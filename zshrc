@@ -82,6 +82,9 @@ alias edit="$EDITOR"
 # Chrome Dev Open
 alias chrome="open -a Google\ Chrome --args --disable-web-security"
 
+# Tmuxinator Auto Completion
+source ~/.bin/tmuxinator.zsh
+
 # Disable auto-correct
 unsetopt correct_all
 
