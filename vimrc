@@ -21,7 +21,6 @@ NeoBundle 'benekastah/neomake'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'mxw/vim-jsx'
-NeoBundle 'christoomey/vim-tmux-navigator'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'Valloric/YouCompleteMe'
@@ -32,6 +31,12 @@ NeoBundle 'marijnh/tern_for_vim'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'tpope/vim-eunuch'
+NeoBundle 'zhaocai/GoldenView.Vim'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'jistr/vim-nerdtree-tabs'
+
+" This has precendence to preserve C-[hjkl] shortcuts
+NeoBundle 'christoomey/vim-tmux-navigator'
 
 call neobundle#end()
 filetype plugin indent on
@@ -58,8 +63,14 @@ nmap <CR> }
 nmap <F1> <nop>
 imap <F1> <nop>
 
+" Quit
+nnoremap <Leader>x :qa<CR>
+
 " Git commit messages
 autocmd Filetype gitcommit setlocal spell textwidth=72
+
+" NerdTREE Toggle
+nnoremap <Leader>t :NERDTreeMirrorToggle<CR>
 
 " unmap arrow keys
 noremap <Up> <Nop>
