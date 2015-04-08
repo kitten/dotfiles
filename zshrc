@@ -73,6 +73,12 @@ source $ZSH/oh-my-zsh.sh
 
 alias ack="ag"
 
+# Just use one editor
+alias nvim="$EDITOR"
+alias vim="$EDITOR"
+alias vi="$EDITOR"
+alias edit="$EDITOR"
+
 # Chrome Dev Open
 alias chrome="open -a Google\ Chrome --args --disable-web-security"
 

@@ -1,5 +1,12 @@
-# Make vim the default editor for everything
-export VISUAL=/usr/local/bin/vim
+# Search vor neovim, fallback to vim
+if [ -f /usr/local/bin/nvim ]; then
+  export VISUAL=/usr/local/bin/nvim
+elif [ -f /usr/local/bin/vim ]; then
+  export VISUAL=/usr/local/bin/vim
+else
+  export VISUAL=vim
+fi
+
 export EDITOR=$VISUAL
 
 # Oh My ZSH
