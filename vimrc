@@ -16,6 +16,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'benekastah/neomake'
   Plug 'bling/vim-airline'
   Plug 'airblade/vim-gitgutter'
+  Plug 'jelera/vim-javascript-syntax'
+  Plug 'pangloss/vim-javascript'
   Plug 'mxw/vim-jsx'
   Plug 'terryma/vim-multiple-cursors'
   Plug 'altercation/vim-colors-solarized'
@@ -23,7 +25,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'terryma/vim-smooth-scroll'
   Plug 'Valloric/ListToggle'
   Plug 'Lokaltog/vim-easymotion'
-  Plug 'marijnh/tern_for_vim'
+  Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-unimpaired'
   Plug 'tpope/vim-eunuch'
