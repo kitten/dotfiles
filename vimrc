@@ -54,8 +54,9 @@ nmap <CR> }
 nmap <F1> <nop>
 imap <F1> <nop>
 
-" Javascript Libraries
+" Javascript
 let g:used_javascript_libs = 'react,flux,requirejs'
+let g:jsx_ext_required = 0
 
 " Quit
 nnoremap <Leader>x :qa<CR>
