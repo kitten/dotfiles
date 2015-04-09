@@ -61,6 +61,9 @@ let g:jsx_ext_required = 0
 " Quit
 nnoremap <Leader>x :qa<CR>
 
+" Explorer List Style
+let g:netrw_liststyle=3
+
 " Git commit messages
 autocmd Filetype gitcommit setlocal spell textwidth=72
 
