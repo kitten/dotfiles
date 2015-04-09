@@ -18,6 +18,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'airblade/vim-gitgutter'
   Plug 'pangloss/vim-javascript'
   Plug 'mxw/vim-jsx'
+  Plug 'othree/javascript-libraries-syntax.vim'
   Plug 'terryma/vim-multiple-cursors'
   Plug 'altercation/vim-colors-solarized'
   Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
@@ -52,6 +53,9 @@ nmap <CR> }
 " unmap F1 help
 nmap <F1> <nop>
 imap <F1> <nop>
+
+" Javascript Libraries
+let g:used_javascript_libs = 'react,flux,requirejs'
 
 " Quit
 nnoremap <Leader>x :qa<CR>
