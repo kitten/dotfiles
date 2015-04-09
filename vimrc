@@ -1,57 +1,46 @@
-"NeoBundle Scripts-----------------------------
-if has('vim_starting')
-  if &compatible
-    set nocompatible               " Be iMproved
+function! BuildYCM(info)
+  if a:info.status == 'installed' || a:info.force
+    !./install.sh
   endif
-  set runtimepath+=/Users/phil/.vim/bundle/neobundle.vim/
-endif
-call neobundle#begin(expand('~/.vim/bundle'))
+endfunction
 
-NeoBundleFetch 'Shougo/neobundle.vim'
+call plug#begin('~/.vim/plugged')
+  Plug 'tpope/vim-sensible'
+  Plug 'tpope/vim-repeat'
+  Plug 'michaeljsmith/vim-indent-object'
+  Plug 'kien/ctrlp.vim'
+  Plug 'tpope/vim-fugitive'
+  Plug 'rking/ag.vim'
+  Plug 'myusuf3/numbers.vim'
+  Plug 'MartinLafreniere/vim-PairTools'
+  Plug 'benekastah/neomake'
+  Plug 'bling/vim-airline'
+  Plug 'airblade/vim-gitgutter'
+  Plug 'mxw/vim-jsx'
+  Plug 'terryma/vim-multiple-cursors'
+  Plug 'altercation/vim-colors-solarized'
+  Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+  Plug 'terryma/vim-smooth-scroll'
+  Plug 'Valloric/ListToggle'
+  Plug 'Lokaltog/vim-easymotion'
+  Plug 'marijnh/tern_for_vim'
+  Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-unimpaired'
+  Plug 'tpope/vim-eunuch'
+  Plug 'zhaocai/GoldenView.Vim'
+  Plug 'scrooloose/nerdtree'
+  Plug 'jistr/vim-nerdtree-tabs'
 
-NeoBundle 'tpope/vim-sensible'
-NeoBundle 'tpope/vim-repeat'
-NeoBundle 'michaeljsmith/vim-indent-object'
-NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'rking/ag.vim'
-NeoBundle 'myusuf3/numbers.vim'
-NeoBundle 'MartinLafreniere/vim-PairTools'
-NeoBundle 'benekastah/neomake'
-NeoBundle 'bling/vim-airline'
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'mxw/vim-jsx'
-NeoBundle 'terryma/vim-multiple-cursors'
-NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'Valloric/YouCompleteMe'
-NeoBundle 'terryma/vim-smooth-scroll'
-NeoBundle 'Valloric/ListToggle'
-NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundle 'marijnh/tern_for_vim'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'tpope/vim-unimpaired'
-NeoBundle 'tpope/vim-eunuch'
-NeoBundle 'zhaocai/GoldenView.Vim'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'jistr/vim-nerdtree-tabs'
-
-" This has precendence to preserve C-[hjkl] shortcuts
-NeoBundle 'christoomey/vim-tmux-navigator'
-
-call neobundle#end()
-filetype plugin indent on
-NeoBundleCheck
-"End NeoBundle Scripts-------------------------
+  " This has precendence to preserve C-[hjkl] shortcuts
+  Plug 'christoomey/vim-tmux-navigator'
+call plug#end()
 
 set encoding=utf8
-set clipboard=unnamed
+set nocompatible
 set t_Co=256
 
-let mapleader = " "
-
-" Disable leader timeout
-set notimeout
-set ttimeout
+nnoremap <Space> <nop>
+let mapleader="\<Space>"
 
 " Replace first character motion
 nmap , ^
@@ -108,7 +97,6 @@ let g:neomake_error_sign = {
 
 " Neomake Actuators
 nnoremap <Leader>m :Neomake<CR>
-autocmd! BufWritePost * Neomake
 
 " Ag Search
 nnoremap <Leader>f :Ag
@@ -162,19 +150,6 @@ set smartcase
 set ruler
 set laststatus=2
 set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [%l,%c]\ [%L,%p%%]
-if version >= 700
-  au InsertEnter * hi StatusLine ctermfg=235 ctermbg=2
-  au InsertLeave * hi StatusLine ctermbg=240 ctermfg=12
-endif
-
-" Highlight trailing spaces
-func! DeleteTrailingWS()
-  exe "normal mz"
-  %s/\s\+$//ge
-  exe "normal `z"
-endfunc
-autocmd BufWrite *.py :call DeleteTrailingWS()
-autocmd BufWrite *.coffee :call DeleteTrailingWS()
 
 " Scrolling
 set scrolloff=2
