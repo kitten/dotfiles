@@ -32,6 +32,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'zhaocai/GoldenView.Vim'
   Plug 'scrooloose/nerdtree'
   Plug 'jistr/vim-nerdtree-tabs'
+  Plug 'editorconfig/editorconfig-vim'
 
   " This has precendence to preserve C-[hjkl] shortcuts
   Plug 'christoomey/vim-tmux-navigator'
