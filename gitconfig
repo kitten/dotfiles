@@ -1,8 +1,5 @@
 [push]
 	default = simple
-[user]
-	name = Phil Plückthun
-	email = phil@plckthn.me
 [color]
   ui = auto
 [filter "hawser"]
