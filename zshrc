@@ -72,6 +72,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias ack="ag"
+alias git="hub"
 
 # Just use one editor
 alias nvim="$EDITOR"
@@ -88,3 +89,5 @@ unsetopt correct_all
 # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
+# Tmuxifier Init
+eval "$(tmuxifier init -)"

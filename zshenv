@@ -15,6 +15,9 @@ export ZSH="$HOME/.oh-my-zsh"
 # Ensure dotfiles bin directory is loaded first
 export PATH="$HOME/.bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 
+# Tmuxifier
+export PATH="$HOME/.tmuxifier/bin:$PATH"
+
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export ANDROID_HOME=/usr/local/opt/android-sdk
 

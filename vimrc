@@ -7,32 +7,46 @@ endfunction
 call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-sensible'
   Plug 'tpope/vim-repeat'
-  Plug 'michaeljsmith/vim-indent-object'
-  Plug 'kien/ctrlp.vim'
-  Plug 'tpope/vim-fugitive'
-  Plug 'rking/ag.vim'
-  Plug 'myusuf3/numbers.vim'
-  Plug 'MartinLafreniere/vim-PairTools'
-  Plug 'benekastah/neomake'
-  Plug 'bling/vim-airline'
+  Plug 'editorconfig/editorconfig-vim'
+
+  " Visual
+  Plug 'altercation/vim-colors-solarized'
   Plug 'airblade/vim-gitgutter'
+  Plug 'bling/vim-airline'
+  Plug 'myusuf3/numbers.vim'
+  Plug 'zhaocai/GoldenView.Vim'
+
+  " Navigation
+  Plug 'kien/ctrlp.vim'
+  Plug 'rking/ag.vim'
+  Plug 'scrooloose/nerdtree'
+  Plug 'jistr/vim-nerdtree-tabs'
+  Plug 'terryma/vim-smooth-scroll'
+
+  " Tools
+  Plug 'MartinLafreniere/vim-PairTools'
+  Plug 'tpope/vim-fugitive'
+  Plug 'Valloric/ListToggle'
+  Plug 'tpope/vim-eunuch'
+
+  " Linting
+  Plug 'benekastah/neomake'
+  Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
+  Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+
+  " Javascript Syntax
   Plug 'pangloss/vim-javascript'
   Plug 'mxw/vim-jsx'
   Plug 'othree/javascript-libraries-syntax.vim'
-  Plug 'terryma/vim-multiple-cursors'
-  Plug 'altercation/vim-colors-solarized'
-  Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
-  Plug 'terryma/vim-smooth-scroll'
-  Plug 'Valloric/ListToggle'
-  Plug 'Lokaltog/vim-easymotion'
-  Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
-  Plug 'tpope/vim-surround'
+
+  " Objects
+  Plug 'michaeljsmith/vim-indent-object'
   Plug 'tpope/vim-unimpaired'
-  Plug 'tpope/vim-eunuch'
-  Plug 'zhaocai/GoldenView.Vim'
-  Plug 'scrooloose/nerdtree'
-  Plug 'jistr/vim-nerdtree-tabs'
-  Plug 'editorconfig/editorconfig-vim'
+
+  " Motions
+  Plug 'terryma/vim-multiple-cursors'
+  Plug 'Lokaltog/vim-easymotion'
+  Plug 'tpope/vim-surround'
 
   " This has precendence to preserve C-[hjkl] shortcuts
   Plug 'christoomey/vim-tmux-navigator'
