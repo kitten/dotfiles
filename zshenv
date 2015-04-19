@@ -18,13 +18,14 @@ export PATH="$HOME/.bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/
 # Tmuxifier
 export PATH="$HOME/.tmuxifier/bin:$PATH"
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export ANDROID_HOME=/usr/local/opt/android-sdk
+
+if which rbenv &>/dev/null ; then
+  eval "$(rbenv init - --no-rehash)"
+fi
 
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # Local config
 [[ -f ~/.zshenv.local ]] && source ~/.zshenv.local
