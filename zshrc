@@ -73,6 +73,7 @@ source $ZSH/oh-my-zsh.sh
 
 alias ack="ag"
 alias git="hub"
+alias j="jump"
 
 # Just use one editor
 alias nvim="$EDITOR"
@@ -88,6 +89,9 @@ unsetopt correct_all
 
 # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
+# The Fuck
+alias fuck='$(thefuck $(fc -ln -1))'
 
 # Tmuxifier Init
 eval "$(tmuxifier init -)"
