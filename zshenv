@@ -25,7 +25,7 @@ if which rbenv &>/dev/null ; then
 fi
 
 export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+source $NVM_DIR/nvm.sh
 
 # Local config
 [[ -f ~/.zshenv.local ]] && source ~/.zshenv.local
