@@ -1,3 +1,5 @@
+source $HOME/.zshenv
+
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="edvardm"
@@ -72,7 +74,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias ack="ag"
-alias git="hub"
 alias j="jump"
 
 # Just use one editor
@@ -80,9 +81,6 @@ alias nvim="$EDITOR"
 alias vim="$EDITOR"
 alias vi="$EDITOR"
 alias edit="$EDITOR"
-
-# Chrome Dev Open
-alias chrome="open -a Google\ Chrome --args --disable-web-security"
 
 # Disable auto-correct
 unsetopt correct_all

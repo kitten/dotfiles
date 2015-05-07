@@ -1,8 +1,8 @@
 # Search vor neovim, fallback to vim
-if [ -f /usr/local/bin/nvim ]; then
-  export VISUAL=/usr/local/bin/nvim
-elif [ -f /usr/local/bin/vim ]; then
-  export VISUAL=/usr/local/bin/vim
+if which nvim >/dev/null; then
+  export VISUAL=$(which nvim)
+elif which vim >/dev/null; then
+  export VISUAL=$(which vim)
 else
   export VISUAL=vim
 fi
