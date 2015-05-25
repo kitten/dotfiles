@@ -1,10 +1,10 @@
 # Search vor neovim, fallback to vim
 if which nvim >/dev/null; then
-  export VISUAL=$(which nvim)
+  export VISUAL="$(which nvim)"
 elif which vim >/dev/null; then
-  export VISUAL=$(which vim)
+  export VISUAL="$(which vim)"
 else
-  export VISUAL=vim
+  export VISUAL="vim"
 fi
 
 export EDITOR=$VISUAL
@@ -23,9 +23,7 @@ export PATH="$HOME/.tmuxifier/bin:$PATH"
 
 export ANDROID_HOME=/usr/local/opt/android-sdk
 
-if which rbenv &>/dev/null ; then
-  eval "$(rbenv init - --no-rehash)"
-fi
+eval "$(rbenv init -)"
 
 export NVM_DIR=~/.nvm
 source $NVM_DIR/nvm.sh
