@@ -9,6 +9,9 @@ fi
 
 export EDITOR=$VISUAL
 
+# Golang
+export GOPATH="$HOME/.golang"
+
 # Oh My ZSH
 export ZSH="$HOME/.oh-my-zsh"
 

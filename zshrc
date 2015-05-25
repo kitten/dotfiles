@@ -93,3 +93,8 @@ alias fuck='$(thefuck $(fc -ln -1))'
 
 # Tmuxifier Init
 eval "$(tmuxifier init -)"
+
+# Docker & Boot2Docker
+alias dockup='boot2docker up && eval "$(boot2docker shellinit)"'
+alias dockdo='boot2docker stop'
+alias dockop='open http://$(boot2docker ip 2>/dev/null)/'

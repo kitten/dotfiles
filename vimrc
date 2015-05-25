@@ -39,6 +39,12 @@ call plug#begin('~/.vim/plugged')
   Plug 'mxw/vim-jsx'
   Plug 'othree/javascript-libraries-syntax.vim'
 
+  " Golang Syntax
+  Plug 'fatih/vim-go'
+
+  " Haskell Syntax
+  Plug 'haskell.vim'
+
   " Objects
   Plug 'michaeljsmith/vim-indent-object'
   Plug 'tpope/vim-unimpaired'
