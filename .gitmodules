@@ -7,3 +7,12 @@
 [submodule "nvm"]
 	path = nvm
 	url = https://github.com/creationix/nvm.git
+[submodule "tmux/plugins/tpm"]
+	path = tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
+[submodule "tmux/plugins/tmux-resurrect"]
+	path = tmux/plugins/tmux-resurrect
+	url = git@github.com:tmux-plugins/tmux-resurrect.git
+[submodule "tmux/plugins/tmux-continuum"]
+	path = tmux/plugins/tmux-continuum
+	url = https://github.com/tmux-plugins/tmux-continuum.git
