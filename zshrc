@@ -82,6 +82,8 @@ alias vim="$EDITOR"
 alias vi="$EDITOR"
 alias edit="$EDITOR"
 
+alias recommit='git commit -a --amend --no-edit'
+
 # Disable auto-correct
 unsetopt correct_all
 
