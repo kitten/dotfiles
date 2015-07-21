@@ -84,6 +84,8 @@ alias edit="$EDITOR"
 
 alias recommit='git commit -a --amend --no-edit'
 
+alias joinpdf='/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Resources/join.py'
+
 # Disable auto-correct
 unsetopt correct_all
 
