@@ -100,10 +100,6 @@ noremap <Right> <Nop>
 " Remove highlighting with Escape
 nmap <Esc> :noh<CR>
 
-" Cursor shape
-let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-
 " Syntax highlighting
 syntax enable
 
