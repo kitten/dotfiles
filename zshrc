@@ -42,7 +42,7 @@ ZSH_THEME="edvardm"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(battery tmux git jump brew brew-cask npm)
+plugins=(battery tmux git brew brew-cask npm)
 
 # User configuration
 

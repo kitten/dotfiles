@@ -39,8 +39,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'mxw/vim-jsx'
   Plug 'othree/javascript-libraries-syntax.vim'
 
-  " Golang Syntax
-  Plug 'fatih/vim-go'
+  " Rust Syntax
+  Plug 'rust-lang/rust.vim'
 
   " Haskell Syntax
   Plug 'haskell.vim'
