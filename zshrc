@@ -74,7 +74,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias ack="ag"
-alias j="jump"
 
 # Just use one editor
 alias nvim="$EDITOR"
@@ -95,10 +94,11 @@ unsetopt correct_all
 # The Fuck
 alias fuck='$(thefuck $(fc -ln -1))'
 
-# Tmuxifier Init
-eval "$(tmuxifier init -)"
-
 # Docker & Boot2Docker
 alias dockup='boot2docker up && eval "$(boot2docker shellinit)"'
 alias dockdo='boot2docker stop'
 alias dockop='open http://$(boot2docker ip 2>/dev/null)/'
+
+# z.sh
+. ~/.zjump/z.sh
+

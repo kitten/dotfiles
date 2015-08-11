@@ -8,13 +8,13 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-sensible'
   Plug 'tpope/vim-repeat'
   Plug 'editorconfig/editorconfig-vim'
+  Plug 'zerowidth/vim-copy-as-rtf'
 
   " Visual
   Plug 'altercation/vim-colors-solarized'
   Plug 'airblade/vim-gitgutter'
   Plug 'bling/vim-airline'
   Plug 'myusuf3/numbers.vim'
-  Plug 'zhaocai/GoldenView.Vim'
 
   " Navigation
   Plug 'kien/ctrlp.vim'
