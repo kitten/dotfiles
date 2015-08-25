@@ -94,6 +94,9 @@ unsetopt correct_all
 # The Fuck
 alias fuck='$(thefuck $(fc -ln -1))'
 
+# My IP
+alias myip='curl ipv4.wtfismyip.com/text'
+
 # Docker & Boot2Docker
 alias dockup='boot2docker up && eval "$(boot2docker shellinit)"'
 alias dockdo='boot2docker stop'
