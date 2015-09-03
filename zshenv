@@ -13,9 +13,6 @@ export HOSTNAME_SHORT="$(hostname -s)"
 # Ensure dotfiles bin directory is loaded first
 export PATH="$HOME/.bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 
-# Better history
-export HISTFILE="$HOME/.history/$(date -u +%Y/%m/%d.%H.%M.%S)_${HOSTNAME_SHORT}_$$"
-
 # Search for neovim, fallback to vim
 if which nvim >/dev/null; then
   export VISUAL="$(which nvim)"
