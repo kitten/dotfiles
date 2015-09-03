@@ -8,7 +8,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-sensible'
   Plug 'tpope/vim-repeat'
   Plug 'editorconfig/editorconfig-vim'
-  Plug 'zerowidth/vim-copy-as-rtf'
 
   " Visual
   Plug 'altercation/vim-colors-solarized'
@@ -30,9 +29,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-eunuch'
 
   " Linting
-  Plug 'benekastah/neomake'
-  Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
-  Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+  "Plug 'benekastah/neomake'
+  "Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
+  "Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 
   " Javascript Syntax
   Plug 'pangloss/vim-javascript'
@@ -44,6 +43,9 @@ call plug#begin('~/.vim/plugged')
 
   " Haskell Syntax
   Plug 'haskell.vim'
+
+  " Swift Syntax
+  Plug 'keith/swift.vim'
 
   " Objects
   Plug 'michaeljsmith/vim-indent-object'
@@ -185,12 +187,10 @@ set nowb
 set noswapfile
 
 " Smooth scroll
-noremap <silent> <c-y> :call smooth_scroll#up(4, 20, 1)<CR>
-noremap <silent> <c-e> :call smooth_scroll#down(4, 20, 1)<CR>
-noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 30, 2)<CR>
-noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 30, 2)<CR>
-noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 30, 4)<CR>
-noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 30, 4)<CR>
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 
 " Line numbers
 set number

@@ -6,10 +6,17 @@ else
   export isOSX=false
 fi
 
+# Hostnames
+export HOSTNAME="$(hostname)"
+export HOSTNAME_SHORT="$(hostname -s)"
+
 # Ensure dotfiles bin directory is loaded first
 export PATH="$HOME/.bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 
-# Search vor neovim, fallback to vim
+# Better history
+export HISTFILE="$HOME/.history/$(date -u +%Y/%m/%d.%H.%M.%S)_${HOSTNAME_SHORT}_$$"
+
+# Search for neovim, fallback to vim
 if which nvim >/dev/null; then
   export VISUAL="$(which nvim)"
 elif which vim >/dev/null; then
