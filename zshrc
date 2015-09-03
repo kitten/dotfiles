@@ -1,12 +1,9 @@
 source $HOME/.zshenv
 
-# Custom history folder
-HISTFILE="$HOME/.history/$(date -u +%Y/%m/%d.%H.%M)_${HOSTNAME_SHORT}_$$"
-
 ZSH_THEME="edvardm"
 DISABLE_AUTO_UPDATE="true"
 HIST_STAMPS="dd.mm.yyyy"
-plugins=(history battery tmux git brew npm)
+plugins=(battery tmux git brew npm)
 
 # Load Oh-My-Zsh
 source $ZSH/oh-my-zsh.sh

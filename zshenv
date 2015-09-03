@@ -10,6 +10,15 @@ fi
 export HOSTNAME="$(hostname)"
 export HOSTNAME_SHORT="$(hostname -s)"
 
+# Today's date
+export DATE="$(date -u +%d.%m.%Y)"
+
+# History
+setopt HIST_IGNORE_SPACE
+HISTDIR=$HOME/.history/$DATE
+[ -d $HISTDIR ] || mkdir -p $HISTDIR
+HISTFILE=$HISTDIR/$$_${HOSTNAME_SHORT}
+
 # Ensure dotfiles bin directory is loaded first
 export PATH="$HOME/.bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 
