@@ -12,12 +12,17 @@ export HOSTNAME_SHORT="$(hostname -s)"
 
 # Today's date
 export DATE="$(date -u +%d.%m.%Y)"
+export YEAR="$(date -u +%Y)"
+export MONTH="$(date -u +%m)"
+
+# Current boottime
+export BOOTTIME="$(sysctl -n kern.boottime | awk -F"[ ,]+" '{print $4}')"
 
 # History
 setopt HIST_IGNORE_SPACE
-HISTDIR=$HOME/.history/$DATE
+HISTDIR=$HOME/.history/$YEAR/$MONTH
 [ -d $HISTDIR ] || mkdir -p $HISTDIR
-HISTFILE=$HISTDIR/$$_${HOSTNAME_SHORT}
+HISTFILE="$HISTDIR/${BOOTTIME}_${HOSTNAME_SHORT}"
 
 # Ensure dotfiles bin directory is loaded first
 export PATH="$HOME/.bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"

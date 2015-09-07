@@ -4,10 +4,16 @@ function! BuildYCM(info)
   endif
 endfunction
 
+" Python paths
+let g:python_host_prog  = "/usr/local/bin/python"
+let g:python3_host_prog = "/usr/local/bin/python3"
+
 call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-sensible'
   Plug 'tpope/vim-repeat'
   Plug 'editorconfig/editorconfig-vim'
+
+  Plug 'floobits/floobits-neovim'
 
   " Visual
   Plug 'altercation/vim-colors-solarized'
@@ -17,6 +23,7 @@ call plug#begin('~/.vim/plugged')
 
   " Navigation
   Plug 'kien/ctrlp.vim'
+  Plug 'FelikZ/ctrlp-py-matcher'
   Plug 'rking/ag.vim'
   Plug 'scrooloose/nerdtree'
   Plug 'jistr/vim-nerdtree-tabs'
@@ -93,6 +100,12 @@ autocmd Filetype gitcommit setlocal spell textwidth=72
 " NerdTREE Toggle
 nnoremap <Leader>t :NERDTreeMirrorToggle<CR>
 
+" NerdTREE config
+let g:nerdtree_tabs_open_on_gui_startup = 0
+let g:nerdtree_tabs_smart_startup_focus = 2
+let g:nerdtree_tabs_open_on_new_tab = 0
+let g:nerdtree_tabs_focus_on_files = 1
+
 " unmap arrow keys
 noremap <Up> <Nop>
 noremap <Down> <Nop>
@@ -100,7 +113,7 @@ noremap <Left> <Nop>
 noremap <Right> <Nop>
 
 " Remove highlighting with Escape
-nmap <Esc> :noh<CR>
+nmap <silent> <Esc> :noh<CR>
 
 " Syntax highlighting
 syntax enable
@@ -212,7 +225,16 @@ let g:ctrlp_working_path_mode = 0
 let g:ctrlp_match_window_reversed = 0
 
 " use silver searcher for ctrlp
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
+      \ --ignore .git
+      \ --ignore .svn
+      \ --ignore .hg
+      \ --ignore .DS_Store
+      \ --ignore "**/*.pyc"
+      \ -g ""'
+
+" Speed up CtrlP
+let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
