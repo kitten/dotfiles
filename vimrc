@@ -13,7 +13,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-repeat'
   Plug 'editorconfig/editorconfig-vim'
 
-  Plug 'floobits/floobits-neovim'
+  Plug 'floobits/floobits-neovim', { 'do': function('hooks#remote') }
 
   " Visual
   Plug 'altercation/vim-colors-solarized'
