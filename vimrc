@@ -6,7 +6,6 @@ endfunction
 
 " Python paths
 let g:python_host_prog  = "/usr/local/bin/python"
-let g:python3_host_prog = "/usr/local/bin/python3"
 
 call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-sensible'
@@ -117,11 +116,9 @@ nmap <silent> <Esc> :noh<CR>
 
 " Syntax highlighting
 syntax enable
-
-" Theming
 set background=dark
-let g:solarized_termtrans=1
 colorscheme solarized
+
 set cursorline
 let g:airline#extensions#tmuxline#enabled = 0
 let g:airline_theme="solarized"
