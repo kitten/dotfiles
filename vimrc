@@ -15,7 +15,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'floobits/floobits-neovim', { 'do': function('hooks#remote') }
 
   " Visual
-  Plug 'altercation/vim-colors-solarized'
+  Plug 'frankier/neovim-colors-solarized-truecolor-only'
   Plug 'airblade/vim-gitgutter'
   Plug 'bling/vim-airline'
   Plug 'myusuf3/numbers.vim'
@@ -68,7 +68,6 @@ call plug#end()
 
 set encoding=utf8
 set nocompatible
-set t_Co=256
 
 nnoremap <Space> <nop>
 let mapleader="\<Space>"
@@ -116,13 +115,14 @@ nmap <silent> <Esc> :noh<CR>
 
 " Syntax highlighting
 syntax enable
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
 colorscheme solarized
 
-set cursorline
 let g:airline#extensions#tmuxline#enabled = 0
 let g:airline_theme="solarized"
 highlight clear SignColumn
+set cursorline
 
 " Neomake Configuration
 let g:neomake_javascript_enabled_makers = ['eslint']
