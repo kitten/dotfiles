@@ -136,6 +136,9 @@ let g:neomake_error_sign = {
 " Neomake Actuators
 nnoremap <Leader>m :Neomake<CR>
 
+" Force saving files that require root permission
+cnoremap w!! w !sudo tee > /dev/null %
+
 " Ag Search
 nnoremap <Leader>f :Ag
 

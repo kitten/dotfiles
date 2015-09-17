@@ -6,6 +6,11 @@ else
   export isOSX=false
 fi
 
+if [ "$isOSX" = true ]; then
+  ulimit -n 65536
+  ulimit -u 2048
+fi
+
 # Hostnames
 export HOSTNAME="$(hostname)"
 export HOSTNAME_SHORT="$(hostname -s)"
