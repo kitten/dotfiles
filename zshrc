@@ -32,9 +32,8 @@ alias fuck='$(thefuck $(fc -ln -1))'
 # My IP
 alias myip='curl ipv4.wtfismyip.com/text'
 
-# Docker & Dinghy
-alias dockup='dinghy up && eval "$(dinghy shellinit)"'
-alias dockdo='dinghy halt'
+# Docker
+alias dm='docker-machine'
 
 # Neovim.app
 alias nvimapp='open -a ~/Applications/Neovim.app'
