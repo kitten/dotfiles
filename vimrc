@@ -35,14 +35,11 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-eunuch'
 
   " Linting
-  "Plug 'benekastah/neomake'
-  "Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
-  "Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+  Plug 'benekastah/neomake'
 
   " Javascript Syntax
   Plug 'pangloss/vim-javascript'
   Plug 'mxw/vim-jsx'
-  Plug 'othree/javascript-libraries-syntax.vim'
 
   " Rust Syntax
   Plug 'rust-lang/rust.vim'

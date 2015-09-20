@@ -1,11 +1,20 @@
 
 
-# 50-character subject line
+# 50-character subject line in imperative mood
 #
-# 72-character wrapped longer description. This should answer:
+# All paragraphs should wrap at 72-characters and be
+# separared with a single blank line. Optimally there should
+# be a paragraph for each of these bullet points at least:
 #
-# * Why was this change necessary?
-# * How does it address the problem?
-# * Are there any side effects?
+# - Explain what this commit solves / fixes / addresses
 #
-# Include a link to the ticket, if any.
+# - Summarize what changed and what side effects this has
+#
+# If you need to explain or summarize a bunch of things then
+# consider splitting the commit into smaller commits or use
+# bullet points, like seen above.
+#
+# Include a link to the Trello card here if necessary and add a
+# notice if this fixed an issue on Github like so:
+#
+# Fix: #123

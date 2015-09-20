@@ -8,7 +8,6 @@ plugins=(battery tmux git brew npm)
 # Load Oh-My-Zsh
 source $ZSH/oh-my-zsh.sh
 
-
 alias ack="ag"
 
 # Just use one editor
@@ -33,13 +32,12 @@ alias fuck='$(thefuck $(fc -ln -1))'
 # My IP
 alias myip='curl ipv4.wtfismyip.com/text'
 
-# Docker & Boot2Docker
-alias dockup='boot2docker up && eval "$(boot2docker shellinit)"'
-alias dockdo='boot2docker stop'
-alias dockop='open http://$(boot2docker ip 2>/dev/null)/'
+# Docker & Dinghy
+alias dockup='dinghy up && eval "$(dinghy shellinit)"'
+alias dockdo='dinghy halt'
 
 # Neovim.app
-alias nvimapp='open -a /Applications/Neovim.app'
+alias nvimapp='open -a ~/Applications/Neovim.app'
 
 # z.sh
 . ~/.zjump/z.sh
