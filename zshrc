@@ -33,6 +33,12 @@ alias fuck='$(thefuck $(fc -ln -1))'
 alias myip='curl ipv4.wtfismyip.com/text'
 
 # Docker
+function dmenv () {
+  eval "$(docker-machine env $1)"
+}
+function dmip () {
+  open "http://$(docker-machine ip $1)"
+}
 alias dm='docker-machine'
 
 # Neovim.app

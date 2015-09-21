@@ -1,9 +1,0 @@
-#!/bin/sh
-#
-# Set the environment for a docker-machine VM.
-#
-# dmenv machine
-
-machine=$1
-shift
-eval "$(docker-machine env $machine)"
