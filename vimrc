@@ -15,7 +15,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'floobits/floobits-neovim', { 'do': function('hooks#remote') }
 
   " Visual
-  Plug 'frankier/neovim-colors-solarized-truecolor-only'
   Plug 'airblade/vim-gitgutter'
   Plug 'bling/vim-airline'
   Plug 'myusuf3/numbers.vim'
@@ -27,6 +26,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'scrooloose/nerdtree'
   Plug 'jistr/vim-nerdtree-tabs'
   Plug 'terryma/vim-smooth-scroll'
+
+  Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 
   " Tools
   Plug 'MartinLafreniere/vim-PairTools'
@@ -69,8 +70,8 @@ set nocompatible
 nnoremap <Space> <nop>
 let mapleader="\<Space>"
 
-" Replace first character motion
-nmap , ^
+" Map comma to colon
+noremap , :
 
 " Enter goes to next paragraph
 nmap <CR> }
@@ -114,7 +115,7 @@ nmap <silent> <Esc> :noh<CR>
 syntax enable
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
-colorscheme solarized
+colorscheme Dracula
 
 let g:airline#extensions#tmuxline#enabled = 0
 let g:airline_theme="solarized"
@@ -157,6 +158,11 @@ map <Down> <Plug>(easymotion-j)
 map <Left> <Plug>(easymotion-linebackward)
 map <Right> <Plug>(easymotion-lineforward)
 
+" Gif config
+nmap s <Plug>(easymotion-s2)
+nmap t <Plug>(easymotion-t2)
+
+let g:EasyMotion_smartcase = 1
 let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
 
 " Indentation
@@ -195,12 +201,6 @@ set nofoldenable
 set nobackup
 set nowb
 set noswapfile
-
-" Smooth scroll
-noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
-noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
-noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
-noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 
 " Line numbers
 set number

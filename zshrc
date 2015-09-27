@@ -47,3 +47,5 @@ alias nvimapp='open -a ~/Applications/Neovim.app'
 # z.sh
 . ~/.zjump/z.sh
 
+# IRC
+alias freenode='irssi -c irc.freenode.net -p 8001 -n vielviel_phil'
