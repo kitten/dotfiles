@@ -2,10 +2,6 @@
 	default = simple
 [color]
   ui = auto
-[filter "hawser"]
-	clean = git hawser clean %f
-	smudge = git hawser smudge %f
-	required = true
 [merge]
   ff = only
 [commit]
@@ -14,6 +10,9 @@
   prune = true
 [include]
   path = ~/.gitconfig.local
-
 [status]
 	showUntrackedFiles = all
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
