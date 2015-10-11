@@ -12,8 +12,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-repeat'
   Plug 'editorconfig/editorconfig-vim'
 
-  Plug 'floobits/floobits-neovim', { 'do': function('hooks#remote') }
-
   " Visual
   Plug 'airblade/vim-gitgutter'
   Plug 'bling/vim-airline'
@@ -73,9 +71,6 @@ let mapleader="\<Space>"
 " Map comma to colon
 noremap , :
 
-" Enter goes to next paragraph
-nmap <CR> }
-
 " unmap F1 help
 nmap <F1> <nop>
 imap <F1> <nop>
@@ -84,14 +79,9 @@ imap <F1> <nop>
 let g:used_javascript_libs = 'react,flux,requirejs'
 let g:jsx_ext_required = 0
 
-" Quit
-nnoremap <Leader>x :qa<CR>
-
-" Explorer List Style
-let g:netrw_liststyle=3
-
-" Git commit messages
-autocmd Filetype gitcommit setlocal spell textwidth=72
+" Keep undo history
+set undofile
+set undodir=~/.vim/undo
 
 " NerdTREE Toggle
 nnoremap <Leader>t :NERDTreeMirrorToggle<CR>
@@ -134,11 +124,12 @@ let g:neomake_error_sign = {
 " Neomake Actuators
 nnoremap <Leader>m :Neomake<CR>
 
-" Force saving files that require root permission
-cnoremap w!! w !sudo tee > /dev/null %
-
 " Ag Search
-nnoremap <Leader>f :Ag
+function! Agerium()
+  let params = input('Search files for: ')
+  execute 'Ag ' . params
+endfunction
+nnoremap <Leader>f :call Agerium()<CR>
 
 " List Toggle
 let g:lt_location_list_toggle_map = '<leader>p'
@@ -202,6 +193,14 @@ set nobackup
 set nowb
 set noswapfile
 
+" Move to beginning/end of line
+nnoremap <Leader>h ^
+nnoremap <Leader>l $
+
+" $/^ doesn't do anything
+nnoremap $ <nop>
+nnoremap ^ <nop>
+
 " Line numbers
 set number
 
@@ -214,7 +213,6 @@ nnoremap <Leader>w :w<CR>
 " ctrlp config
 let g:ctrlp_map = '<leader>o'
 let g:ctrlp_cmd = 'CtrlPMixed'
-let g:ctrlp_working_path_mode = 'a'
 let g:ctrlp_match_window_bottom = 1
 let g:ctrlp_use_caching = 0
 let g:ctrlp_max_height = 30
@@ -222,13 +220,7 @@ let g:ctrlp_working_path_mode = 0
 let g:ctrlp_match_window_reversed = 0
 
 " use silver searcher for ctrlp
-let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
-      \ --ignore .git
-      \ --ignore .svn
-      \ --ignore .hg
-      \ --ignore .DS_Store
-      \ --ignore "**/*.pyc"
-      \ -g ""'
+let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden -g ""'
 
 " Speed up CtrlP
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
