@@ -33,6 +33,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'Valloric/ListToggle'
   Plug 'tpope/vim-eunuch'
 
+  Plug 'edkolev/tmuxline.vim'
+
   " Linting
   Plug 'benekastah/neomake'
 

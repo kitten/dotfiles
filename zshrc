@@ -36,8 +36,11 @@ alias myip='curl ipv4.wtfismyip.com/text'
 function dmenv () {
   eval "$(docker-machine env $1)"
 }
-function dmip () {
+function dmopen () {
   open "http://$(docker-machine ip $1)"
+}
+function dmip () {
+  docker-machine ip $DOCKER_MACHINE_NAME
 }
 alias dm='docker-machine'
 
@@ -49,3 +52,8 @@ alias nvimapp='open -a ~/Applications/Neovim.app'
 
 # IRC
 alias freenode='irssi -c irc.freenode.net -p 8001 -n vielviel_phil'
+
+# Docker
+alias dockclean='docker rmi $(docker images -q -f dangling=true)'
+alias dockpurge='docker rm $(docker ps -a -q)'
+
