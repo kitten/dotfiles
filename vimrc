@@ -38,6 +38,9 @@ call plug#begin('~/.vim/plugged')
   " Linting
   Plug 'benekastah/neomake'
 
+  " Dockerfile Syntax
+  Plug 'ekalinin/Dockerfile.vim'
+
   " Javascript Syntax
   Plug 'pangloss/vim-javascript'
   Plug 'mxw/vim-jsx'
@@ -66,6 +69,8 @@ call plug#end()
 
 set encoding=utf8
 set nocompatible
+"set list
+"set listchars=tab:▸\ ,eol:¬
 
 nnoremap <Space> <nop>
 let mapleader="\<Space>"
