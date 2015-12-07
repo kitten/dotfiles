@@ -18,3 +18,6 @@
 	required = true
 [credential]
 	helper = osxkeychain
+[user]
+	email = phil@plckthn.me
+	name = Phil Plückthun

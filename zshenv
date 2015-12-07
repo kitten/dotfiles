@@ -1,16 +1,3 @@
-# Determine environment
-unamestr=`uname -s`
-if [[ "$unamestr" == 'Linux' ]]; then
-  export isOSX=true
-else
-  export isOSX=false
-fi
-
-if [ "$isOSX" = true ]; then
-  ulimit -n 65536
-  ulimit -u 2048
-fi
-
 # Hostnames
 export HOSTNAME="$(hostname)"
 export HOSTNAME_SHORT="$(hostname -s)"
