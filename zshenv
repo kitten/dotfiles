@@ -1,3 +1,11 @@
+# Determine environment
+unamestr=`uname -s`
+if [[ "$unamestr" == 'Linux' ]]; then
+  export isOSX=false
+else
+  export isOSX=true
+fi
+
 # Hostnames
 export HOSTNAME="$(hostname)"
 export HOSTNAME_SHORT="$(hostname -s)"
@@ -8,7 +16,11 @@ export YEAR="$(date -u +%Y)"
 export MONTH="$(date -u +%m)"
 
 # Current boottime
-export BOOTTIME="$(sysctl -n kern.boottime | awk -F"[ ,]+" '{print $4}')"
+if [ "$isOSX" = true ]; then
+  export BOOTTIME="$(sysctl -n kern.boottime | awk -F"[ ,]+" '{print $4}')"
+else
+  export BOOTTIME=`date -d "$(uptime -s)" +%s`
+fi
 
 # History
 setopt HIST_IGNORE_SPACE
