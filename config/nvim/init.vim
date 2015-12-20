@@ -1,9 +1,3 @@
-function! BuildYCM(info)
-  if a:info.status == 'installed' || a:info.force
-    !./install.sh
-  endif
-endfunction
-
 " Python paths
 let g:python_host_prog  = "/usr/local/bin/python"
 
@@ -23,8 +17,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'scrooloose/nerdtree'
   Plug 'jistr/vim-nerdtree-tabs'
   Plug 'terryma/vim-smooth-scroll'
-
-  Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 
   " Tools
   Plug 'MartinLafreniere/vim-PairTools'
