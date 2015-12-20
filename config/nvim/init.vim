@@ -8,7 +8,6 @@ endfunction
 let g:python_host_prog  = "/usr/local/bin/python"
 
 call plug#begin('~/.vim/plugged')
-  Plug 'tpope/vim-sensible'
   Plug 'tpope/vim-repeat'
   Plug 'editorconfig/editorconfig-vim'
 
