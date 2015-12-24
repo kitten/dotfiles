@@ -1,0 +1,58 @@
+#!/bin/sh
+#
+# Set, randomise or restore mac address
+#
+# mac set 70:56:51:BE:B3:6F
+# mac get
+# mac randomize
+
+FIRST_ARGUMENT=$1
+SECOND_ARGUMENT=$2
+THIRD_ARGUMENT=$3
+
+function help_text() {
+  echo "Usage: mac [COMMAND] [INTERFACE] [arg...]"
+  echo ""
+  echo "A simple mac address helper"
+  echo ""
+  echo "Commands:"
+  echo ""
+  echo "  set [MAC ADDRESS]"
+  echo "  get"
+  echo "  randomize"
+  echo "  reset"
+  exit 1
+}
+
+function reset() {
+  sudo ifconfig en0 down
+  sudo ifconfig en0 up
+}
+
+function set() {
+  sudo ifconfig $SECOND_ARGUMENT ether $THIRD_ARGUMENT
+}
+
+function get() {
+  ifconfig $SECOND_ARGUMENT ether | grep -Eo '([[:xdigit:]]{1,2}[:-]){5}[[:xdigit:]]{1,2}' | head -n1
+}
+
+function randomize() {
+  MAC_ADDRESS=`openssl rand -hex 6 | sed 's%\(..\)%\1:%g; s%.$%%'`
+  sudo ifconfig $SECOND_ARGUMENT ether $MAC_ADDRESS
+}
+
+if [ "$FIRST_ARGUMENT" = "" ]; then
+  help_text
+else
+  case $FIRST_ARGUMENT in
+    set)        set;;
+    get)        get;;
+    randomize)  randomize;;
+    randomise)  randomize;;
+    *)          echo "'$1' is not a known command for mac"; help_text;;
+  esac
+fi
+
+exit 0
+
