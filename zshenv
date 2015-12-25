@@ -6,6 +6,9 @@ else
   export isOSX=true
 fi
 
+# UID
+export UID="$(id -u)"
+
 # Hostnames
 export HOSTNAME="$(hostname)"
 export HOSTNAME_SHORT="$(hostname -s)"
