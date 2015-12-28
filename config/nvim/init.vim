@@ -74,6 +74,7 @@ highlight clear SignColumn
 set cursorline
 
 hi NonText guifg=#64666d guibg=NONE gui=NONE
+hi SpecialKey guifg=#64666d guibg=NONE gui=NONE
 
 " Ag Search
 function! Agerium()
