@@ -15,53 +15,33 @@ call plug#begin('~/.vim/plugged')
   Plug 'FelikZ/ctrlp-py-matcher'
   Plug 'rking/ag.vim'
   Plug 'scrooloose/nerdtree'
-  Plug 'jistr/vim-nerdtree-tabs'
-  Plug 'terryma/vim-smooth-scroll'
 
   " Tools
-  Plug 'MartinLafreniere/vim-PairTools'
   Plug 'tpope/vim-fugitive'
   Plug 'Valloric/ListToggle'
   Plug 'tpope/vim-eunuch'
 
-  Plug 'edkolev/tmuxline.vim'
-
-  " Linting
-  Plug 'benekastah/neomake'
-
-  " Dockerfile Syntax
+  " Syntax
+  Plug 'pangloss/jbgutierrez/vim-babel'
   Plug 'ekalinin/Dockerfile.vim'
-
-  " Javascript Syntax
-  Plug 'pangloss/vim-javascript'
-  Plug 'mxw/vim-jsx'
-
-  " Rust Syntax
   Plug 'rust-lang/rust.vim'
-
-  " Haskell Syntax
   Plug 'haskell.vim'
-
-  " Swift Syntax
   Plug 'keith/swift.vim'
 
   " Objects
   Plug 'michaeljsmith/vim-indent-object'
   Plug 'tpope/vim-unimpaired'
+  Plug 'MartinLafreniere/vim-PairTools'
 
   " Motions
   Plug 'terryma/vim-multiple-cursors'
   Plug 'Lokaltog/vim-easymotion'
   Plug 'tpope/vim-surround'
-
-  " This has precendence to preserve C-[hjkl] shortcuts
-  Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 set encoding=utf8
-set nocompatible
-"set list
-"set listchars=tab:▸\ ,eol:¬
+set list
+set listchars=tab:▸\ ,eol:¬
 
 nnoremap <Space> <nop>
 let mapleader="\<Space>"
@@ -72,23 +52,6 @@ noremap , :
 " unmap F1 help
 nmap <F1> <nop>
 imap <F1> <nop>
-
-" Javascript
-let g:used_javascript_libs = 'react,flux,requirejs'
-let g:jsx_ext_required = 0
-
-" Keep undo history
-set undofile
-set undodir=~/.vim/undo
-
-" NerdTREE Toggle
-nnoremap <Leader>t :NERDTreeMirrorToggle<CR>
-
-" NerdTREE config
-let g:nerdtree_tabs_open_on_gui_startup = 0
-let g:nerdtree_tabs_smart_startup_focus = 2
-let g:nerdtree_tabs_open_on_new_tab = 0
-let g:nerdtree_tabs_focus_on_files = 1
 
 " unmap arrow keys
 noremap <Up> <Nop>
@@ -110,17 +73,7 @@ let g:airline_theme="solarized"
 highlight clear SignColumn
 set cursorline
 
-" Neomake Configuration
-let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_jsx_enabled_makers = ['eslint']
-let g:neomake_airline = 1
-let g:neomake_error_sign = {
-        \ 'text': '✗',
-        \ 'texthl': 'DiffDelete',
-        \ }
-
-" Neomake Actuators
-nnoremap <Leader>m :Neomake<CR>
+hi NonText guifg=#64666d guibg=NONE gui=NONE
 
 " Ag Search
 function! Agerium()
