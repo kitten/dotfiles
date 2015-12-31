@@ -1,0 +1,43 @@
+#!/bin/sh
+# http://iamvery.com/2013/11/16/tmux-pairing-anywhere-on-your-box.html
+
+command=$(basename $0)
+
+# Make sure dependencies are installed
+if [ ! $(command -v gh-auth) ]; then
+  gem install github-auth
+fi
+if [ ! $(command -v tmux) ]; then
+  echo "This script depends on tmux. Try: brew install tmux"
+  exit 1
+fi
+
+help(){
+  echo "Usage: $command <subcommand> [options]\n"
+  echo "Subcommands:"
+  echo "    add  Add a github user"
+  echo "    rm   Remove a github user"
+  echo "    ls   List github users"
+}
+
+add(){
+  gh-auth add --users $@ --command="$(which tmux) attach -t shared"
+}
+
+rm(){
+  gh-auth remove --users $@
+}
+
+ls(){
+  gh-auth list
+}
+
+subcommand=$1
+case $subcommand in
+  '' | '-h' | '--help')
+    help ;;
+  *)
+    shift
+    ${subcommand} $@
+    ;;
+esac
