@@ -1,3 +1,6 @@
+# Ensure dotfiles bin directory is loaded first
+export PATH="$HOME/.bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+
 # Determine environment
 unamestr=`uname -s`
 if [[ "$unamestr" == 'Linux' ]]; then
@@ -30,9 +33,6 @@ setopt HIST_IGNORE_SPACE
 HISTDIR=$HOME/.history/$YEAR/$MONTH
 [ -d $HISTDIR ] || mkdir -p $HISTDIR
 HISTFILE="$HISTDIR/${BOOTTIME}_${HOSTNAME_SHORT}"
-
-# Ensure dotfiles bin directory is loaded first
-export PATH="$HOME/.bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 
 # Search for neovim, fallback to vim
 if which nvim >/dev/null; then
