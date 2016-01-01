@@ -22,7 +22,7 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'tpope/vim-eunuch'
 
   " Syntax
-  Plug 'pangloss/jbgutierrez/vim-babel'
+  Plug 'isRuslan/vim-es6'
   Plug 'ekalinin/Dockerfile.vim'
   Plug 'rust-lang/rust.vim'
   Plug 'haskell.vim'
