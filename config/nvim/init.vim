@@ -1,7 +1,7 @@
 " Python paths
 let g:python_host_prog  = "/usr/local/bin/python"
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugins')
   Plug 'tpope/vim-repeat'
   Plug 'editorconfig/editorconfig-vim'
 
@@ -27,6 +27,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'rust-lang/rust.vim'
   Plug 'haskell.vim'
   Plug 'keith/swift.vim'
+  Plug 'fatih/vim-go'
 
   " Objects
   Plug 'michaeljsmith/vim-indent-object'
