@@ -8,6 +8,14 @@ plugins=(battery tmux git brew npm)
 # Load Oh-My-Zsh
 source $ZSH/oh-my-zsh.sh
 
+# Copy dotfiles to remote
+function dotcp () {
+  scp -r ~/.zshrc ~/.zshenv ~/.oh-my-zsh ~/.tmux.conf ~/.tmuxlinerc ~/.config/nvim ~/.gitconfig ~/.gitignore ~/.gitmessage ~/.bin $1:~
+}
+
+# Fix up aliases for sudo
+alias sudo="sudo "
+
 alias ack="ag"
 
 # Just use one editor
@@ -15,6 +23,13 @@ alias nvim="$EDITOR"
 alias vim="$EDITOR"
 alias vi="$EDITOR"
 alias edit="$EDITOR"
+
+if [ "$isOSX" = true ]; then
+  alias less="/usr/local/share/nvim/runtime/macros/less.sh"
+fi
+
+alias diff="$EDITOR -d"
+alias vimdiff="$EDITOR -d"
 
 alias recommit='git commit -a --amend --no-edit'
 
@@ -61,6 +76,9 @@ alias dm='docker-machine'
 
 # Neovim.app
 alias nvimapp='open -a ~/Applications/Neovim.app'
+
+# Git
+alias glog='git log --oneline --decorate --all --graph'
 
 # z.sh
 . ~/.zjump/z.sh

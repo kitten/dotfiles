@@ -15,6 +15,7 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'FelikZ/ctrlp-py-matcher'
   Plug 'rking/ag.vim'
   Plug 'scrooloose/nerdtree'
+  Plug 'jistr/vim-nerdtree-tabs'
 
   " Tools
   Plug 'tpope/vim-fugitive'
@@ -60,9 +61,6 @@ noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 
-" Remove highlighting with Escape
-nmap <silent> <Esc> :noh<CR>
-
 " Syntax highlighting
 syntax enable
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -83,6 +81,10 @@ function! Agerium()
   execute 'Ag ' . params
 endfunction
 nnoremap <Leader>f :call Agerium()<CR>
+
+let g:nerdtree_tabs_open_on_gui_startup = 0
+let g:nerdtree_tabs_open_on_console_startup = 0
+nnoremap <Leader>n :NERDTreeTabsToggle<CR>
 
 " List Toggle
 let g:lt_location_list_toggle_map = '<leader>p'
@@ -171,9 +173,15 @@ let g:ctrlp_use_caching = 0
 let g:ctrlp_max_height = 30
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_lazy_update = 350
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_max_files = 0
 
 " use silver searcher for ctrlp
-let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden -g ""'
+if executable('ag')
+  set grepprg=ag\ --nogroup\ --nocolor
+  let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden -g ""'
+endif
 
 " Speed up CtrlP
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }

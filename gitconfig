@@ -4,6 +4,7 @@
   ui = auto
 [merge]
   ff = only
+	tool = nvim -d
 [commit]
   template = ~/.gitmessage
 [fetch]
@@ -21,3 +22,5 @@
 [user]
 	email = phil@plckthn.me
 	name = Phil Plückthun
+[diff]
+	tool = nvim -d

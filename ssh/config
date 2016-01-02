@@ -1,8 +1,7 @@
 Host *
-	Ciphers blowfish-cbc
-	Compression yes
-	CompressionLevel 6
+  Ciphers blowfish-cbc
+  Compression yes
+  CompressionLevel 6
 Host github.com
   Hostname ssh.github.com
   Port 443
-
