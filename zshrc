@@ -5,6 +5,9 @@ DISABLE_AUTO_UPDATE="true"
 HIST_STAMPS="dd.mm.yyyy"
 plugins=(battery tmux git brew npm)
 
+# Preserve Insert Cursor shape in nvim using iterm
+export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+
 # Load Oh-My-Zsh
 source $ZSH/oh-my-zsh.sh
 

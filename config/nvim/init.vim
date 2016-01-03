@@ -58,6 +58,16 @@ set encoding=utf8
 set list
 set listchars=tab:▸\ ,eol:¬
 
+if exists('$ITERM_PROFILE')
+  if exists('$TMUX')
+    let &t_SI = "\<Esc>[3 q"
+    let &t_EI = "\<Esc>[0 q"
+  else
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+  endif
+end
+
 nnoremap <Space> <nop>
 let mapleader="\<Space>"
 
