@@ -38,6 +38,7 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'haskell.vim'
   Plug 'keith/swift.vim'
   Plug 'fatih/vim-go'
+  Plug 'Harenome/vim-mipssyntax'
 
   " Objects
   Plug 'michaeljsmith/vim-indent-object'
