@@ -1,9 +1,6 @@
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
-[submodule "nvm"]
-	path = nvm
-	url = https://github.com/creationix/nvm.git
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
@@ -22,3 +19,6 @@
 [submodule "zjump"]
 	path = zjump
 	url = https://github.com/rupa/z.git
+[submodule "n"]
+	path = n
+	url = git@github.com:tj/n.git

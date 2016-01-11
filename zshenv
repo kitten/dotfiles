@@ -1,5 +1,5 @@
 # Ensure dotfiles bin directory is loaded first
-export PATH="$HOME/.bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+export PATH="$HOME/.bin:$HOME/.n/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 
 # Determine environment
 unamestr=`uname -s`
@@ -47,10 +47,6 @@ export EDITOR=$VISUAL
 
 # Oh My ZSH
 export ZSH="$HOME/.oh-my-zsh"
-
-# nvm
-export NVM_DIR=$(readlink "$HOME/.nvm")
-source $NVM_DIR/nvm.sh
 
 # SSH Agent
 if [ "$isOSX" = true ]; then
