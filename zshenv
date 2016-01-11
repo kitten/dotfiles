@@ -48,14 +48,6 @@ export EDITOR=$VISUAL
 # Oh My ZSH
 export ZSH="$HOME/.oh-my-zsh"
 
-# tmuxifier
-export PATH="$HOME/.tmuxifier/bin:$PATH"
-eval "$(tmuxifier init -)"
-
-if [ -d "/usr/local/opt/android-sdk" ]; then
-  export ANDROID_HOME=/usr/local/opt/android-sdk
-fi
-
 # nvm
 export NVM_DIR=$(readlink "$HOME/.nvm")
 source $NVM_DIR/nvm.sh
