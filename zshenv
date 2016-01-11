@@ -64,6 +64,14 @@ eval "$(rbenv init -)"
 export NVM_DIR=~/.nvm
 source $NVM_DIR/nvm.sh
 
+# SSH Agent
+if [ "$isOSX" = true ]; then
+  export SSH_AGENT_PID=$(pgrep -U $USER ssh-agent)
+  if [ -n "$SSH_AGENT_PID" ]; then
+    export SSH_AUTH_SOCK=$(lsof -U -a -p $SSH_AGENT_PID -F n | grep '^n/' | cut -c2-)
+  fi
+fi
+
 # Local config
 [[ -f ~/.zshenv.local ]] && source ~/.zshenv.local
 
