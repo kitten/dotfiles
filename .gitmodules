@@ -22,9 +22,6 @@
 [submodule "tmux/plugins/tmux-copycat"]
 	path = tmux/plugins/tmux-copycat
 	url = https://github.com/tmux-plugins/tmux-copycat
-[submodule "rbenv"]
-	path = rbenv
-	url = https://github.com/sstephenson/rbenv.git
 [submodule "zjump"]
 	path = zjump
 	url = https://github.com/rupa/z.git

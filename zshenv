@@ -56,12 +56,8 @@ if [ -d "/usr/local/opt/android-sdk" ]; then
   export ANDROID_HOME=/usr/local/opt/android-sdk
 fi
 
-# rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
 # nvm
-export NVM_DIR=~/.nvm
+export NVM_DIR=$(readlink "$HOME/.nvm")
 source $NVM_DIR/nvm.sh
 
 # SSH Agent
