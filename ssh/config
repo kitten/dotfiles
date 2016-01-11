@@ -1,5 +1,5 @@
 Host *
-  Ciphers blowfish-cbc
+  Ciphers blowfish-cbc,aes256-ctr
   Compression yes
   CompressionLevel 6
 Host github.com
