@@ -16,6 +16,6 @@
 [submodule "zjump"]
 	path = zjump
 	url = https://github.com/rupa/z.git
-[submodule "n"]
-	path = n
-	url = git@github.com:tj/n.git
+[submodule "zplug"]
+	path = zplug
+	url = https://github.com/b4b4r07/zplug

@@ -1,14 +1,19 @@
 source $HOME/.zshenv
 
-#plugins=(battery tmux git brew npm)
+# PLUGS #############################################
+source ~/.zplug/zplug
 
-# Load Antigen
-source ~/.antigen.zsh
+zplug "tj/n", do:"make install"
 
-# Copy dotfiles to remote
-function dotcp () {
-  scp -r ~/.zshrc ~/.zshenv ~/.oh-my-zsh ~/.tmux.conf ~/.tmuxlinerc ~/.config/nvim ~/.gitconfig ~/.gitignore ~/.gitmessage ~/.bin $1:~
-}
+zplug "zsh-users/zsh-history-substring-search"
+
+zplug "plugins/git", from:oh-my-zsh, if:"which git"
+zplug "plugins/tmux", from:oh-my-zsh, if:"which tmux"
+zplug "plugins/osx", from:oh-my-zsh, if:"[ $isOSX = true ]"
+
+zplug "themes/sorin", from:oh-my-zsh
+zplug load
+#####################################################
 
 # Fix up aliases for sudo
 alias sudo="sudo "
@@ -17,7 +22,6 @@ alias ack="ag"
 
 # Preserve Insert Cursor shape in nvim using iterm
 export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-
 
 # Just use one editor
 alias nvim="$EDITOR"
