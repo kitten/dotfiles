@@ -1,15 +1,9 @@
 source $HOME/.zshenv
 
-ZSH_THEME="edvardm"
-DISABLE_AUTO_UPDATE="true"
-HIST_STAMPS="dd.mm.yyyy"
-plugins=(battery tmux git brew npm)
+#plugins=(battery tmux git brew npm)
 
-# Preserve Insert Cursor shape in nvim using iterm
-export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-
-# Load Oh-My-Zsh
-source $ZSH/oh-my-zsh.sh
+# Load Antigen
+source ~/.antigen.zsh
 
 # Copy dotfiles to remote
 function dotcp () {
@@ -20,6 +14,10 @@ function dotcp () {
 alias sudo="sudo "
 
 alias ack="ag"
+
+# Preserve Insert Cursor shape in nvim using iterm
+export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+
 
 # Just use one editor
 alias nvim="$EDITOR"

@@ -45,9 +45,6 @@ fi
 
 export EDITOR=$VISUAL
 
-# Oh My ZSH
-export ZSH="$HOME/.oh-my-zsh"
-
 # SSH Agent
 if [ "$isOSX" = true ]; then
   export SSH_AGENT_PID=$(pgrep -U $USER ssh-agent)
