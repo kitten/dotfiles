@@ -32,7 +32,8 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'tpope/vim-eunuch'
 
   " Syntax
-  Plug 'isRuslan/vim-es6'
+  Plug 'othree/yajs.vim'
+  Plug 'mxw/vim-jsx'
   Plug 'ekalinin/Dockerfile.vim'
   Plug 'rust-lang/rust.vim'
   Plug 'haskell.vim'
@@ -98,6 +99,9 @@ let g:airline_theme="solarized"
 
 hi NonText guifg=#64666d guibg=NONE gui=NONE
 hi SpecialKey guifg=#64666d guibg=NONE gui=NONE
+
+" Activate JSX for JS files
+let g:jsx_ext_required = 0
 
 " Ag Search
 function! Agerium()
