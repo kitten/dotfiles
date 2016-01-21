@@ -54,33 +54,35 @@ alias fuck='$(thefuck $(fc -ln -1))'
 alias myip='curl ipv4.wtfismyip.com/text'
 
 # Docker
-function dmenv () {
-  eval "$(docker-machine env $1)"
-}
-function dmopen () {
-  open "http://$(docker-machine ip $1)"
-}
-function dmip () {
-  docker-machine ip $DOCKER_MACHINE_NAME
-}
-function dmdns() {
-  DOCKERMACHINEIP=$(docker-machine ip $DOCKER_MACHINE_NAME)
-  if [ -z "$1" ]; then
-    DOCKER_TEMP_NAME=$DOCKER_MACHINE_NAME
-  else
-    DOCKER_TEMP_NAME=$1
-  fi
+if ! type "docker-machine" &> /dev/null; then
+  function dmenv () {
+    eval "$(docker-machine env $1)"
+  }
+  function dmopen () {
+    open "http://$(docker-machine ip $1)"
+  }
+  function dmip () {
+    docker-machine ip $DOCKER_MACHINE_NAME
+  }
+  function dmdns() {
+    DOCKERMACHINEIP=$(docker-machine ip $DOCKER_MACHINE_NAME)
+    if [ -z "$1" ]; then
+      DOCKER_TEMP_NAME=$DOCKER_MACHINE_NAME
+    else
+      DOCKER_TEMP_NAME=$1
+    fi
 
-  if [ ! -e /etc/resolver/$DOCKER_TEMP_NAME ]; then
-    echo "Adding forwarder from $DOCKER_TEMP_NAME TLD to dnsmasq"
-    sudo mkdir -p /etc/resolver
-    sudo echo "nameserver 127.0.0.1" > /etc/resolver/$DOCKER_TEMP_NAME
-  fi
+    if [ ! -e /etc/resolver/$DOCKER_TEMP_NAME ]; then
+      echo "Adding forwarder from $DOCKER_TEMP_NAME TLD to dnsmasq"
+      sudo mkdir -p /etc/resolver
+      sudo echo "nameserver 127.0.0.1" > /etc/resolver/$DOCKER_TEMP_NAME
+    fi
 
-  sed -i '' "/^address=\/.$DOCKER_TEMP_NAME\//d" /usr/local/etc/dnsmasq.conf
-  echo "address=/.$DOCKER_TEMP_NAME/$DOCKERMACHINEIP" >> /usr/local/etc/dnsmasq.conf
-}
-alias dm='docker-machine'
+    sed -i '' "/^address=\/.$DOCKER_TEMP_NAME\//d" /usr/local/etc/dnsmasq.conf
+    echo "address=/.$DOCKER_TEMP_NAME/$DOCKERMACHINEIP" >> /usr/local/etc/dnsmasq.conf
+  }
+  alias dm='docker-machine'
+fi
 
 # Neovim.app
 alias nvimapp='open -a ~/Applications/Neovim.app'
