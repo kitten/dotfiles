@@ -13,9 +13,6 @@
 [submodule "tmux/plugins/tmux-copycat"]
 	path = tmux/plugins/tmux-copycat
 	url = https://github.com/tmux-plugins/tmux-copycat
-[submodule "zjump"]
-	path = zjump
-	url = https://github.com/rupa/z.git
 [submodule "zplug"]
 	path = zplug
 	url = https://github.com/b4b4r07/zplug

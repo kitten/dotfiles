@@ -6,6 +6,7 @@ source ~/.zplug/zplug
 zplug "tj/n", do:"make install"
 
 zplug "zsh-users/zsh-history-substring-search"
+zplug "rupa/z", of:"z.sh"
 
 zplug "plugins/git", from:oh-my-zsh, if:"which git"
 zplug "plugins/tmux", from:oh-my-zsh, if:"which tmux"
@@ -88,7 +89,7 @@ alias nvimapp='open -a ~/Applications/Neovim.app'
 alias glog='git log --oneline --decorate --all --graph'
 
 # z.sh
-. ~/.zjump/z.sh
+#. ~/.zjump/z.sh
 
 # IRC
 alias freenode='irssi -c irc.freenode.net -p 8001 -n vielviel_phil'
