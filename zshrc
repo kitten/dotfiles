@@ -84,6 +84,15 @@ if ! type "docker-machine" &> /dev/null; then
   alias dm='docker-machine'
 fi
 
+# History searching
+function hist () {
+  if [ -z "$TMUX" ]; then
+    print -z $(ag --nofilename "$1" ~/.history | fzf +s --tac | cut -c 16-)
+  else
+    print -z $(ag --nofilename "$1" ~/.history | fzf-tmux -d 15 +s --tac | cut -c 16-)
+  fi
+}
+
 # Neovim.app
 alias nvimapp='open -a ~/Applications/Neovim.app'
 
