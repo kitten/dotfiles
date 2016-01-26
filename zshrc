@@ -54,9 +54,12 @@ alias fuck='$(thefuck $(fc -ln -1))'
 alias myip='curl ipv4.wtfismyip.com/text'
 
 # Docker
-if ! type "docker-machine" &> /dev/null; then
+if [ $(command -v docker-machine) ]; then
+  function dmend () {
+    eval "$(docker-machine env -u)"
+  }
   function dmenv () {
-    eval "$(docker-machine env $1)"
+    eval "$(docker-machine env $@)"
   }
   function dmopen () {
     open "http://$(docker-machine ip $1)"
