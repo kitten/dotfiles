@@ -33,7 +33,6 @@ call plug#begin('~/.config/nvim/plugins')
 
   " Syntax
   Plug 'othree/yajs.vim'
-  Plug 'mxw/vim-jsx'
   Plug 'ekalinin/Dockerfile.vim'
   Plug 'rust-lang/rust.vim'
   Plug 'haskell.vim'
@@ -70,8 +69,8 @@ if exists('$ITERM_PROFILE')
   endif
 end
 
+let mapleader=" "
 nnoremap <Space> <nop>
-let mapleader="\<Space>"
 
 " Map comma to colon
 noremap , :
