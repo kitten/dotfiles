@@ -6,3 +6,10 @@ Host *
 Host github.com
   Hostname ssh.github.com
   Port 443
+# begin dlite
+Host local.docker
+  HostName 192.168.64.5
+  IdentityFile /Users/phil/.dlite/docker
+  User docker
+  StrictHostKeyChecking no
+# end dlite

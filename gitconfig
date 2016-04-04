@@ -24,3 +24,7 @@
 	name = Phil Plückthun
 [diff]
 	tool = nvim -d
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[pull]
+	rebase = true

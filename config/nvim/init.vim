@@ -17,7 +17,8 @@ call plug#begin('~/.config/nvim/plugins')
 
   " Visual
   Plug 'airblade/vim-gitgutter'
-  Plug 'bling/vim-airline'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
 
   " Navigation
   Plug 'kien/ctrlp.vim'
