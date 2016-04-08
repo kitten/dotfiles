@@ -23,9 +23,6 @@
   lol = log --oneline
 [credential]
 	helper = osxkeychain
-[user]
-	email = phil@plckthn.me
-	name = Phil Plückthun
 [diff]
 	tool = nvim -d
 [url "git@github.com:"]
