@@ -1,16 +1,3 @@
-" Python paths
-let g:python_host_prog  = "/usr/local/bin/python"
-
-function! BuildYCM(info)
-  " info is a dictionary with 3 fields
-  " - name:   name of the plugin
-  " - status: 'installed', 'updated', or 'unchanged'
-  " - force:  set on PlugInstall! or PlugUpdate!
-  if a:info.status == 'installed' || a:info.force
-    !./install.py --clang-completer --tern-completer --gocode-completer
-  endif
-endfunction
-
 call plug#begin('~/.config/nvim/plugins')
   Plug 'tpope/vim-repeat'
   Plug 'editorconfig/editorconfig-vim'
@@ -52,8 +39,7 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'tpope/vim-surround'
 
   " Completion
-  Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
-  Plug 'benekastah/neomake'
+  Plug 'Shougo/deoplete.nvim'
 call plug#end()
 
 set encoding=utf8
@@ -114,9 +100,8 @@ let g:nerdtree_tabs_open_on_gui_startup = 0
 let g:nerdtree_tabs_open_on_console_startup = 0
 nnoremap <Leader>n :NERDTreeTabsToggle<CR>
 
-" NeoMake
-nnoremap <Leader>m :Neomake<CR>
-autocmd! BufWritePost * Neomake
+" Deoplete
+let g:deoplete#enable_at_startup = 1
 
 let g:neomake_error_sign = {
   \ 'text': '✖',

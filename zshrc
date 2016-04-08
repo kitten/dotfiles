@@ -38,6 +38,7 @@ alias diff="$EDITOR -d"
 alias vimdiff="$EDITOR -d"
 
 alias recommit='git commit -a --amend --no-edit'
+alias pushf='git push --force-with-lease'
 
 alias joinpdf='/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Resources/join.py'
 

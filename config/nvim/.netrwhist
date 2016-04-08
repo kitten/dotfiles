@@ -1,9 +1,4 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/Users/phil/Development/Projects/fluorine/test'
-let g:netrw_dirhist_2='/Users/phil/Development/Projects/fluorine/test/dispatcher'
-let g:netrw_dirhist_3='/Users/phil/Development/Projects/fluorine/src'
-let g:netrw_dirhist_4='/Users/phil/Development/Projects/fluorine/src/util'
-let g:netrw_dirhist_5='/Users/phil/Development/Projects/fluorine/docs/api'
-let g:netrw_dirhist_6='/Users/phil/Development/src/github.com/piemapping/apple-pie/src/scripts/reducers/utils'
-let g:netrw_dirhist_7='/Users/phil/.config/nvim'
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/Users/phil/Development/src/github.com/piemapping/apple-pie/node_modules/@reactivex/rxjs/dist/cjs/add/observable'
+let g:netrw_dirhist_2='/Users/phil/Development/src/github.com/piemapping/apple-pie/node_modules/@reactivex/rxjs/dist/cjs/add/observable/dom'
