@@ -31,7 +31,6 @@ call plug#begin('~/.config/nvim/plugins')
   " Objects
   Plug 'michaeljsmith/vim-indent-object'
   Plug 'tpope/vim-unimpaired'
-  Plug 'MartinLafreniere/vim-PairTools'
 
   " Motions
   Plug 'terryma/vim-multiple-cursors'

@@ -32,6 +32,8 @@ alias edit="$EDITOR"
 
 if [ "$isOSX" = true ]; then
   alias less="/usr/local/share/nvim/runtime/macros/less.sh"
+  alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+  alias joinpdf='/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Resources/join.py'
 fi
 
 alias diff="$EDITOR -d"
@@ -39,8 +41,6 @@ alias vimdiff="$EDITOR -d"
 
 alias recommit='git commit -a --amend --no-edit'
 alias pushf='git push --force-with-lease'
-
-alias joinpdf='/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Resources/join.py'
 
 # Disable auto-correct
 unsetopt correct_all
