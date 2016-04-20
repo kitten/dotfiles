@@ -25,6 +25,7 @@
 	helper = osxkeychain
 [diff]
 	tool = nvim -d
+	submodule = log
 [url "git@github.com:"]
 	insteadOf = https://github.com/
 [pull]
