@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/Users/phil/Development/src/github.com/piemapping/apple-pie/node_modules/@reactivex/rxjs/dist/cjs/add/observable'
 let g:netrw_dirhist_2='/Users/phil/Development/src/github.com/piemapping/apple-pie/node_modules/@reactivex/rxjs/dist/cjs/add/observable/dom'
 let g:netrw_dirhist_3='/Users/phil/Development/src/github.com/piemapping/apple-pie/submodules/toolkit'
+let g:netrw_dirhist_4='/Users/phil/.bin'
+let g:netrw_dirhist_5='/Users/phil/Development/src/github.com/philpl/fluorine/test/dispatcher'
