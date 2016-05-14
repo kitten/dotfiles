@@ -10,7 +10,7 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'kien/ctrlp.vim'
   Plug 'FelikZ/ctrlp-py-matcher'
   Plug 'rking/ag.vim'
-  Plug 'scrooloose/nerdtree' | Plug 'jistr/vim-nerdtree-tabs', { 'on':  'NERDTreeTabsToggle' }
+  Plug 'scrooloose/nerdtree' | Plug 'jistr/vim-nerdtree-tabs'
 
   " Tools
   Plug 'tpope/vim-fugitive'
