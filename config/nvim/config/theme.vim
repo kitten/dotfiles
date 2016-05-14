@@ -24,6 +24,5 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
 colorscheme Dracula
 
-let g:airline#extensions#tmuxline#enabled = 0
 let g:airline_theme="solarized"
 
