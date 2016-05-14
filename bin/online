@@ -1,0 +1,9 @@
+#!/bin/bash
+
+nc -vz google.com 80 > /dev/null 2>&1
+if [ "$?" = "0" ]; then
+  echo -n "✅ "
+else
+  echo -n "❎ "
+fi
+
