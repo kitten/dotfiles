@@ -1,6 +1,6 @@
 #!/bin/bash
 
-nc -vz google.com 80 > /dev/null 2>&1
+nc -vz -w 2 google.com 80 > /dev/null 2>&1
 if [ "$?" = "0" ]; then
   echo -n "✅ "
 else
