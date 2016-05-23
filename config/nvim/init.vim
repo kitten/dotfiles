@@ -25,6 +25,7 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'keith/swift.vim'
   Plug 'fatih/vim-go'
   Plug 'Harenome/vim-mipssyntax'
+  Plug 'elixir-lang/vim-elixir'
 
   " Objects
   Plug 'michaeljsmith/vim-indent-object'
