@@ -2,6 +2,7 @@ source $HOME/.zshenv
 
 # PLUGS #############################################
 source ~/.zplug/zplug
+export DEFAULT_USER="phil"
 
 zplug "tj/n", do:"make install"
 
@@ -12,7 +13,7 @@ zplug "plugins/git", from:oh-my-zsh, if:"which git"
 zplug "plugins/tmux", from:oh-my-zsh, if:"which tmux"
 zplug "plugins/osx", from:oh-my-zsh, if:"[ $isOSX = true ]"
 
-zplug "themes/sorin", from:oh-my-zsh
+zplug "~/.zsh", from:local
 zplug load
 #####################################################
 
