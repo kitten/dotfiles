@@ -18,14 +18,16 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'tpope/vim-eunuch'
 
   " Syntax
-  Plug 'othree/yajs.vim'
+  Plug 'kern/vim-es7'
+  Plug 'othree/es.next.syntax.vim'
   Plug 'ekalinin/Dockerfile.vim'
   Plug 'rust-lang/rust.vim'
   Plug 'haskell.vim'
   Plug 'keith/swift.vim'
-  Plug 'fatih/vim-go'
+  "Plug 'fatih/vim-go'
   Plug 'Harenome/vim-mipssyntax'
   Plug 'elixir-lang/vim-elixir'
+  Plug 'maksimr/vim-jsbeautify'
 
   " Objects
   Plug 'michaeljsmith/vim-indent-object'

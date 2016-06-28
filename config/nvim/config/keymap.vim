@@ -57,6 +57,10 @@ nnoremap ^ <nop>
 " Save
 nnoremap <Leader>w :w<CR>
 
-
-
+" JS Beautify
+autocmd FileType javascript vnoremap <buffer> <c-b> :call RangeJsBeautify()<CR>
+autocmd FileType json vnoremap <buffer> <c-b> :call RangeJsonBeautify()<CR>
+autocmd FileType jsx vnoremap <buffer> <c-b> :call RangeJsxBeautify()<CR>
+autocmd FileType html vnoremap <buffer> <c-b> :call RangeHtmlBeautify()<CR>
+autocmd FileType css vnoremap <buffer> <c-b> :call RangeCSSBeautify()<CR>
 
