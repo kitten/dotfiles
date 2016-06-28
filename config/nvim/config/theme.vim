@@ -22,7 +22,7 @@ set textwidth=0
 syntax enable
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
-colorscheme Dracula
+colorscheme dracula
 
 let g:airline_theme="solarized"
 
