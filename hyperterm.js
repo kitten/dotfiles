@@ -14,11 +14,28 @@ module.exports = {
       }
     `,
     padding: '0',
+
+    overlay: {
+      animate: true,
+      alwaysOnTop: true,
+      hasShadow: false,
+      hideOnBlur: true,
+      hideDock: false,
+      hotkeys: ['Option+Space'],
+      resizable: true,
+      position: 'top',
+      primaryDisplay: false,
+      startup: true,
+      size: 1,
+      tray: false,
+      unique: true
+    }
   },
 
   plugins: [
     'hypertheme',
     'hyperterm-draculicious',
+    'hyperterm-overlay',
     'hyperterm-final-say'
   ],
 
