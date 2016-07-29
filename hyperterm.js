@@ -1,17 +1,25 @@
 module.exports = {
   config: {
-    fontSize: 11,
-    fontFamily: 'Monoid, "Source Code Pro", Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
-    cursorColor: '#F81CE5',
-    borderColor: '#333',
-    css: '',
-    termCSS: '',
-    padding: '12px 14px',
+    fontSize: 12,
+    fontFamily: '"Fira Code", Monoid, Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
+    cursorColor: 'rgba(189, 195, 199, .8)',
+    css: `
+      header {
+        box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.17);
+      }
+    `,
+    termCSS: `
+      x-screen {
+        line-height: 1;
+      }
+    `,
+    padding: '0',
   },
 
   plugins: [
     'hypertheme',
-    'hyperterm-draculicious'
+    'hyperterm-draculicious',
+    'hyperterm-final-say'
   ],
 
   // `~/.hyperterm_plugins/local/`
