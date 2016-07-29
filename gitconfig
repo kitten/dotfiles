@@ -4,9 +4,7 @@
   ui = auto
 [merge]
 	ff = only
-	tool = nvimdiff
-[mergetool "nvimdiff"]
-	cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+	tool = vimdiff
 [commit]
   template = ~/.gitmessage
 [fetch]
@@ -26,13 +24,11 @@
 [credential]
 	helper = osxkeychain
 [diff]
-	tool = nvimdiff
+	tool = vimdiff
 	submodule = log
 	compactionHeuristic = true
-[difftool]
-	prompt = true
-[difftool "nvimdiff"]
-	cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+[mergetool "vimdiff"]
+  cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [url "git@github.com:"]
 	insteadOf = https://github.com/
 [pull]
