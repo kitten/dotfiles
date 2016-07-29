@@ -8,6 +8,8 @@ zplug "tj/n", do:"make install"
 
 zplug "zsh-users/zsh-history-substring-search"
 zplug "rupa/z", of:"z.sh"
+zplug "holman/spark", as:command, of:"spark"
+zplug "Goles/Battery", as:command, of:"battery"
 
 zplug "plugins/git", from:oh-my-zsh, if:"which git"
 zplug "plugins/tmux", from:oh-my-zsh, if:"which tmux"
