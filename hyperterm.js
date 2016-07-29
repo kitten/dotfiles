@@ -16,7 +16,7 @@ module.exports = {
     padding: '0',
 
     overlay: {
-      animate: true,
+      animate: false,
       alwaysOnTop: true,
       hasShadow: false,
       hideOnBlur: true,
