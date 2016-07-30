@@ -12,6 +12,22 @@ module.exports = {
       x-screen {
         line-height: 1;
       }
+
+      x-row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: no-wrap;
+        height: 14px;
+      }
+
+      x-row > span {
+        display: block;
+        height: 14px;
+        line-height: 16px;
+        vertical-align: middle;
+      }
     `,
     padding: '0'
   },
