@@ -1,21 +1,23 @@
 source $HOME/.zshenv
 
-# PLUGS #############################################
-source ~/.zplug/zplug
 export DEFAULT_USER="phil"
 
-zplug "tj/n", do:"make install"
+# PLUGS #############################################
+source ~/.zplug/init.zsh
 
-zplug "zsh-users/zsh-history-substring-search"
-zplug "rupa/z", of:"z.sh"
-zplug "holman/spark", as:command, of:"spark"
-zplug "Goles/Battery", as:command, of:"battery"
+zplug "zplug/zplug"
+zplug "tj/n", hook-build:"make install"
 
-zplug "plugins/git", from:oh-my-zsh, if:"which git"
-zplug "plugins/tmux", from:oh-my-zsh, if:"which tmux"
-zplug "plugins/osx", from:oh-my-zsh, if:"[ $isOSX = true ]"
+zplug "rupa/z", use:"z.sh"
+zplug "holman/spark", as:command, use:"spark"
+zplug "Goles/Battery", as:command, use:"battery"
 
-zplug "~/.zsh", from:local
+zplug "zsh-users/zsh-history-substring-search", nice:10
+zplug "plugins/git", from:oh-my-zsh, if:"which git", nice:10
+zplug "plugins/tmux", from:oh-my-zsh, if:"which tmux", nice:10
+zplug "plugins/osx", from:oh-my-zsh, if:"[ $isOSX = true ]", nice:10
+
+zplug "~/.zsh", from:local, use:"*.zsh-theme"
 zplug load
 #####################################################
 
