@@ -1,6 +1,7 @@
 source $HOME/.zshenv
 
 export DEFAULT_USER="phil"
+export PATH="$PATH:$HOME/.zplug/bin"
 
 # PLUGS #############################################
 source ~/.zplug/init.zsh
