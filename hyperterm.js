@@ -8,33 +8,28 @@ module.exports = {
         box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.17);
       }
     `,
-    termCSS: `
-      x-screen {
-        line-height: 1;
-      }
+    padding: '0',
 
-      x-row {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-start;
-        flex-wrap: no-wrap;
-        height: 14px;
-      }
-
-      x-row > span {
-        display: block;
-        height: 14px;
-        line-height: 16px;
-        vertical-align: middle;
-      }
-    `,
-    padding: '0'
+    overlay: {
+      animate: false,
+      alwaysOnTop: true,
+      hashShadow: false,
+      hideOnBlur: false,
+      hideDock: false,
+      hotkeys: ['Option+Space', 'Ctrl+Space'],
+      resizable: false,
+      position: 'top',
+      primaryDisplay: false,
+      startup: true,
+      size: 1,
+      tray: false,
+      unique: true
+    }
   },
 
   plugins: [
-    'hypertheme',
     'hyperterm-draculicious',
+    'hyperterm-overlay',
     'hyperterm-final-say'
   ],
 
