@@ -16,7 +16,7 @@ module.exports = {
       hashShadow: false,
       hideOnBlur: false,
       hideDock: false,
-      hotkeys: ['Option+Space', 'Ctrl+Space'],
+      hotkeys: ['CommandOrControl+Z'],
       resizable: false,
       position: 'top',
       primaryDisplay: false,
@@ -29,6 +29,7 @@ module.exports = {
 
   plugins: [
     'hyperterm-draculicious',
+    'hyperterm-title',
     'hyperterm-overlay',
     'hyperterm-final-say'
   ],
