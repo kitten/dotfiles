@@ -119,8 +119,8 @@ hi cssCommonAttr ctermfg=81 ctermbg=NONE cterm=NONE guifg=#6be5fd guibg=NONE gui
 hi cssBraces ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
 
 " end of document
-hi NonText guifg=#64666d guibg=NONE gui=NONE
+hi NonText ctermbg=NONE cterm=NONE guifg=#64666d guibg=NONE gui=NONE
 
 " invisibles
-hi SpecialKey guifg=#64666d guibg=NONE gui=NONE
+hi SpecialKey ctermbg=NONE cterm=NONE guifg=#64666d guibg=NONE gui=NONE
 
