@@ -28,6 +28,7 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'Harenome/vim-mipssyntax'
   Plug 'elixir-lang/vim-elixir'
   Plug 'maksimr/vim-jsbeautify'
+  Plug 'rhysd/vim-crystal'
 
   " Objects
   Plug 'michaeljsmith/vim-indent-object'
