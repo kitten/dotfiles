@@ -5,6 +5,7 @@ call plug#begin('~/.config/nvim/plugins')
   " Visual
   Plug 'airblade/vim-gitgutter'
   Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
+  Plug 'sjl/vitality.vim'
 
   " Navigation
   Plug 'kien/ctrlp.vim'
@@ -57,6 +58,7 @@ source ~/.config/nvim/config/neomake.vim
 source ~/.config/nvim/config/fugitive.vim
 source ~/.config/nvim/config/easymotion.vim
 source ~/.config/nvim/config/ctrlp.vim
+source ~/.config/nvim/config/vitality.vim
 source ~/.config/nvim/config/keymap.vim
 
 " Local config

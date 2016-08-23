@@ -31,6 +31,9 @@ module.exports = {
     'hyperterm-draculicious',
     'hyperterm-title',
     'hyperterm-overlay',
+    'hyperterm-alternatescroll',
+    'hyperterm-focus-reporting',
+    'hyperterm-paste',
     'hyperterm-final-say'
   ],
 
