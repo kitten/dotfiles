@@ -1,4 +1,4 @@
-# PIE's recommended dotfiles
+# Phil's recommended dotfiles
 
 ## Requirements
 
