@@ -1,9 +1,6 @@
 # Ensure dotfiles bin directory is loaded first
 export PATH="$HOME/.bin:$HOME/.n/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH:./node_modules/.bin"
 
-# ZPlug Path
-export ZPLUG_HOME=~/.zplug
-
 # Determine environment
 unamestr=`uname -s`
 if [[ "$unamestr" == 'Linux' ]]; then

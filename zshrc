@@ -4,6 +4,10 @@ export DEFAULT_USER="phil"
 export PATH="$PATH:$HOME/.zplug/bin"
 
 # PLUGS #############################################
+if [ "$ZPLUG_HOME" = "" ]; then
+  export ZPLUG_HOME="~/.zplug"
+fi
+
 if [[ -f $ZPLUG_HOME/init.zsh ]]; then
   source $ZPLUG_HOME/init.zsh
 
