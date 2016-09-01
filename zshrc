@@ -4,22 +4,25 @@ export DEFAULT_USER="phil"
 export PATH="$PATH:$HOME/.zplug/bin"
 
 # PLUGS #############################################
-source ~/.zplug/init.zsh
+if [[ -f $ZPLUG_HOME/init.zsh ]]; then
+  source $ZPLUG_HOME/init.zsh
 
-zplug "zplug/zplug"
-zplug "tj/n", hook-build:"make install"
+  zplug "zplug/zplug"
+  zplug "tj/n", hook-build:"make install"
 
-zplug "rupa/z", use:"z.sh"
-zplug "holman/spark", as:command, use:"spark"
-zplug "Goles/Battery", as:command, use:"battery"
+  zplug "rupa/z", use:"z.sh"
+  zplug "holman/spark", as:command, use:"spark"
+  zplug "Goles/Battery", as:command, use:"battery"
 
-zplug "zsh-users/zsh-history-substring-search", nice:10
-zplug "plugins/git", from:oh-my-zsh, if:"which git", nice:10
-zplug "plugins/tmux", from:oh-my-zsh, if:"which tmux", nice:10
-zplug "plugins/osx", from:oh-my-zsh, if:"[ $isOSX = true ]", nice:10
+  zplug "zsh-users/zsh-history-substring-search", nice:10
+  zplug "plugins/git", from:oh-my-zsh, if:"which git", nice:10
+  zplug "plugins/tmux", from:oh-my-zsh, if:"which tmux", nice:10
+  zplug "plugins/osx", from:oh-my-zsh, if:"[ $isOSX = true ]", nice:10
 
-zplug "~/.zsh", from:local, use:"*.zsh-theme"
-zplug load
+  zplug "~/.zsh", from:local, use:"*.zsh-theme"
+
+  zplug load
+fi
 #####################################################
 
 # Fix up aliases for sudo
