@@ -1,4 +1,3 @@
-
 set encoding=utf8
 set list
 
@@ -9,7 +8,6 @@ set listchars=tab:▸\ ,eol:¬
 set nowrap
 set textwidth=0
 syntax enable
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
 colorscheme dracula
 
