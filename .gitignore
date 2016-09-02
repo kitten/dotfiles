@@ -26,4 +26,6 @@ Temporary Items
 .apdisk
 
 config/nvim/plugins
+zplug/bin/*
+!zplug/bin/zplug-env
 

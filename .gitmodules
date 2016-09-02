@@ -15,4 +15,4 @@
 	url = https://github.com/tmux-plugins/tmux-copycat
 [submodule "zplug"]
 	path = zplug
-	url = https://github.com/b4b4r07/zplug
+	url = https://github.com/zplug/zplug

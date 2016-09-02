@@ -1,13 +1,6 @@
 source $HOME/.zshenv
 
-export DEFAULT_USER="phil"
-export PATH="$PATH:$HOME/.zplug/bin"
-
 # PLUGS #############################################
-if [ "$ZPLUG_HOME" = "" ]; then
-  export ZPLUG_HOME="~/.zplug"
-fi
-
 if [[ -f $ZPLUG_HOME/init.zsh ]]; then
   source $ZPLUG_HOME/init.zsh
 
@@ -23,7 +16,7 @@ if [[ -f $ZPLUG_HOME/init.zsh ]]; then
   zplug "plugins/tmux", from:oh-my-zsh, if:"which tmux", nice:10
   zplug "plugins/osx", from:oh-my-zsh, if:"[ $isOSX = true ]", nice:10
 
-  zplug "~/.zsh", from:local, use:"*.zsh-theme"
+  zplug "$HOME/.zsh", from:local, use:"*.zsh-theme"
 
   zplug load
 fi
@@ -98,12 +91,6 @@ alias nvimapp='open -a ~/Applications/Neovim.app'
 
 # Git
 alias glog='git log --oneline --decorate --all --graph'
-
-# z.sh
-#. ~/.zjump/z.sh
-
-# IRC
-alias freenode='irssi -c irc.freenode.net -p 8001 -n vielviel_phil'
 
 # Docker
 alias dockclean='docker rmi $(docker images -q -f dangling=true)'

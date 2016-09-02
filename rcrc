@@ -1,3 +1,3 @@
 EXCLUDES="README.md LICENSE"
 DOTFILES_DIRS="$HOME/dotfiles-local $HOME/dotfiles $HOME/.dotfiles"
-SYMLINK_DIRS="bin oh-my-zsh aria2 zjump tmux tmuxifier nvim nvm n"
+SYMLINK_DIRS="oh-my-zsh aria2 zjump tmux tmuxifier nvim nvm n zplug"
