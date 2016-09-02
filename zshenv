@@ -2,6 +2,7 @@
 export PATH="$HOME/.bin:$HOME/.n/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH:./node_modules/.bin"
 
 # ZPlug Env Variables
+export DISABLE_AUTO_UPDATE=true # Eliminate omz auto updates
 export ZPLUG_HOME="$HOME/.zplug"
 export ZPLUG_PROTOCOL="SSH"
 export ZPLUG_CACHE_DIRECTORY="$HOME/.cache/zplug"
