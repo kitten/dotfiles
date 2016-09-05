@@ -13,6 +13,7 @@ if [[ -f $ZPLUG_HOME/init.zsh ]]; then
   zplug "robbyrussell/oh-my-zsh", use:"lib/*.zsh", nice:5
 
   zplug "zsh-users/zsh-history-substring-search", nice:10
+  zplug "zsh-users/zsh-syntax-highlighting", nice:10
   zplug "plugins/git", from:oh-my-zsh, if:"which git", nice:10
   zplug "plugins/tmux", from:oh-my-zsh, if:"which tmux", nice:10
   zplug "plugins/osx", from:oh-my-zsh, if:"[ $isOSX = true ]", nice:10
