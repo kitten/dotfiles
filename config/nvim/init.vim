@@ -1,4 +1,6 @@
+" Enable true color support
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+set termguicolors
 
 call plug#begin('~/.config/nvim/plugins')
   Plug 'tpope/vim-repeat'
