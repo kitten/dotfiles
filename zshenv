@@ -23,7 +23,12 @@ export UID="$(id -u)"
 
 # Hostnames
 export HOSTNAME="$(hostname)"
-export HOSTNAME_SHORT="$(hostname -s)"
+if [ "$isOSX" = true ]; then
+  export HOSTNAME_SHORT="$(hostname -s)"
+else
+  # There is no short hostname on linux
+  export HOSTNAME_SHORT="$(hostname)"
+fi
 
 # Current user
 export DEFAULT_USER=$(whoami)
