@@ -12,6 +12,7 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
   Plug 'scrooloose/nerdtree' | Plug 'jistr/vim-nerdtree-tabs'
+  Plug 'majutsushi/tagbar'
 
   " Tools
   Plug 'tpope/vim-fugitive'
@@ -38,7 +39,7 @@ call plug#begin('~/.config/nvim/plugins')
   " Completion
   Plug 'ervandew/supertab'
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm i -g tern', 'for': 'javscript' }
+  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm i -g tern', 'for': 'javascript' }
   Plug 'mhartington/deoplete-typescript', { 'do': 'npm i -g typescript', 'for': 'typescript' }
   Plug 'neomake/neomake'
 call plug#end()
@@ -51,6 +52,7 @@ source ~/.config/nvim/config/fold.vim
 source ~/.config/nvim/config/functions.vim
 source ~/.config/nvim/config/theme.vim
 source ~/.config/nvim/config/nerdtree.vim
+source ~/.config/nvim/config/tagbar.vim
 source ~/.config/nvim/config/supertab.vim
 source ~/.config/nvim/config/deoplete.vim
 source ~/.config/nvim/config/airline.vim

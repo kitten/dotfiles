@@ -13,6 +13,9 @@ noremap ; :
 let g:lt_location_list_toggle_map = '<leader>p'
 let g:lt_quickfix_list_toggle_map = '<leader>q'
 
+" Tagbar
+nnoremap <Leader>t :TagbarToggle<CR>
+
 " fzf
 nnoremap <Leader>o :GFiles<CR>
 
