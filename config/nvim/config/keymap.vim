@@ -6,8 +6,8 @@ nnoremap <Space> <nop>
 nmap <F1> <nop>
 imap <F1> <nop>
 
-" Map comma to colon
-noremap , :
+" Map semicolon to colon
+noremap ; :
 
 " Quick/Location list Toggle
 let g:lt_location_list_toggle_map = '<leader>p'
