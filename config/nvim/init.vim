@@ -12,7 +12,6 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
   Plug 'scrooloose/nerdtree' | Plug 'jistr/vim-nerdtree-tabs'
-  Plug 'majutsushi/tagbar'
 
   " Tools
   Plug 'tpope/vim-fugitive'
