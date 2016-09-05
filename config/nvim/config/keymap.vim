@@ -13,8 +13,8 @@ noremap , :
 let g:lt_location_list_toggle_map = '<leader>p'
 let g:lt_quickfix_list_toggle_map = '<leader>q'
 
-" CtrlP
-let g:ctrlp_map = '<leader>o'
+" fzf
+nnoremap <Leader>o :GFiles<CR>
 
 " Agerium
 nnoremap <Leader>f :call Agerium()<CR>
@@ -56,11 +56,4 @@ nnoremap ^ <nop>
 
 " Save
 nnoremap <Leader>w :w<CR>
-
-" JS Beautify
-autocmd FileType javascript vnoremap <buffer> <c-b> :call RangeJsBeautify()<CR>
-autocmd FileType json vnoremap <buffer> <c-b> :call RangeJsonBeautify()<CR>
-autocmd FileType jsx vnoremap <buffer> <c-b> :call RangeJsxBeautify()<CR>
-autocmd FileType html vnoremap <buffer> <c-b> :call RangeHtmlBeautify()<CR>
-autocmd FileType css vnoremap <buffer> <c-b> :call RangeCSSBeautify()<CR>
 

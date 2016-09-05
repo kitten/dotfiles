@@ -10,9 +10,8 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'sjl/vitality.vim'
 
   " Navigation
-  Plug 'kien/ctrlp.vim'
-  Plug 'FelikZ/ctrlp-py-matcher'
-  Plug 'rking/ag.vim'
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  Plug 'junegunn/fzf.vim'
   Plug 'scrooloose/nerdtree' | Plug 'jistr/vim-nerdtree-tabs'
 
   " Tools
@@ -30,7 +29,6 @@ call plug#begin('~/.config/nvim/plugins')
   "Plug 'fatih/vim-go'
   Plug 'Harenome/vim-mipssyntax'
   Plug 'elixir-lang/vim-elixir'
-  Plug 'maksimr/vim-jsbeautify'
   Plug 'rhysd/vim-crystal'
 
   " Objects
@@ -59,7 +57,7 @@ source ~/.config/nvim/config/airline.vim
 source ~/.config/nvim/config/neomake.vim
 source ~/.config/nvim/config/fugitive.vim
 source ~/.config/nvim/config/easymotion.vim
-source ~/.config/nvim/config/ctrlp.vim
+source ~/.config/nvim/config/fzf.vim
 source ~/.config/nvim/config/vitality.vim
 source ~/.config/nvim/config/keymap.vim
 
