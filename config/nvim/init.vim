@@ -34,6 +34,7 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'terryma/vim-multiple-cursors'
   Plug 'Lokaltog/vim-easymotion'
   Plug 'tpope/vim-surround'
+  Plug 'bronson/vim-visual-star-search'
 
   " Completion
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }

@@ -57,3 +57,23 @@ nnoremap ^ <nop>
 " Save
 nnoremap <Leader>w :w<CR>
 
+" Blackhole all x commands and make X behave like d
+nnoremap X "_d
+nnoremap XX "_dd
+vnoremap X "_d
+vnoremap x "_d
+nnoremap x "_x
+
+" Make the dot command work as expected in visual mode (via
+" https://www.reddit.com/r/vim/comments/3y2mgt/do_you_have_any_minor_customizationsmappings_that/cya0x04)
+vnoremap . :norm.<CR>
+
+" Allows you to visually select a section and then hit @ to run a macro on all lines
+" https://medium.com/@schtoeffel/you-don-t-need-more-than-one-cursor-in-vim-2c44117d51db#.3dcn9prw6
+xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
+
+" Have the indent commands re-highlight the last visual selection to make
+" multiple indentations easier
+vnoremap > >gv
+vnoremap < <gv
+
