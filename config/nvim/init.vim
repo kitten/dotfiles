@@ -23,6 +23,7 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'othree/es.next.syntax.vim', { 'for': 'javascript' }
   Plug 'ekalinin/Dockerfile.vim', { 'for': 'dockerfile' }
   Plug 'haskell.vim', { 'for': 'haskell' }
+  Plug 'leafgarland/typescript-vim'
   Plug 'elixir-lang/vim-elixir'
   Plug 'rhysd/vim-crystal'
   Plug 'keith/swift.vim'
