@@ -8,6 +8,7 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'airblade/vim-gitgutter'
   Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
   Plug 'sjl/vitality.vim'
+  Plug 'sts10/vim-zipper'
 
   " Navigation
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -20,28 +21,22 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'tpope/vim-eunuch'
 
   " Syntax
-  Plug 'kern/vim-es7'
-  Plug 'othree/es.next.syntax.vim'
-  Plug 'ekalinin/Dockerfile.vim'
-  Plug 'rust-lang/rust.vim'
-  Plug 'haskell.vim'
-  Plug 'keith/swift.vim'
-  "Plug 'fatih/vim-go'
-  Plug 'Harenome/vim-mipssyntax'
+  Plug 'othree/yajs.vim', { 'for': 'javascript' }
+  Plug 'othree/es.next.syntax.vim', { 'for': 'javascript' }
+  Plug 'ekalinin/Dockerfile.vim', { 'for': 'dockerfile' }
+  Plug 'haskell.vim', { 'for': 'haskell' }
   Plug 'elixir-lang/vim-elixir'
   Plug 'rhysd/vim-crystal'
-
-  " Objects
-  Plug 'michaeljsmith/vim-indent-object'
-  Plug 'tpope/vim-unimpaired'
+  Plug 'keith/swift.vim'
 
   " Motions
+  Plug 'matze/vim-move'
   Plug 'terryma/vim-multiple-cursors'
   Plug 'Lokaltog/vim-easymotion'
   Plug 'tpope/vim-surround'
 
   " Completion
-  Plug 'Shougo/deoplete.nvim'
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'neomake/neomake'
 call plug#end()
 
@@ -49,6 +44,7 @@ call plug#end()
 let g:jsx_ext_required = 0
 
 source ~/.config/nvim/config/basic.vim
+source ~/.config/nvim/config/fold.vim
 source ~/.config/nvim/config/functions.vim
 source ~/.config/nvim/config/theme.vim
 source ~/.config/nvim/config/nerdtree.vim
@@ -57,6 +53,7 @@ source ~/.config/nvim/config/airline.vim
 source ~/.config/nvim/config/neomake.vim
 source ~/.config/nvim/config/fugitive.vim
 source ~/.config/nvim/config/easymotion.vim
+source ~/.config/nvim/config/move.vim
 source ~/.config/nvim/config/fzf.vim
 source ~/.config/nvim/config/vitality.vim
 source ~/.config/nvim/config/keymap.vim

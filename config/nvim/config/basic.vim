@@ -5,6 +5,14 @@ set ts=2
 set shiftwidth=2
 set expandtab
 
+" Max Width
+set textwidth=0
+
+" No wrapping except onmarkdown and html
+set nowrap
+autocmd FileType markdown setlocal wrap
+autocmd FileType html setlocal wrap
+
 " Make backspace usable
 set backspace=indent,eol,start
 
