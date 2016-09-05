@@ -23,7 +23,7 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'othree/es.next.syntax.vim', { 'for': 'javascript' }
   Plug 'ekalinin/Dockerfile.vim', { 'for': 'dockerfile' }
   Plug 'haskell.vim', { 'for': 'haskell' }
-  Plug 'leafgarland/typescript-vim'
+  Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
   Plug 'elixir-lang/vim-elixir'
   Plug 'rhysd/vim-crystal'
   Plug 'keith/swift.vim'
@@ -36,7 +36,10 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'bronson/vim-visual-star-search'
 
   " Completion
+  Plug 'ervandew/supertab'
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm i -g tern', 'for': 'javscript' }
+  Plug 'mhartington/deoplete-typescript', { 'do': 'npm i -g typescript', 'for': 'typescript' }
   Plug 'neomake/neomake'
 call plug#end()
 
@@ -48,6 +51,7 @@ source ~/.config/nvim/config/fold.vim
 source ~/.config/nvim/config/functions.vim
 source ~/.config/nvim/config/theme.vim
 source ~/.config/nvim/config/nerdtree.vim
+source ~/.config/nvim/config/supertab.vim
 source ~/.config/nvim/config/deoplete.vim
 source ~/.config/nvim/config/airline.vim
 source ~/.config/nvim/config/neomake.vim
