@@ -60,7 +60,7 @@ unsetopt correct_all
 alias fuck='$(thefuck $(fc -ln -1))'
 
 # My IP
-alias myip='curl ipv4.wtfismyip.com/text'
+alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 
 # Docker
 if [ $(command -v docker-machine) ]; then
