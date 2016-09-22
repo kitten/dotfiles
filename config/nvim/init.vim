@@ -3,6 +3,7 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'editorconfig/editorconfig-vim'
 
   " Visual
+  Plug 'philpl/vim-adventurous'
   Plug 'airblade/vim-gitgutter'
   Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
   Plug 'sjl/vitality.vim'

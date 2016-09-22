@@ -16,7 +16,7 @@ set nowrap
 set textwidth=0
 syntax enable
 set background=dark
-colorscheme dracula
+colorscheme adventurous
 
 let g:airline_theme="solarized"
 
