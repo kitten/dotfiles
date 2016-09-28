@@ -97,3 +97,8 @@ alias glog='git log --oneline --decorate --all --graph'
 # Docker
 alias dockclean='docker rmi $(docker images -q -f dangling=true)'
 alias dockpurge='docker rm $(docker ps -a -q)'
+
+# RM Aliases
+alias saferm='rm -i'
+alias erase='sudo rm -v -r -P'
+
