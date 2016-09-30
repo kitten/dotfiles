@@ -20,6 +20,7 @@ module.exports = {
     'hyperterm-alternatescroll',
     'hyperterm-focus-reporting',
     'hyperterm-cursor',
+    'hyperterm-tabs',
     'hyperterm-final-say'
   ],
 
