@@ -1,0 +1,229 @@
+#!/bin/sh
+
+if [ `id -u` -ne 0 ]
+then
+  echo "Please start this script with root privileges!"
+  echo "Try again with sudo."
+  exit 1
+fi
+
+if [ ! -f /usr/local/bin/ssh-agent ]; then
+  echo "Missing: /usr/local/bin/ssh-agent"
+  exit 1
+fi
+
+cat > /Library/LaunchAgents/com.custom.ssh-agent.plist <<EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>Label</key>
+        <string>com.custom.ssh-agent</string>
+        <key>ProgramArguments</key>
+        <array>
+            <string>/usr/local/bin/ssh-agent</string>
+            <string>-D</string>
+        </array>
+        <key>ServiceIPC</key>
+        <true/>
+        <key>Sockets</key>
+        <dict>
+            <key>Listeners</key>
+            <dict>
+                <key>SecureSocketWithKey</key>
+                <string>SSH_AUTH_SOCK</string>
+            </dict>
+        </dict>
+        <key>EnableTransactions</key>
+        <true/>
+    </dict>
+</plist>
+EOF
+
+if [ ! -f /usr/local/sbin/sshd ]; then
+  echo "Missing: /usr/local/sbin/sshd"
+  exit 1
+fi
+
+cat > /Library/LaunchDaemons/com.custom.ssh.plist <<EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.custom.ssh</string>
+  <key>Program</key>
+  <string>/usr/libexec/sshd-keygen-wrapper</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/usr/local/sbin/sshd</string>
+    <string>-i</string>
+    <string>-f</string>
+    <string>/usr/local/etc/ssh/sshd_config</string>
+  </array>
+  <key>Sockets</key>
+  <dict>
+    <key>Listeners</key>
+    <dict>
+      <key>SockServiceName</key>
+      <string>ssh</string>
+      <key>Bonjour</key>
+      <array>
+        <string>ssh</string>
+        <string>sftp-ssh</string>
+      </array>
+    </dict>
+  </dict>
+  <key>inetdCompatibility</key>
+  <dict>
+    <key>Wait</key>
+    <false/>
+    <key>Instances</key>
+    <integer>42</integer>
+  </dict>
+  <key>StandardErrorPath</key>
+  <string>/dev/null</string>
+  <key>SHAuthorizationRight</key>
+  <string>system.preferences</string>
+  <key>POSIXSpawnType</key>
+  <string>Interactive</string>
+</dict>
+</plist>
+EOF
+
+cat > /usr/local/etc/ssh/sshd_config << EOF
+Port 22
+ListenAddress 127.0.0.1
+Protocol 2
+HostKey /usr/local/etc/ssh/ssh_host_rsa_key
+HostKey /usr/local/etc/ssh/ssh_host_dsa_key
+HostKey /usr/local/etc/ssh/ssh_host_ecdsa_key
+HostKey /usr/local/etc/ssh/ssh_host_ed25519_key
+Ciphers blowfish-cbc,chacha20-poly1305@openssh.com,aes128-ctr,aes192-ctr,aes256-ctr,aes128-gcm@openssh.com,aes256-gcm@openssh.com
+SyslogFacility AUTH
+LogLevel INFO
+PermitRootLogin no
+StrictModes yes
+MaxSessions 1
+PubkeyAuthentication yes
+AuthorizedKeysFile  .ssh/authorized_keys
+HostbasedAuthentication no
+IgnoreUserKnownHosts yes
+IgnoreRhosts yes
+PasswordAuthentication no
+PermitEmptyPasswords no
+KerberosAuthentication no
+GSSAPIAuthentication no
+UsePAM no
+AllowAgentForwarding no
+AllowTcpForwarding no
+GatewayPorts no
+X11Forwarding no
+PrintMotd no
+UsePrivilegeSeparation sandbox
+PermitTunnel no
+AllowUsers phil
+Subsystem sftp  /usr/local/Cellar/openssh/7.1p1/libexec/sftp-server
+EOF
+
+if [ ! -f /usr/local/opt/dnsmasq/sbin/dnsmasq ]; then
+  echo "Missing: /usr/local/opt/dnsmasq/sbin/dnsmasq"
+  exit 1
+fi
+
+cat > /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist << EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Label</key>
+    <string>homebrew.mxcl.dnsmasq</string>
+    <key>ProgramArguments</key>
+    <array>
+      <string>/usr/local/opt/dnsmasq/sbin/dnsmasq</string>
+      <string>--keep-in-foreground</string>
+      <string>-C</string>
+      <string>/usr/local/etc/dnsmasq.conf</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <true/>
+  </dict>
+</plist>
+EOF
+
+cat > /usr/local/etc/dnsmasq.conf << EOF
+# Forward queries to dnscrypt on localhost
+server=127.0.0.1#5355
+
+# Interfaces to listen on
+interface=lo0
+interface=en0
+interface=bridge100
+
+# Never forward plain names
+domain-needed
+
+# Blackhole Tor hidden services and local TLDs
+address=/.onion/0.0.0.0
+address=/.local/0.0.0.0
+address=/.openvpn/0.0.0.0
+
+# Never forward addresses in the non-routed address spaces
+bogus-priv
+
+# Reject private addresses from upstream nameservers
+stop-dns-rebind
+
+# Query servers in order
+strict-order
+
+# Set the size of the cache
+# The default is to keep 150 hostnames
+cache-size=8192
+
+# Optional logging directives
+log-async
+log-dhcp
+log-queries
+log-facility=/var/log/dnsmasq.log
+EOF
+
+if [ ! -f /usr/local/opt/dnscrypt-proxy/sbin/dnscrypt-proxy ]; then
+  echo "Missing: /usr/local/opt/dnscrypt-proxy/sbin/dnscrypt-proxy"
+  exit 1
+fi
+
+cat > /Library/LaunchDaemons/homebrew.mxcl.dnscrypt-proxy.plist << EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-/Apple/DTD PLIST 1.0/EN" "http:/www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Label</key>
+    <string>homebrew.mxcl.dnscrypt-proxy</string>
+    <key>KeepAlive</key>
+    <true/>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>ProgramArguments</key>
+    <array>
+      <string>/usr/local/opt/dnscrypt-proxy/sbin/dnscrypt-proxy</string>
+      <string>--local-address=127.0.0.1:5355</string>
+      <string>--ephemeral-keys</string>
+      <string>--resolvers-list=/usr/local/share/dnscrypt-proxy-static/dnscrypt-resolvers.csv</string>
+      <string>--resolver-name=cs-de</string>
+      <string>--user=nobody</string>
+    </array>
+    <key>UserName</key>
+    <string>root</string>
+    <key>StandardErrorPath</key>
+    <string>/dev/null</string>
+    <key>StandardOutPath</key>
+    <string>/dev/null</string>
+  </dict>
+</plist>
+EOF
+
+curl -L --create-dirs -o /usr/local/share/dnscrypt-proxy/static/dnscrypt-resolvers.csv https://raw.githubusercontent.com/jedisct1/dnscrypt-proxy/master/dnscrypt-resolvers.csv
+
