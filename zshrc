@@ -102,3 +102,5 @@ alias dockpurge='docker rm $(docker ps -a -q)'
 alias saferm='rm -i'
 alias erase='sudo rm -v -r -P'
 
+"[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+

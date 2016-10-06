@@ -10,4 +10,5 @@ let g:neomake_warning_sign = {
   \ 'texthl': 'GitGutterChangeDefault',
   \ }
 let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_typescript_enabled_makers = []
 

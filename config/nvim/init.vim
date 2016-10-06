@@ -1,6 +1,7 @@
 call plug#begin('~/.config/nvim/plugins')
   Plug 'tpope/vim-repeat'
   Plug 'editorconfig/editorconfig-vim'
+  Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 
   " Visual
   Plug 'philpl/vim-adventurous'
@@ -43,6 +44,7 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'carlitux/deoplete-ternjs', { 'do': 'npm i -g tern', 'for': 'javascript' }
   Plug 'mhartington/deoplete-typescript', { 'do': 'npm i -g typescript', 'for': 'typescript' }
   Plug 'neomake/neomake'
+  Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
 call plug#end()
 
 " Activate JSX for JS files
@@ -58,6 +60,7 @@ source ~/.config/nvim/config/supertab.vim
 source ~/.config/nvim/config/deoplete.vim
 source ~/.config/nvim/config/airline.vim
 source ~/.config/nvim/config/neomake.vim
+source ~/.config/nvim/config/tsuquyomi.vim
 source ~/.config/nvim/config/fugitive.vim
 source ~/.config/nvim/config/easymotion.vim
 source ~/.config/nvim/config/move.vim
