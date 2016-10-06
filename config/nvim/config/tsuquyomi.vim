@@ -6,3 +6,5 @@ function! TsuSearchPrompt()
   execute 'TsuSearch ' . params
 endfunction
 
+let g:tsuquyomi_disable_quickfix = 1
+
