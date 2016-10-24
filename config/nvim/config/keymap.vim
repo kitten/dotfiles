@@ -83,5 +83,6 @@ vnoremap < <gv
 " TypeScript specific keymaps
 autocmd FileType typescript nmap <Leader>d :TsuDefinition<CR>
 autocmd FileType typescript nmap <Leader>r :TsuReferences<CR>
+autocmd FileType typescript nmap <Leader>i :TsuImport<CR>
 autocmd FileType typescript nmap <Leader>k :call TsuSearchPrompt()<CR>
 

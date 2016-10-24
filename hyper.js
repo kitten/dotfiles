@@ -17,9 +17,9 @@ module.exports = {
   plugins: [
     'hyperterm-adventurous',
     'hyperterm-title',
-    'hyperterm-alternatescroll',
+    // 'hyperterm-alternatescroll',
     'hyperterm-focus-reporting',
-    'hyperterm-cursor',
+    // 'hyperterm-cursor',
     'hyperterm-tabs',
     'hyperterm-final-say'
   ],
