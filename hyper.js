@@ -21,7 +21,7 @@ module.exports = {
   plugins: [
     'hyperterm-adventurous',
     'hyperterm-title',
-    'hyperterm-focus-reporting',
+    'hyperterm-focus-reporting'
   ],
 
   // `~/.hyperterm_plugins/local/`
