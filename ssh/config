@@ -12,3 +12,45 @@ Host github.com
   Port 443
   # Github needs SHA1 sometimes
   KexAlgorithms curve25519-sha256@libssh.org,diffie-hellman-group-exchange-sha256,diffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1
+
+
+Host c33lwb
+  Hostname c33-ta-linuxweb.asgtest.local
+  User ubuntu
+  IdentitiesOnly yes
+  PubkeyAuthentication=yes
+  IdentityFile ~/.ssh/TestTango.pem
+
+Host c34lwb
+  Hostname c34-ta-linuxweb.asgtest.local
+  User ubuntu
+  IdentitiesOnly yes
+  PubkeyAuthentication=yes
+  IdentityFile ~/.ssh/TestTango.pem
+
+Host c35lwb
+  Hostname c35-ta-linuxweb.asgtest.local
+  User ubuntu
+  IdentitiesOnly yes
+  PubkeyAuthentication=yes
+  IdentityFile ~/.ssh/TestTango.pem
+
+Host st1lwb
+  Hostname st1-ta-linuxweb-blue.asgtest.local
+  User ec2-user
+  IdentitiesOnly yes
+  PubkeyAuthentication=yes
+  IdentityFile ~/.ssh/TestTango.pem
+
+Host 10.250.*
+  User ubuntu
+  IdentitiesOnly yes
+  PubkeyAuthentication=yes
+  IdentityFile ~/.ssh/TestTango.pem
+
+Host 10.249.*
+  User ubuntu
+  IdentitiesOnly yes
+  PubkeyAuthentication=yes
+  IdentityFile ~/.ssh/TestTango.pem
+
