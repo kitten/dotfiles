@@ -1,7 +1,7 @@
 module.exports = {
   config: {
-    fontSize: 13,
-    fontFamily: '"Operator Mono", "Fira Code", Monoid, Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
+    fontSize: 12,
+    fontFamily: '"Fira Code", Monoid, Menlo, "DejaVu Sans Mono", "Lucida Console", monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
     css: `
       header {
         box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.17);
