@@ -1,0 +1,27 @@
+#!/bin/bash
+
+git status > /dev/null
+if [ "$?" != "0" ]; then
+  exit 1
+fi
+
+if [ "$1" = "" ]; then
+  BRANCH=`git rev-parse --abbrev-ref HEAD`
+else
+  BRANCH=`git rev-parse --abbrev-ref "$1"`
+fi
+
+echo -n "Base of $BRANCH is "
+
+COLUMN=$(( $(git show-branch | grep '^[^\[]*\*' | head -1 | cut -d* -f1 | wc -c) - 1 ))
+ROW=$(( $(git show-branch | grep -n "^[\-]*$" | cut -d: -f1) + 1 ))
+
+git show-branch \
+  | tail -n +$ROW \
+  | grep -v "^[^\[]*\[$BRANCH" \
+  | grep "^.\{$COLUMN\}[^ ]" \
+  | head -n1 \
+  | sed 's/.*\[\(.*\)\].*/\1/' \
+  | sed 's/[\^~].*//'
+
+exit 0
