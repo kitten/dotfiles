@@ -53,5 +53,8 @@ set splitright
 " Always use vertical diffs
 set diffopt+=vertical
 
-
+" Command livepreview for nvim
+if has('nvim')
+  set inccommand=nosplit
+endif
 
