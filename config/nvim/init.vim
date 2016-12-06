@@ -22,14 +22,16 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'tpope/vim-eunuch'
 
   " Syntax
-  Plug 'othree/yajs.vim', { 'for': 'javascript' }
-  Plug 'othree/es.next.syntax.vim', { 'for': 'javascript' }
-  Plug 'ekalinin/Dockerfile.vim', { 'for': 'dockerfile' }
+  Plug 'othree/yajs.vim'
+  Plug 'othree/es.next.syntax.vim'
+  Plug 'ekalinin/Dockerfile.vim'
   Plug 'haskell.vim', { 'for': 'haskell' }
-  Plug 'HerringtonDarkholme/yats.vim'
   Plug 'elixir-lang/vim-elixir'
   Plug 'rhysd/vim-crystal'
   Plug 'keith/swift.vim'
+  Plug 'leafgarland/typescript-vim'
+  Plug 'Quramy/vim-js-pretty-template'
+  Plug 'jason0x43/vim-js-indent'
 
   " Motions
   Plug 'matze/vim-move'
