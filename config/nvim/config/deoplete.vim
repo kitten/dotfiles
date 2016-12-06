@@ -12,3 +12,6 @@ let g:deoplete#enable_smart_case = 1
 " Close scratch window automatically
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
+" Missing tsx extension
+autocmd BufNewFile,BufRead *.ts,*.tsx setlocal filetype=typescript
+
