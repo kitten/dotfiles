@@ -85,4 +85,7 @@ autocmd FileType typescript nmap <Leader>d :TsuDefinition<CR>
 autocmd FileType typescript nmap <Leader>r :TsuReferences<CR>
 autocmd FileType typescript nmap <Leader>i :TsuImport<CR>
 autocmd FileType typescript nmap <Leader>k :call TsuSearchPrompt()<CR>
+autocmd FileType typescript nmap <buffer> <Leader>e <Plug>(TsuquyomiRenameSymbol)
+autocmd FileType typescript nmap <buffer> <Leader>E <Plug>(TsuquyomiRenameSymbolC)
+autocmd FileType typescript nmap <buffer> <Leader>p : <C-u>echo tsuquyomi#hint()<CR>
 
