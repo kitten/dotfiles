@@ -21,17 +21,21 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'Valloric/ListToggle'
   Plug 'tpope/vim-eunuch'
 
-  " Syntax
+  " JS Syntax
   Plug 'othree/yajs.vim'
   Plug 'othree/es.next.syntax.vim'
+  Plug 'leafgarland/typescript-vim'
+  Plug 'Quramy/vim-js-pretty-template'
+  Plug 'jason0x43/vim-js-indent'
+  Plug 'mxw/vim-jsx'
+  Plug 'ianks/vim-tsx'
+
+  " Syntax
   Plug 'ekalinin/Dockerfile.vim'
   Plug 'haskell.vim', { 'for': 'haskell' }
   Plug 'elixir-lang/vim-elixir'
   Plug 'rhysd/vim-crystal'
   Plug 'keith/swift.vim'
-  Plug 'leafgarland/typescript-vim'
-  Plug 'Quramy/vim-js-pretty-template'
-  Plug 'jason0x43/vim-js-indent'
 
   " Motions
   Plug 'matze/vim-move'
@@ -52,23 +56,12 @@ call plug#end()
 " Activate JSX for JS files
 let g:jsx_ext_required = 0
 
-source ~/.config/nvim/config/basic.vim
-source ~/.config/nvim/config/fold.vim
-source ~/.config/nvim/config/functions.vim
-source ~/.config/nvim/config/theme.vim
-source ~/.config/nvim/config/nerdtree.vim
-source ~/.config/nvim/config/tagbar.vim
-source ~/.config/nvim/config/supertab.vim
-source ~/.config/nvim/config/deoplete.vim
-source ~/.config/nvim/config/airline.vim
-source ~/.config/nvim/config/neomake.vim
-source ~/.config/nvim/config/tsuquyomi.vim
-source ~/.config/nvim/config/fugitive.vim
-source ~/.config/nvim/config/easymotion.vim
-source ~/.config/nvim/config/move.vim
-source ~/.config/nvim/config/fzf.vim
-source ~/.config/nvim/config/vitality.vim
-source ~/.config/nvim/config/keymap.vim
+" Import all .vim files in config
+for f in split(glob('~/.config/nvim/config/*.vim'), '\n')
+  exe 'source' f
+endfor
+
+autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
