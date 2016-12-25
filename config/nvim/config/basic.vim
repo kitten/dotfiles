@@ -33,7 +33,7 @@ set laststatus=2
 set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [%l,%c]\ [%L,%p%%]
 
 " Scrolling
-set scrolloff=2
+set scrolloff=9999
 
 " No code folding
 set nofoldenable
@@ -52,6 +52,10 @@ set splitright
 
 " Always use vertical diffs
 set diffopt+=vertical
+
+" Italics support
+set t_ZH=^[[3m
+set t_ZR=^[[23m
 
 " Command livepreview for nvim
 if has('nvim')
