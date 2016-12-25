@@ -1,3 +1,6 @@
+# Force nested shells to use xterm-256color-it
+export TERM="xterm-256color-it"
+
 # Ensure dotfiles bin directory is loaded first
 export PATH="$HOME/.bin:$HOME/.n/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH:./node_modules/.bin"
 
