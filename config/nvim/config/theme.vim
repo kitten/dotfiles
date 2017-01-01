@@ -2,7 +2,7 @@ set encoding=utf8
 set list
 
 " Invisibles
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:▸\ ,eol:⨼
 
 " Enable true color support
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
