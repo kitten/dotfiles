@@ -9,6 +9,7 @@ if [[ -f $ZPLUG_HOME/init.zsh ]]; then
   zplug "rupa/z", use:"z.sh"
   zplug "holman/spark", as:command, use:"spark"
   zplug "Goles/Battery", as:command, use:"battery"
+  zplug "supercrabtree/k", use:"k.sh"
 
   zplug "robbyrussell/oh-my-zsh", use:"lib/*.zsh", nice:5
 
@@ -102,6 +103,9 @@ alias dockpurge='docker rm $(docker ps -a -q)'
 # RM Aliases
 alias saferm='rm -i'
 alias erase='sudo rm -v -r -P'
+
+# Human readable filesizes for k
+alias k='k -h'
 
 #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

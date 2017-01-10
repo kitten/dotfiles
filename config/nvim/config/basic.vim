@@ -33,7 +33,7 @@ set laststatus=2
 set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [%l,%c]\ [%L,%p%%]
 
 " Scrolling
-set scrolloff=9999
+set scrolloff=2
 
 " No code folding
 set nofoldenable
