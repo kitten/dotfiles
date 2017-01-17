@@ -54,3 +54,9 @@ tm_session_name="#[fg=$tm_color_feature,bold]#S"
 
 set -g status-left $tm_session_name' '
 set -g status-right $tm_date' '$tm_online' '$tm_battery'  '$tm_host
+
+set -g pane-border-fg colour238
+set -g pane-border-bg colour238
+set -g pane-active-border-fg colour238
+set -g pane-active-border-bg colour238
+
