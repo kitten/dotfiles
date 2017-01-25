@@ -14,7 +14,6 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
   Plug 'scrooloose/nerdtree' | Plug 'jistr/vim-nerdtree-tabs'
-  Plug 'majutsushi/tagbar'
 
   " Tools
   Plug 'tpope/vim-fugitive'
@@ -30,6 +29,9 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'mxw/vim-jsx'
   Plug 'ianks/vim-tsx'
 
+  " TypeScript
+  Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
+
   " Syntax
   Plug 'ekalinin/Dockerfile.vim'
   Plug 'haskell.vim', { 'for': 'haskell' }
@@ -44,13 +46,14 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'tpope/vim-surround'
   Plug 'bronson/vim-visual-star-search'
 
+  " Linting
+  Plug 'w0rp/ale'
+
   " Completion
   Plug 'ervandew/supertab'
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'carlitux/deoplete-ternjs', { 'do': 'npm i -g tern', 'for': 'javascript' }
-  Plug 'mhartington/deoplete-typescript', { 'do': 'npm i -g typescript', 'for': 'typescript' }
-  Plug 'neomake/neomake'
-  Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
+
 call plug#end()
 
 " Activate JSX for JS files

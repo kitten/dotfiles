@@ -20,3 +20,7 @@ colorscheme adventurous
 
 let g:airline_theme="solarized"
 
+" Some theming for ALE
+hi ALEWarningSign ctermfg=70 ctermbg=NONE cterm=NONE guifg=#4BAE16 guibg=NONE gui=NONE
+hi ALEErrorSign ctermfg=166 ctermbg=NONE cterm=NONE guifg=#D3422E guibg=NONE gui=NONE
+
