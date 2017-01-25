@@ -1,7 +1,7 @@
 module.exports = {
   config: {
-    fontSize: 12,
-    fontFamily: '"Fira Code", Monoid, Menlo, "DejaVu Sans Mono", "Lucida Console", monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+    fontSize: 13,
+    fontFamily: '"Operator Mono"',
     css: `
       header {
         box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.17);
@@ -13,6 +13,7 @@ module.exports = {
     `,
     termCSS: `
       x-row > span {
+        font-weight: 500;
       }
     `,
     padding: '0'

@@ -49,9 +49,15 @@ map <Right> <Plug>(easymotion-lineforward)
 nmap s <Plug>(easymotion-s2)
 nmap t <Plug>(easymotion-t2)
 
-" Move to beginning/end of line
-nnoremap <Leader>h ^
-nnoremap <Leader>l $
+" Move to previous/next buffer
+nnoremap <leader>h :bprevious<CR>
+nnoremap <leader>l :bnext<CR>
+
+" Close a buffer
+nnoremap <leader>k :bp <BAR> bd #<CR>
+
+" List buffers
+nnoremap <leader>j :Buffers<CR>
 
 " $/^ doesn't do anything
 nnoremap $ <nop>
