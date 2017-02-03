@@ -13,9 +13,6 @@ noremap ; :
 let g:lt_location_list_toggle_map = '<leader>p'
 let g:lt_quickfix_list_toggle_map = '<leader>q'
 
-" Tagbar
-nnoremap <Leader>t :TagbarToggle<CR>
-
 " fzf
 nnoremap <Leader>o :GFiles<CR>
 
@@ -90,7 +87,7 @@ vnoremap < <gv
 autocmd FileType typescript nmap <Leader>d :TsuDefinition<CR>
 autocmd FileType typescript nmap <Leader>r :TsuReferences<CR>
 autocmd FileType typescript nmap <Leader>i :TsuImport<CR>
-autocmd FileType typescript nmap <Leader>k :call TsuSearchPrompt()<CR>
+autocmd FileType typescript nmap <Leader>t :call TsuSearchPrompt()<CR>
 autocmd FileType typescript nmap <buffer> <Leader>e <Plug>(TsuquyomiRenameSymbol)
 autocmd FileType typescript nmap <buffer> <Leader>E <Plug>(TsuquyomiRenameSymbolC)
 autocmd FileType typescript nmap <buffer> <Leader>p : <C-u>echo tsuquyomi#hint()<CR>
