@@ -6,11 +6,12 @@ export PATH="$HOME/.bin:$HOME/.n/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bi
 
 # ZPlug Env Variables
 export DISABLE_AUTO_UPDATE=true # Eliminate omz auto updates
-export ZPLUG_HOME="$HOME/.zplug"
 export ZPLUG_PROTOCOL="SSH"
-export ZPLUG_CACHE_DIRECTORY="$HOME/.cache/zplug"
-export ZPLUG_CACHE_FILE="$ZPLUG_CACHE_DIRECTORY/cache"
-export ZPLUG_REPOS="$ZPLUG_CACHE_DIRECTORY/repos"
+export ZPLUG_HOME="$HOME/.zplug"
+export ZPLUG_CACHE="$HOME/.cache/zplug"
+export ZPLUG_CACHE_DIR="$ZPLUG_CACHE/cache"
+export ZPLUG_REPOS="$ZPLUG_CACHE/repos"
+[ -d $ZPLUG_CACHE_DIR ] || mkdir -p $ZPLUG_CACHE_DIR
 [ -d $ZPLUG_REPOS ] || mkdir -p $ZPLUG_REPOS
 
 # Determine environment

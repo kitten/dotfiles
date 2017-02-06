@@ -11,16 +11,16 @@ if [[ -f $ZPLUG_HOME/init.zsh ]]; then
   zplug "Goles/Battery", as:command, use:"battery"
   zplug "supercrabtree/k", use:"k.sh"
 
-  zplug "robbyrussell/oh-my-zsh", use:"lib/*.zsh", nice:5
+  zplug "plugins/git", from:oh-my-zsh, if:"which git"
+  zplug "plugins/tmux", from:oh-my-zsh, if:"which tmux"
+  zplug "plugins/npm", from:oh-my-zsh, if:"which npm"
+  zplug "plugins/osx", from:oh-my-zsh, if:"[ $isOSX = true ]"
 
-  zplug "zsh-users/zsh-history-substring-search", nice:10
-  zplug "zsh-users/zsh-syntax-highlighting", nice:10
-  zplug "plugins/git", from:oh-my-zsh, if:"which git", nice:10
-  zplug "plugins/tmux", from:oh-my-zsh, if:"which tmux", nice:10
-  zplug "plugins/npm", from:oh-my-zsh, if:"which npm", nice:10
-  zplug "plugins/osx", from:oh-my-zsh, if:"[ $isOSX = true ]", nice:10
+  zplug "zsh-users/zsh-history-substring-search", defer:2
+  zplug "zsh-users/zsh-syntax-highlighting", defer:2
+  zplug "zsh-users/zsh-autosuggestions", defer:2
 
-  zplug "$HOME/.zsh", from:local, use:"*.zsh*", nice:15
+  zplug "$HOME/.zsh", from:local, as:theme
 
   zplug load
 fi
