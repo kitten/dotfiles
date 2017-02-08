@@ -1,5 +1,7 @@
 source $HOME/.zshenv
 
+bindkey -e # Enable EMacs shortcuts
+
 # PLUGS #############################################
 if [[ -f $ZPLUG_HOME/init.zsh ]]; then
   source $ZPLUG_HOME/init.zsh
