@@ -28,7 +28,7 @@ fi
 
 # Fix up aliases for sudo
 alias sudo="sudo "
-
+alias l="k"
 alias ack="ag"
 
 # Preserve Insert Cursor shape in nvim using iterm
