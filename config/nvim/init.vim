@@ -18,7 +18,6 @@ call plug#begin('~/.config/nvim/plugins')
   " Tools
   Plug 'tpope/vim-fugitive'
   Plug 'Valloric/ListToggle'
-  Plug 'tpope/vim-eunuch'
 
   " JS Syntax
   Plug 'othree/yajs.vim'
