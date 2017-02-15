@@ -19,9 +19,6 @@ nnoremap <Leader>o :GFiles<CR>
 " Agerium
 nnoremap <Leader>f :call Agerium()<CR>
 
-" NERDTree
-nnoremap <Leader>n :NERDTreeTabsToggle<CR>
-
 " Easymotion Shortcuts
 map n <Plug>(easymotion-next)
 map N <Plug>(easymotion-prev)
