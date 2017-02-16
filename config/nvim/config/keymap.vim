@@ -44,8 +44,7 @@ map <Left> <Plug>(easymotion-linebackward)
 map <Right> <Plug>(easymotion-lineforward)
 
 " Gif config
-nmap s <Plug>(easymotion-s2)
-nmap t <Plug>(easymotion-t2)
+nmap s <Plug>(easymotion-s)
 
 " Move to previous/next buffer
 nnoremap <leader>h :bprevious<CR>
