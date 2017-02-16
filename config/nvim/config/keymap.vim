@@ -47,18 +47,20 @@ nmap t <Plug>(easymotion-t2)
 nnoremap <leader>h :bprevious<CR>
 nnoremap <leader>l :bnext<CR>
 
+" Go to last used buffer
+nnoremap <leader>j C-^
+
 " Close a buffer
 nnoremap <leader>k :bp <BAR> bd #<CR>
 
 " List buffers
-nnoremap <leader>j :Buffers<CR>
+nnoremap <leader>b :Buffers<CR>
 
-" $/^ doesn't do anything
-nnoremap $ <nop>
-nnoremap ^ <nop>
+" List buffer commits
+nnoremap <leader>c :BCommits<CR>
 
-" Save
-nnoremap <Leader>w :w<CR>
+" List git status files
+nnoremap <leader>c :GFiles?<CR>
 
 " Blackhole all x commands and make X behave like d
 nnoremap X "_d

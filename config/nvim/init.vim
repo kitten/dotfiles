@@ -13,8 +13,7 @@ call plug#begin('~/.config/nvim/plugins')
   " Navigation
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
-  Plug 'scrooloose/nerdtree'
-  Plug 'tpope/vim-vinegar'
+  Plug 'justinmk/vim-dirvish'
 
   " Tools
   Plug 'tpope/vim-fugitive'
