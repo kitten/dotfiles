@@ -18,9 +18,9 @@ if [[ -f $ZPLUG_HOME/init.zsh ]]; then
   zplug "plugins/npm", from:oh-my-zsh, if:"which npm"
   zplug "plugins/osx", from:oh-my-zsh, if:"[ $isOSX = true ]"
 
-  zplug "zsh-users/zsh-history-substring-search", defer:2
   zplug "zsh-users/zsh-syntax-highlighting", defer:2
   zplug "zsh-users/zsh-autosuggestions", defer:2
+  zplug "zsh-users/zsh-history-substring-search", defer:3
 
   zplug "$HOME/.zsh", from:local, as:theme
 

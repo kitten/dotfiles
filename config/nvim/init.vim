@@ -9,6 +9,7 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
   Plug 'sjl/vitality.vim'
   Plug 'sts10/vim-zipper'
+  Plug 'roman/golden-ratio'
 
   " Navigation
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
