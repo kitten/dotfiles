@@ -48,7 +48,7 @@ nnoremap <leader>h :bprevious<CR>
 nnoremap <leader>l :bnext<CR>
 
 " Go to last used buffer
-nnoremap <leader>j C-^
+nnoremap <leader>j <C-^>
 
 " Close a buffer
 nnoremap <leader>k :bp <BAR> bd #<CR>
