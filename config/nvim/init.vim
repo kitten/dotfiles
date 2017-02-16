@@ -39,8 +39,6 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'keith/swift.vim'
 
   " Motions
-  Plug 'matze/vim-move'
-  Plug 'terryma/vim-multiple-cursors'
   Plug 'Lokaltog/vim-easymotion'
   Plug 'tpope/vim-surround'
   Plug 'bronson/vim-visual-star-search'
