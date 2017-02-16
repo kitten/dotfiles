@@ -6,6 +6,10 @@ nnoremap <Space> <nop>
 nmap <F1> <nop>
 imap <F1> <nop>
 
+" Map <C-w> , to vsp and . to sp
+nnoremap <C-w>, :vsp<CR>
+nnoremap <C-w>. :sp<CR>
+
 " Map semicolon to colon
 noremap ; :
 
