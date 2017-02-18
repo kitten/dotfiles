@@ -1,0 +1,71 @@
+#!/bin/sh
+
+command=$(basename $0)
+
+# Make sure dependencies are installed
+if [ ! $(command -v gpg) ] || [ ! $(command -v gpg-agent) ]; then
+  echo "This script depends on gpg. Try: brew install gpg"
+  exit 1
+fi
+
+help(){
+  echo "Usage: $command <subcommand> [options]\n"
+  echo "Subcommands:"
+  echo "    status  Check on GPG Agent"
+  echo "    env     Output GPG Agent env info"
+  echo "    restart Restart GPG Agent"
+}
+
+status(){
+  if [ -f "${HOME}/.gpg-agent-info" ] && [ -n "$(pgrep gpg-agent)" ]; then
+    echo "GPG Agent is up and running!"
+    exit 0
+  else
+    echo "GPG Agent is stopped or unavailable!"
+    exit 1
+  fi
+}
+
+env(){
+  if [ -f "${HOME}/.gpg-agent-info" ] && [ -n "$(pgrep gpg-agent)" ]; then
+    cat "${HOME}/.gpg-agent-info"
+    exit 0
+  else
+    if [ -f "${HOME}/.gpg-agent-info" ]; then
+      (>&2 echo "No GPG Agent Info found!")
+    else
+      (>&2 echo "No GPG Agent running!")
+    fi
+
+    exit 1
+  fi
+}
+
+restart(){
+  if [ -f "${HOME}/.gpg-agent-info" ]; then
+    rm "${HOME}/.gpg-agent-info"
+    echo "GPG Agent info removed."
+  fi
+
+  if [ -n "$(pgrep gpg-agent)" ]; then
+    pkill gpg-agent
+    echo "GPG Agent processes killed."
+  fi
+
+  gpg-agent --daemon --log-file ~/.gnupg/gpg-agent.log
+
+  echo "GPG Agent started."
+  echo "Run 'eval \$\(${commans} env\)' to source the necessary environment variables."
+
+  exit 0
+}
+
+subcommand=$1
+case $subcommand in
+  '' | '-h' | '--help')
+    help ;;
+  *)
+    shift
+    ${subcommand} $@
+    ;;
+esac
