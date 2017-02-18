@@ -66,13 +66,21 @@ fi
 
 export EDITOR=$VISUAL
 
-# SSH Agent
-if [ "$isOSX" = true ]; then
-  export SSH_AGENT_PID=$(pgrep -U $USER ssh-agent)
-  if [ -n "$SSH_AGENT_PID" ]; then
-    export SSH_AUTH_SOCK=$(lsof -U -a -p $SSH_AGENT_PID -F n | grep '^n/' | cut -c2-)
-  fi
+# Start up GPG Agent or source env from running one
+if [ -f "${HOME}/.gpg-agent-info" ] && [ -n "$(pgrep gpg-agent)" ]; then
+  source "${HOME}/.gpg-agent-info"
+  export GPG_AGENT_INFO
+  export SSH_AUTH_SOCK
+  export SSH_AGENT_PID
+else
+  if [ -f "${HOME}/.gpg-agent-info" ]; then rm "${HOME}/.gpg-agent-info"; fi
+  if [ -n "$(pgrep gpg-agent)" ]; then pkill gpg-agent; fi
+
+  eval $(gpg-agent --daemon --log-file ~/.gnupg/gpg-agent.log)
 fi
+
+# Apparently we need this for GPG
+export GPG_TTY=$(tty)
 
 # Local config
 [[ -f ~/.zshenv.local ]] && source ~/.zshenv.local

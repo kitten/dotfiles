@@ -1,10 +1,10 @@
 [push]
-	default = simple
+  default = simple
 [color]
   ui = auto
 [merge]
-	ff = only
-	tool = vimdiff
+  ff = only
+  tool = vimdiff
 [commit]
   template = ~/.gitmessage
 [fetch]
@@ -12,28 +12,28 @@
 [include]
   path = ~/.gitconfig.local
 [status]
-	showUntrackedFiles = all
+  showUntrackedFiles = all
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
+  required = true
 [alias]
   s = status -s
   last = log -1
   lol = log --oneline
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
 [diff]
-	tool = vimdiff
-	submodule = log
-	compactionHeuristic = true
+  tool = vimdiff
+  submodule = log
+  compactionHeuristic = true
 [mergetool "vimdiff"]
   cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [url "git@github.com:"]
-	insteadOf = https://github.com/
+  insteadOf = https://github.com/
 [pull]
-	rebase = true
+  rebase = true
 [core]
-	pager = diff-so-fancy | less --tabs=4 -RFX
+  pager = diff-so-fancy | less --tabs=4 -RFX
 [interactive]
-	diffFilter = diff-so-fancy
+  diffFilter = diff-so-fancy
