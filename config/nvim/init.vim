@@ -21,11 +21,9 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'Valloric/ListToggle'
 
   " JS Syntax
-  Plug 'othree/yajs.vim'
-  Plug 'othree/es.next.syntax.vim'
+  Plug 'pangloss/vim-javascript'
   Plug 'leafgarland/typescript-vim'
-  Plug 'Quramy/vim-js-pretty-template'
-  Plug 'jason0x43/vim-js-indent'
+  Plug 'fleischie/vim-styled-components'
   Plug 'mxw/vim-jsx'
   Plug 'ianks/vim-tsx'
 
@@ -38,6 +36,7 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'elixir-lang/vim-elixir'
   Plug 'rhysd/vim-crystal'
   Plug 'keith/swift.vim'
+  Plug 'ElmCast/elm-vim', { 'for': 'elm' }
 
   " Motions
   Plug 'Lokaltog/vim-easymotion'
@@ -54,8 +53,11 @@ call plug#begin('~/.config/nvim/plugins')
 
 call plug#end()
 
-" Activate JSX for JS files
+let g:javascript_plugin_flow = 1
 let g:jsx_ext_required = 0
+
+" Disable keybindings for elm-vim
+let g:elm_setup_keybindings = 0
 
 " Import all .vim files in config
 for f in split(glob('~/.config/nvim/config/*.vim'), '\n')
@@ -63,6 +65,7 @@ for f in split(glob('~/.config/nvim/config/*.vim'), '\n')
 endfor
 
 autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
+autocmd BufNewFile,BufRead *.elm set filetype=elm
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
