@@ -3,3 +3,4 @@
 .env
 tags
 .tern-port
+*.orig
