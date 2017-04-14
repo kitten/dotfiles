@@ -1,5 +1,5 @@
-# Force nested shells to use xterm-256color-it
-export TERM="xterm-256color-it"
+# Force nested shells to use xterm-256color-italic
+export TERM="xterm-256color-italic"
 
 # Ensure dotfiles bin directory is loaded first
 export PATH="$HOME/.bin:$HOME/.n/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH:./node_modules/.bin"
@@ -66,21 +66,10 @@ fi
 
 export EDITOR=$VISUAL
 
-# Start up GPG Agent or source env from running one
-if [ -f "${HOME}/.gpg-agent-info" ] && [ -n "$(pgrep gpg-agent)" ]; then
-  source "${HOME}/.gpg-agent-info"
-  export GPG_AGENT_INFO
-  export SSH_AUTH_SOCK
-  export SSH_AGENT_PID
-else
-  if [ -f "${HOME}/.gpg-agent-info" ]; then rm "${HOME}/.gpg-agent-info"; fi
-  if [ -n "$(pgrep gpg-agent)" ]; then pkill gpg-agent; fi
-
-  eval $(gpg-agent --daemon --log-file ~/.gnupg/gpg-agent.log)
-fi
-
-# Apparently we need this for GPG
+# Establish GPG Agent session
 export GPG_TTY=$(tty)
+gpg-connect-agent --quiet /bye
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 
 # Local config
 [[ -f ~/.zshenv.local ]] && source ~/.zshenv.local
