@@ -51,9 +51,14 @@ fi
 
 # History
 setopt HIST_IGNORE_SPACE
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+HISTSIZE=10000000
+SAVEHIST=10000000
 HISTDIR=$HOME/.history/$YEAR/$MONTH
 [ -d $HISTDIR ] || mkdir -p $HISTDIR
 HISTFILE="$HISTDIR/${BOOTTIME}_${HOSTNAME_SHORT}"
+touch $HISTFILE
 
 # Search for neovim, fallback to vim
 if which nvim >/dev/null; then
