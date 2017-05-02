@@ -19,14 +19,18 @@ if [[ -f $ZPLUG_HOME/init.zsh ]]; then
   zplug "plugins/osx", from:oh-my-zsh, if:"[ $isOSX = true ]"
 
   zplug "zsh-users/zsh-syntax-highlighting", defer:2
-  zplug "zsh-users/zsh-autosuggestions", defer:2
-  zplug "zsh-users/zsh-history-substring-search", defer:3
+  zplug "zsh-users/zsh-history-substring-search", defer:2
+  zplug "zsh-users/zsh-autosuggestions", defer:3
 
   zplug "$HOME/.zsh", from:local, as:theme
 
   zplug load
 fi
 #####################################################
+
+# Fix substring-search
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 # Fix up aliases for sudo
 alias sudo="sudo "
