@@ -16,9 +16,15 @@ set nowrap
 set textwidth=0
 syntax enable
 set background=dark
-colorscheme adventurous
+colorscheme sharkbites
 
-let g:airline_theme="solarized"
+let g:airline_theme="sharkbites"
+
+" Sharkbites mods
+hi NonText guifg=#404449 guibg=NONE gui=NONE
+hi SpecialKey guifg=#404449 guibg=NONE gui=NONE
+hi VertSplit guifg=#555555 guibg=#555555 gui=NONE
+hi Normal guifg=#f8f8f2 guibg=NONE gui=NONE
 
 " Some theming for ALE
 hi ALEWarningSign ctermfg=70 ctermbg=NONE cterm=NONE guifg=#4BAE16 guibg=NONE gui=NONE

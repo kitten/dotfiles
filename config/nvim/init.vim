@@ -5,6 +5,7 @@ call plug#begin('~/.config/nvim/plugins')
 
   " Visual
   Plug 'philpl/vim-adventurous'
+  Plug 'kenwheeler/glow-in-the-dark-gucci-shark-bites-vim'
   Plug 'airblade/vim-gitgutter'
   Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
   Plug 'sjl/vitality.vim'
