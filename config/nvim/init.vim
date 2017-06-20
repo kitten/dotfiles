@@ -24,7 +24,6 @@ call plug#begin('~/.config/nvim/plugins')
   " JS Syntax
   Plug 'pangloss/vim-javascript'
   Plug 'leafgarland/typescript-vim'
-  Plug 'fleischie/vim-styled-components'
   Plug 'mxw/vim-jsx'
   Plug 'ianks/vim-tsx'
 
