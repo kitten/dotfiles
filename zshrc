@@ -113,5 +113,10 @@ alias erase='sudo rm -v -r -P'
 # Human readable filesizes for k
 alias k='k -h'
 
+# Attach to tmux automatically
+if [ "$TMUX" = "" ]; then
+  tmux a || tmux new-session -s casual
+fi
+
 #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

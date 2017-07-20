@@ -21,6 +21,7 @@ colorscheme sharkbites
 let g:airline_theme="sharkbites"
 
 " Sharkbites mods
+hi LineNr guifg=#404449 guibg=NONE gui=NONE
 hi NonText guifg=#404449 guibg=NONE gui=NONE
 hi SpecialKey guifg=#404449 guibg=NONE gui=NONE
 hi VertSplit guifg=#555555 guibg=#555555 gui=NONE
