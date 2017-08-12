@@ -74,16 +74,6 @@ prompt_end() {
   CURRENT_BG=''
 }
 
-### Prompt components
-# Each component will draw itself, and hide itself if no information needs to be shown
-
-# Context: user@hostname (who am I and where am I)
-prompt_context() {
-  if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    prompt_segment black default "%(!.%{%F{yellow}%}.)$USER@%m"
-  fi
-}
-
 # Git: branch/detached head, dirty status
 prompt_git() {
 
@@ -171,19 +161,9 @@ prompt_dir() {
   fi
 }
 
-# Virtualenv: current working virtualenv
-prompt_virtualenv() {
-  local virtualenv_path="$VIRTUAL_ENV"
-  if [[ -n $virtualenv_path && -n $VIRTUAL_ENV_DISABLE_PROMPT ]]; then
-    prompt_segment blue black "(`basename $virtualenv_path`)"
-  fi
-}
-
 ## Main prompt
 build_prompt() {
   RETVAL=$?
-  prompt_virtualenv
-  prompt_context
   prompt_dir
   prompt_git
   prompt_hg
