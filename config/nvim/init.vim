@@ -27,6 +27,7 @@ call plug#begin('~/.config/nvim/plugins')
 
   " Syntax
   Plug 'sheerun/vim-polyglot'
+  Plug 'reasonml-editor/vim-reason'
 
   " TypeScript
   Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }

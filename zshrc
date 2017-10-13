@@ -101,6 +101,7 @@ alias nvimapp='open -a ~/Applications/Neovim.app'
 
 # Git
 alias glog='git log --oneline --decorate --all --graph'
+alias git-today='git diff "HEAD@{yesterday}" HEAD --author="$(git config user.email)" --stat'
 
 # Docker
 alias dockclean='docker rmi $(docker images -q -f dangling=true)'
