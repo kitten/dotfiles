@@ -67,6 +67,9 @@ set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 # Remove default vi mode indicator
 function fish_mode_prompt; end
 
+# Remove fish greeting
+function fish_greeting; end
+
 # Enable vi mode
 fish_vi_key_bindings
 
