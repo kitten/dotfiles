@@ -73,6 +73,9 @@ function fish_greeting; end
 # Enable vi mode
 fish_vi_key_bindings
 
+# Activate fzy in insert mode
+bind -M insert \cr 'fzy_select_history (commandline -b)'
+
 #####################################
 # Alias
 #####################################
