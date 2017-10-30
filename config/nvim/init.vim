@@ -5,9 +5,10 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'editorconfig/editorconfig-vim'
   Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 
+  " Themes
+  Plug 'drewtempelmeyer/palenight.vim'
+
   " Visual
-  Plug 'philpl/vim-adventurous'
-  Plug 'kenwheeler/glow-in-the-dark-gucci-shark-bites-vim'
   Plug 'airblade/vim-gitgutter'
   Plug 'itchyny/lightline.vim'
   Plug 'sjl/vitality.vim'

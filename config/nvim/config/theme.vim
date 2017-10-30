@@ -5,8 +5,15 @@ set list
 set listchars=tab:▸\ ,eol:⨼
 
 " Enable true color support
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-set termguicolors
+if (has("nvim"))
+  " For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+
+if (has("termguicolors"))
+  "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162
+  set termguicolors
+endif
 
 " Enable cursor shape switching
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
@@ -16,11 +23,12 @@ set nowrap
 set textwidth=0
 syntax enable
 set background=dark
-colorscheme sharkbites
+colorscheme palenight
 
-let g:airline_theme="sharkbites"
+" Palenight Italics
+let g:palenight_terminal_italics=1
 
-" Sharkbites mods
+" Translucent background
 hi LineNr guifg=#404449 guibg=NONE gui=NONE
 hi NonText guifg=#404449 guibg=NONE gui=NONE
 hi SpecialKey guifg=#404449 guibg=NONE gui=NONE
