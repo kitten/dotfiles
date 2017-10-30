@@ -89,34 +89,34 @@ colors:
   # Default colors
   primary:
     background: '0x191b1f'
-    foreground: '0xfcfefb'
+    foreground: '0xeceff1'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
     text: '0x000000'
-    cursor: '0xffffff'
+    cursor: '0xffcc00'
 
   # Normal colors
   normal:
     black:   '0x191b1f'
-    red:     '0xd3422e'
-    green:   '0x4bae16'
-    yellow:  '0xf5bb12'
-    blue:    '0x0066ff'
-    magenta: '0xde347a'
-    cyan:    '0x8cfdf8'
-    white:   '0xbfd7db'
+    red:     '0xe54b4b'
+    green:   '0x9ece58'
+    yellow:  '0xfaed70'
+    blue:    '0x396fe2'
+    magenta: '0xbb80b3'
+    cyan:    '0x2ddafd'
+    white:   '0xd0d0d0'
 
   # Bright colors
   bright:
     black:   '0x97a0a0'
-    red:     '0xf25a55'
-    green:   '0xa2e185'
-    yellow:  '0xffc620'
-    blue:    '0x00a0e2'
-    magenta: '0xfc6aca'
-    cyan:    '0x7fd6fa'
-    white:   '0xfcfefb'
+    red:     '0xff5370'
+    green:   '0xc3e88d'
+    yellow:  '0xffcb6b'
+    blue:    '0x82aaff'
+    magenta: '0xc792ea'
+    cyan:    '0x89ddff'
+    white:   '0xffffff'
 
 # Visual Bell
 #
