@@ -20,6 +20,9 @@ let g:lt_quickfix_list_toggle_map = '<leader>q'
 " fzf
 nnoremap <Leader>o :GFiles<CR>
 
+" Undotree
+nnoremap <Leader>u :UndotreeToggle<CR>
+
 " Agerium
 nnoremap <Leader>f :call Agerium()<CR>
 

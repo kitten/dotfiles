@@ -4,6 +4,8 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'tpope/vim-repeat'
   Plug 'editorconfig/editorconfig-vim'
   Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+  Plug 'mbbill/undotree'
+  Plug 'jsfaint/purge_undodir.vim'
 
   " Themes
   Plug 'drewtempelmeyer/palenight.vim'
