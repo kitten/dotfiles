@@ -4,7 +4,7 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'tpope/vim-repeat'
   Plug 'editorconfig/editorconfig-vim'
   Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-  Plug 'mbbill/undotree'
+  Plug 'simnalamburt/vim-mundo'
   Plug 'jsfaint/purge_undodir.vim'
 
   " Themes
@@ -60,5 +60,3 @@ endfor
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
 endif
-
-
