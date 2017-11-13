@@ -46,9 +46,6 @@ map <Down> <Plug>(easymotion-j)
 map <Left> <Plug>(easymotion-linebackward)
 map <Right> <Plug>(easymotion-lineforward)
 
-" Gif config
-nmap s <Plug>(easymotion-s)
-
 " Move to previous/next buffer
 nnoremap <leader>h :bprevious<CR>
 nnoremap <leader>l :bnext<CR>
@@ -92,6 +89,7 @@ vnoremap < <gv
 nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> <leader>d :call LanguageClient_textDocument_definition()<CR>
 nnoremap <silent> <leader>r :call LanguageClient_textDocument_rename()<CR>
+nnoremap <silent> <leader>s :call LanguageClient_textDocument_documentSymbol()<CR>
 
 " Make Ctrl-c behave exactly like Escape (because it matters to completions)
 inoremap <c-c> <ESC>
