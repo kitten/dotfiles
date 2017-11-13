@@ -6,6 +6,7 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'Shougo/vimproc.vim', { 'do': 'make' }
   Plug 'simnalamburt/vim-mundo'
   Plug 'jsfaint/purge_undodir.vim'
+  Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 
   " Themes
   Plug 'drewtempelmeyer/palenight.vim'
@@ -27,11 +28,8 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'Valloric/ListToggle'
 
   " Syntax
-  Plug 'sheerun/vim-polyglot'
-  Plug 'reasonml-editor/vim-reason'
-
-  " TypeScript
-  Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
+  Plug 'sheerun/vim-polyglot', { 'do': 'npm i -g javascript-typescript-langserver' }
+  Plug 'reasonml-editor/vim-reason-plus', { 'do': 'npm i -g ocaml-language-server' }
 
   " Motions
   Plug 'Lokaltog/vim-easymotion'
@@ -40,12 +38,11 @@ call plug#begin('~/.config/nvim/plugins')
 
   " Linting
   Plug 'w0rp/ale'
+  Plug 'Shougo/echodoc.vim'
 
   " Completion
   Plug 'ervandew/supertab'
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
-  Plug 'carlitux/deoplete-ternjs'
 call plug#end()
 
 let g:javascript_plugin_flow = 1

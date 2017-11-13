@@ -88,12 +88,7 @@ xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
 vnoremap > >gv
 vnoremap < <gv
 
-" TypeScript specific keymaps
-autocmd FileType typescript nmap <Leader>d :TsuDefinition<CR>
-autocmd FileType typescript nmap <Leader>r :TsuReferences<CR>
-autocmd FileType typescript nmap <Leader>i :TsuImport<CR>
-autocmd FileType typescript nmap <Leader>t :call TsuSearchPrompt()<CR>
-autocmd FileType typescript nmap <buffer> <Leader>e <Plug>(TsuquyomiRenameSymbol)
-autocmd FileType typescript nmap <buffer> <Leader>E <Plug>(TsuquyomiRenameSymbolC)
-autocmd FileType typescript nmap <buffer> <Leader>p : <C-u>echo tsuquyomi#hint()<CR>
-
+" Hover definition
+nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> <leader>d :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> <leader>r :call LanguageClient_textDocument_rename()<CR>
