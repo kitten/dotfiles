@@ -7,6 +7,7 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'simnalamburt/vim-mundo'
   Plug 'jsfaint/purge_undodir.vim'
   Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'roxma/python-support.nvim'
 
   " Themes
   Plug 'drewtempelmeyer/palenight.vim'
@@ -41,8 +42,14 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'Shougo/echodoc.vim'
 
   " Completion
-  Plug 'ervandew/supertab'
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'roxma/nvim-completion-manager'
+  Plug 'calebeby/ncm-css'
+  Plug 'roxma/ncm-github'
+
+  " Non neovim dependencies
+  if !has('nvim')
+    Plug 'roxma/vim-hug-neovim-rpc'
+  endif
 call plug#end()
 
 let g:javascript_plugin_flow = 1

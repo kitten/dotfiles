@@ -92,3 +92,6 @@ vnoremap < <gv
 nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> <leader>d :call LanguageClient_textDocument_definition()<CR>
 nnoremap <silent> <leader>r :call LanguageClient_textDocument_rename()<CR>
+
+" Make Ctrl-c behave exactly like Escape (because it matters to completions)
+inoremap <c-c> <ESC>

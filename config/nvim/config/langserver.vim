@@ -4,9 +4,9 @@ set hidden
 let g:LanguageClient_serverCommands = {
     \ 'reason': ['ocaml-language-server', '--stdio'],
     \ 'ocaml': ['ocaml-language-server', '--stdio'],
-    \ 'javascript': ['javascript-typescript-langserver/lib/language-server-stdio.js'],
-    \ 'javascript.jsx': ['javascript-typescript-langserver/lib/language-server-stdio.js'],
-    \ 'typescript': ['javascript-typescript-langserver/lib/language-server-stdio.js']
+    \ 'javascript': ['javascript-typescript-stdio'],
+    \ 'javascript.jsx': ['javascript-typescript-stdio'],
+    \ 'typescript': ['javascript-typescript-stdio']
     \ }
 
 " Automatically start language servers.
