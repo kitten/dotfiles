@@ -29,7 +29,7 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'Valloric/ListToggle'
 
   " Syntax
-  Plug 'sheerun/vim-polyglot', { 'do': 'npm i -g javascript-typescript-langserver' }
+  Plug 'sheerun/vim-polyglot', { 'do': 'npm i -g javascript-typescript-langserver flow-language-server' }
   Plug 'reasonml-editor/vim-reason-plus', { 'do': 'npm i -g ocaml-language-server' }
 
   " Motions
