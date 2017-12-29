@@ -18,15 +18,15 @@ endif
 " Enable cursor shape switching
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
+" Palenight Italics
+let g:palenight_terminal_italics=1
+
 " Syntax highlighting
 set nowrap
 set textwidth=0
 syntax enable
 set background=dark
 colorscheme palenight
-
-" Palenight Italics
-let g:palenight_terminal_italics=1
 
 " Translucent background
 hi LineNr guifg=#404449 guibg=NONE gui=NONE
