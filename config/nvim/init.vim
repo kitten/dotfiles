@@ -18,6 +18,8 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'sjl/vitality.vim'
   Plug 'sts10/vim-zipper'
   Plug 'roman/golden-ratio'
+  Plug 'junegunn/goyo.vim'
+  Plug 'junegunn/limelight.vim'
 
   " Navigation
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }

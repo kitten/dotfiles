@@ -65,6 +65,9 @@ nnoremap <leader>c :BCommits<CR>
 " List git status files
 nnoremap <leader>c :GFiles?<CR>
 
+" Toggle zen mode
+nnoremap <leader>z :Goyo<CR>
+
 " Blackhole all x commands and make X behave like d
 nnoremap X "_d
 nnoremap XX "_dd
