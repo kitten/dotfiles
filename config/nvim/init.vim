@@ -25,7 +25,7 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'justinmk/vim-dirvish'
 
   " Tools
-  Plug 'tpope/vim-fugitive'
+  Plug 'lambdalisue/gina.vim'
   Plug 'Valloric/ListToggle'
 
   " Syntax
@@ -42,9 +42,10 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'Shougo/echodoc.vim'
 
   " Completion
-  Plug 'roxma/nvim-completion-manager'
+  Plug 'roxma/nvim-completion-manager', { 'do': 'pip3 install --user neovim jedi psutil setproctitle' }
   Plug 'calebeby/ncm-css'
   Plug 'roxma/ncm-github'
+  Plug 'fgrsnau/ncm-otherbuf'
 
   " Non neovim dependencies
   if !has('nvim')

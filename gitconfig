@@ -2,9 +2,6 @@
   default = simple
 [color]
   ui = auto
-[merge]
-  ff = only
-  tool = vimdiff
 [commit]
   template = ~/.gitmessage
 [fetch]
@@ -23,12 +20,6 @@
   lol = log --oneline
 [credential]
   helper = osxkeychain
-[diff]
-  tool = vimdiff
-  submodule = log
-  compactionHeuristic = true
-[mergetool "vimdiff"]
-  cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [url "git@github.com:"]
   insteadOf = https://github.com/
 [pull]
@@ -38,3 +29,16 @@
   excludesfile = ~/.gitignore
 [interactive]
   diffFilter = diff-so-fancy
+[mergetool "vimdiff"]
+  cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+[difftool]
+  prompt = false
+[mergetool]
+  prompt = true
+[merge]
+  ff = only
+  tool = vimdiff
+[diff]
+  tool = vimdiff
+  submodule = log
+  compactionHeuristic = true

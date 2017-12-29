@@ -1,3 +1,6 @@
+" Set default shell
+set shell=/bin/bash
+
 " Indentation
 filetype plugin indent on
 set autoindent

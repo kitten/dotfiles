@@ -10,3 +10,8 @@ function! ExecuteMacroOverVisualRange()
   execute ":'<,'>normal @".nr2char(getchar())
 endfunction
 
+" Ag Search
+function! Agerium()
+  let params = input('Search files for: ')
+  execute 'Ag ' . params
+endfunction
