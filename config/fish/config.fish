@@ -3,7 +3,7 @@
 #####################################
 
 # Force nested shells to use xterm-256color-italic
-set -x TERM 'xterm-256color-italic'
+set -x TERM 'tmux-256color'
 
 # Ensure dotfiles bin directory is loaded first
 set -x PATH "$HOME/.bin" "/usr/local/sbin" "/usr/local/bin" "/usr/bin" "/bin" "/usr/sbin" "/sbin" $PATH
