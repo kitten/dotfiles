@@ -1,6 +1,9 @@
 " Set default shell
 set shell=/bin/bash
 
+" Encoding
+set encoding=utf8
+
 " Indentation
 filetype plugin indent on
 set autoindent
@@ -10,6 +13,9 @@ set expandtab
 
 " Max Width
 set textwidth=0
+
+" Lazy redraw for e.g. macros
+set lazyredraw
 
 " No wrapping except onmarkdown and html
 set nowrap
