@@ -27,7 +27,7 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'justinmk/vim-dirvish'
 
   " Tools
-  Plug 'lambdalisue/gina.vim'
+  Plug 'tpope/vim-fugitive'
   Plug 'Valloric/ListToggle'
 
   " Syntax
