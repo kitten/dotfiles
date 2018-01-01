@@ -18,10 +18,10 @@ let g:lt_location_list_toggle_map = '<leader>p'
 let g:lt_quickfix_list_toggle_map = '<leader>q'
 
 " fzf
-nnoremap <Leader>o :GFiles<CR>
+nnoremap <silent> <Leader>o :GFiles<CR>
 
 " Undotree
-nnoremap <Leader>u :MundoToggle<CR>
+nnoremap <silent> <Leader>u :MundoToggle<CR>
 
 " Agerium
 nnoremap <Leader>f :call Agerium()<CR>
@@ -47,26 +47,26 @@ map <Left> <Plug>(easymotion-linebackward)
 map <Right> <Plug>(easymotion-lineforward)
 
 " Move to previous/next buffer
-nnoremap <leader>h :bprevious<CR>
-nnoremap <leader>l :bnext<CR>
+nnoremap <silent> <leader>h :bprevious<CR>
+nnoremap <silent> <leader>l :bnext<CR>
 
 " Go to last used buffer
 nnoremap <leader>j <C-^>
 
 " Close a buffer
-nnoremap <leader>k :bp <BAR> bd #<CR>
+nnoremap <silent> <leader>k :bp <BAR> bd #<CR>
 
 " List buffers
-nnoremap <leader>b :Buffers<CR>
+nnoremap <silent> <leader>b :Buffers<CR>
 
 " List buffer commits
-nnoremap <leader>c :BCommits<CR>
+nnoremap <silent> <leader>c :BCommits<CR>
 
 " List git status files
-nnoremap <leader>c :GFiles?<CR>
+nnoremap <silent> <leader>c :GFiles?<CR>
 
 " Toggle zen mode
-nnoremap <leader>z :Goyo<CR>
+nnoremap <silent> <leader>z :Goyo<CR>
 
 " Blackhole all x commands and make X behave like d
 nnoremap X "_d
