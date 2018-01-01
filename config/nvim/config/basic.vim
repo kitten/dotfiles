@@ -66,8 +66,10 @@ set diffopt+=vertical
 set t_ZH=^[[3m
 set t_ZR=^[[23m
 
+" Disable welcome message
+set shortmess+=I
+
 " Command livepreview for nvim
 if has('nvim')
   set inccommand=nosplit
 endif
-
