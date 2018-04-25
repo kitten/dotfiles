@@ -33,6 +33,7 @@ call plug#begin('~/.config/nvim/plugins')
   " Syntax
   Plug 'sheerun/vim-polyglot', { 'do': 'npm i -g javascript-typescript-langserver flow-language-server' }
   Plug 'reasonml-editor/vim-reason-plus', { 'do': 'npm i -g ocaml-language-server' }
+  Plug 'jparise/vim-graphql', { 'do': 'npm i -g graphql-language-service' }
 
   " Motions
   Plug 'Lokaltog/vim-easymotion'

@@ -6,7 +6,7 @@
 set -x TERM 'tmux-256color'
 
 # Ensure dotfiles bin directory is loaded first
-set -x PATH "$HOME/.bin" "/usr/local/sbin" "/usr/local/bin" "/usr/bin" "/bin" "/usr/sbin" "/sbin" $PATH
+set -x PATH "$HOME/.bin" "$HOME/Library/Python/3.6/bin" "/usr/local/sbin" "/usr/local/bin" "/usr/bin" "/bin" "/usr/sbin" "/sbin" $PATH
 set -x PATH $PATH "./node_modules/.bin"
 
 # Determine environment

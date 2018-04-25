@@ -93,6 +93,7 @@ nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> <leader>d :call LanguageClient_textDocument_definition()<CR>
 nnoremap <silent> <leader>r :call LanguageClient_textDocument_rename()<CR>
 nnoremap <silent> <leader>s :call LanguageClient_textDocument_documentSymbol()<CR>
+nnoremap <silent> F :call LanguageClient_textDocument_formatting()<CR>
 
 " Make Ctrl-c behave exactly like Escape (because it matters to completions)
 inoremap <c-c> <ESC>

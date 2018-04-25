@@ -13,6 +13,9 @@ endif
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
 function! ResetTheme()
+  " Don't reset background colour
+  let &t_ut=''
+
   " Invisibles
   set listchars=tab:▸\ ,eol:⨼,trail:·
   set list

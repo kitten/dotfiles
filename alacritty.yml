@@ -22,8 +22,8 @@ dimensions:
 # Units are physical pixels; this is not DPI aware.
 # (change requires restart)
 padding:
-  x: 0
-  y: 0
+  x: 4
+  y: 16
 
 # The FreeType rasterizer needs to know the device DPI for best results
 # (changes require restart)
@@ -41,24 +41,24 @@ draw_bold_text_with_bright_colors: false
 font:
   # The normal (roman) font face to use.
   normal:
-    family: Operator Code
+    family: Dank Mono
     # Style can be specified to pick a specific face.
-    # style: Regular
+    style: Regular
 
   # The bold font face
   bold:
-    family: Operator Code
+    family: Dank Mono
     # Style can be specified to pick a specific face.
-    # style: Bold
+    style: Regular
 
   # The italic font face
   italic:
-    family: Operator Code
+    family: Dank Mono
     # Style can be specified to pick a specific face.
-    # style: Italic
+    style: Italic
 
   # Point size of the font
-  size: 12.0
+  size: 14.0
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
