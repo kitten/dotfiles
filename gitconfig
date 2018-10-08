@@ -18,15 +18,12 @@
   s = status -s
   last = log -1
   lol = log --oneline
-[credential]
-  helper = osxkeychain
-[url "git@github.com:"]
-  insteadOf = https://github.com/
 [pull]
   rebase = true
 [core]
   pager = diff-so-fancy | less --tabs=4 -RFX
   excludesfile = ~/.gitignore
+	filemode = false
 [interactive]
   diffFilter = diff-so-fancy
 [mergetool "vimdiff"]

@@ -2,12 +2,10 @@
 # Env
 #####################################
 
-# Force nested shells to use xterm-256color-italic
-set -x TERM 'tmux-256color'
-
-# Ensure dotfiles bin directory is loaded first
-set -x PATH "$HOME/.bin" "$HOME/Library/Python/3.6/bin" "/usr/local/sbin" "/usr/local/bin" "/usr/bin" "/bin" "/usr/sbin" "/sbin" $PATH
-set -x PATH $PATH "./node_modules/.bin"
+set -x GDK_SCALE 2
+set -x LIBGL_ALWAYS_INDIRECT "true"
+set -x DISPLAY "localhost:0.0"
+set -x XDG_RUNTIME_DIR "/tmp"
 
 # Determine environment
 set -l unamestr (uname -s)
@@ -16,6 +14,22 @@ if test "$unamestr" = "Linux"
 else
   set -x isOSX true
 end
+
+# Force nested shells to use xterm-256color-italic
+set -x TERM 'tmux-256color'
+
+# Ensure dotfiles bin directory is loaded first
+if test $isOSX = true
+  set -x PATH "$HOME/Library/Python/3.6/bin"
+end
+
+set -x PATH "$HOME/.bin" "$HOME/.npm-global/bin/" "/usr/local/sbin" "/usr/local/bin" "/usr/bin" "/bin" "/usr/sbin" "/sbin" $PATH
+set -x PATH $PATH "./node_modules/.bin"
+
+set -x PATH $PATH "/mnt/c/home/Development/emsdk" "/mnt/c/home/Development/emsdk/clang/e1.38.8_64bit" "/mnt/c/home/Development/emsdk/node/8.9.1_64bit/bin" "/mnt/c/home/Development/emsdk/emscripten/1.38.8"
+
+# Adjut Yarn cache path
+set -x YARN_CACHE_FOLDER "/home/phil/.cache/yarn"
 
 # UID
 set -x UID (id -u)
@@ -54,11 +68,21 @@ else
 end
 
 set -x EDITOR $VISUAL
+set -x GNUPGHOME "/home/phil/gnupg"
+
+if test -f "$HOME/.opam/opam-init/variables.fish"
+  source "$HOME/.opam/opam-init/variables.fish"
+end
+
+if test -z "(pgrep gpg-agent)"
+  gpgconf --launch gpg-agent
+end
 
 # Establish GPG Agent session
+set -x GPG_AGENT_INFO "$GNUPGHOME/S.gpg-agent:(pgrep gpg-agent):1"
 set -x GPG_TTY (tty)
-gpg-connect-agent --quiet /bye
-set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
+set -x SSH_AUTH_SOCK "$GNUPGHOME/S.gpg-agent.ssh"
+set -e SSH_AGENT_PID
 
 ######################################
 # Fish
@@ -122,7 +146,8 @@ alias tkss='tmux kill-session -t'
 #####################################
 
 # Attach to tmux automatically
-if test "$TMUX" = ""
-  tmux a
-  or tmux new-session -s casual
-end
+#if test "$TMUX" = ""
+#  cd
+#  tmux a
+#  or tmux new-session -s casual
+#end
