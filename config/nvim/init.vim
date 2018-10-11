@@ -45,10 +45,12 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'Shougo/echodoc.vim'
 
   " Completion
-  Plug 'roxma/nvim-completion-manager', { 'do': 'pip3 install --user neovim jedi psutil setproctitle' }
-  Plug 'calebeby/ncm-css'
-  Plug 'roxma/ncm-github'
-  Plug 'fgrsnau/ncm-otherbuf'
+  Plug 'ncm2/ncm2'
+  Plug 'roxma/nvim-yarp'
+  Plug 'ncm2/ncm2-tmux'
+  Plug 'ncm2/ncm2-bufword'
+  Plug 'ncm2/ncm2-path'
+  Plug 'ncm2/ncm2-cssomni'
 
   " Non neovim dependencies
   if !has('nvim')
