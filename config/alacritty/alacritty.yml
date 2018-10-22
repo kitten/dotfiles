@@ -1,4 +1,10 @@
 env:
+  # TERM env customization.
+  # If this property is not set, alacritty will set it to xterm-256color.
+  #
+  # Note that some xterm terminfo databases don't declare support for italics.
+  # You can verify this by checking for the presence of `smso` and `sitm` in
+  # `infocmp xterm-256color`.
   TERM: tmux-256color
 
 window:
@@ -7,8 +13,7 @@ window:
     lines: 48
   padding:
     x: 4
-    y: 16
-  decorations: true
+    y: 10
 
 tabspaces: 2
 draw_bold_text_with_bright_colors: false
@@ -23,7 +28,7 @@ font:
   italic:
     family: Dank Mono
     style: Italic
-  size: 11.0
+  size: 13.0
   offset:
     x: 0
     y: 1
@@ -83,24 +88,26 @@ selection:
 
 dynamic_title: true
 hide_cursor_when_typing: true
+unfocused_hollow_cursor: true
 cursor_style: Block
 
-shell:
-  program: /usr/bin/fish
-
 key_bindings:
-  - { key: V,        mods: Control|Shift,    action: Paste               }
-  - { key: C,        mods: Control|Shift,    action: Copy                }
+  - { key: V,        mods: Command, action: Paste                        }
+  - { key: C,        mods: Command, action: Copy                         }
+  - { key: Paste,                   action: Paste                        }
+  - { key: Copy,                    action: Copy                         }
+  - { key: H,        mods: Command, action: Hide                         }
   - { key: Q,        mods: Command, action: Quit                         }
   - { key: W,        mods: Command, action: Quit                         }
-  - { key: Insert,   mods: Shift,   action: PasteSelection               }
-  - { key: Key0,     mods: Control, action: ResetFontSize                }
-  - { key: Equals,   mods: Control, action: IncreaseFontSize             }
-  - { key: Subtract, mods: Control, action: DecreaseFontSize             }
   - { key: Home,                    chars: "\x1bOH",   mode: AppCursor   }
   - { key: Home,                    chars: "\x1b[H",   mode: ~AppCursor  }
   - { key: End,                     chars: "\x1bOF",   mode: AppCursor   }
   - { key: End,                     chars: "\x1b[F",   mode: ~AppCursor  }
+  - { key: Key0,     mods: Command, action: ResetFontSize                }
+  - { key: Equals,   mods: Command, action: IncreaseFontSize             }
+  - { key: Minus,    mods: Command, action: DecreaseFontSize             }
+  - { key: K,        mods: Command, action: ClearHistory                 }
+  - { key: K,        mods: Command, chars: "\x0c"                        }
   - { key: PageUp,   mods: Shift,   chars: "\x1b[5;2~"                   }
   - { key: PageUp,   mods: Control, chars: "\x1b[5;5~"                   }
   - { key: PageUp,                  chars: "\x1b[5~"                     }
@@ -180,15 +187,16 @@ key_bindings:
   - { key: F10,      mods: Alt,     chars: "\x1b[21;6~"                  }
   - { key: F11,      mods: Alt,     chars: "\x1b[23;6~"                  }
   - { key: F12,      mods: Alt,     chars: "\x1b[24;6~"                  }
-  - { key: F1,       mods: Super,   chars: "\x1b[1;3P"                   }
-  - { key: F2,       mods: Super,   chars: "\x1b[1;3Q"                   }
-  - { key: F3,       mods: Super,   chars: "\x1b[1;3R"                   }
-  - { key: F4,       mods: Super,   chars: "\x1b[1;3S"                   }
-  - { key: F5,       mods: Super,   chars: "\x1b[15;3~"                  }
-  - { key: F6,       mods: Super,   chars: "\x1b[17;3~"                  }
-  - { key: F7,       mods: Super,   chars: "\x1b[18;3~"                  }
-  - { key: F8,       mods: Super,   chars: "\x1b[19;3~"                  }
-  - { key: F9,       mods: Super,   chars: "\x1b[20;3~"                  }
-  - { key: F10,      mods: Super,   chars: "\x1b[21;3~"                  }
-  - { key: F11,      mods: Super,   chars: "\x1b[23;3~"                  }
-  - { key: F12,      mods: Super,   chars: "\x1b[24;3~"                  }
+  - { key: F1,       mods: Command, chars: "\x1b[1;3P"                   }
+  - { key: F2,       mods: Command, chars: "\x1b[1;3Q"                   }
+  - { key: F3,       mods: Command, chars: "\x1b[1;3R"                   }
+  - { key: F4,       mods: Command, chars: "\x1b[1;3S"                   }
+  - { key: F5,       mods: Command, chars: "\x1b[15;3~"                  }
+  - { key: F6,       mods: Command, chars: "\x1b[17;3~"                  }
+  - { key: F7,       mods: Command, chars: "\x1b[18;3~"                  }
+  - { key: F8,       mods: Command, chars: "\x1b[19;3~"                  }
+  - { key: F9,       mods: Command, chars: "\x1b[20;3~"                  }
+  - { key: F10,      mods: Command, chars: "\x1b[21;3~"                  }
+  - { key: F11,      mods: Command, chars: "\x1b[23;3~"                  }
+  - { key: F12,      mods: Command, chars: "\x1b[24;3~"                  }
+  - { key: NumpadEnter,             chars: "\n"                          }

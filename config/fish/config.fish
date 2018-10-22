@@ -20,16 +20,14 @@ set -x TERM 'tmux-256color'
 
 # Ensure dotfiles bin directory is loaded first
 if test $isOSX = true
-  set -x PATH "$HOME/Library/Python/3.6/bin"
+  # set -x PATH "$HOME/Library/Python/3.6/bin"
 end
 
-set -x PATH "$HOME/.bin" "$HOME/.npm-global/bin/" "/usr/local/sbin" "/usr/local/bin" "/usr/bin" "/bin" "/usr/sbin" "/sbin" $PATH
+set -x PATH "$HOME/.bin" "/usr/local/sbin" "/usr/local/bin" "/usr/bin" "/bin" "/usr/sbin" "/sbin" $PATH
 set -x PATH $PATH "./node_modules/.bin"
 
-set -x PATH $PATH "/mnt/c/home/Development/emsdk" "/mnt/c/home/Development/emsdk/clang/e1.38.8_64bit" "/mnt/c/home/Development/emsdk/node/8.9.1_64bit/bin" "/mnt/c/home/Development/emsdk/emscripten/1.38.8"
-
 # Adjut Yarn cache path
-set -x YARN_CACHE_FOLDER "/home/phil/.cache/yarn"
+set -x YARN_CACHE_FOLDER "$HOME/.cache/yarn"
 
 # UID
 set -x UID (id -u)
@@ -68,7 +66,7 @@ else
 end
 
 set -x EDITOR $VISUAL
-set -x GNUPGHOME "/home/phil/gnupg"
+set -x GNUPGHOME "$HOME/.gnupg"
 
 if test -f "$HOME/.opam/opam-init/variables.fish"
   source "$HOME/.opam/opam-init/variables.fish"
