@@ -2,11 +2,6 @@
 # Env
 #####################################
 
-set -x GDK_SCALE 2
-set -x LIBGL_ALWAYS_INDIRECT "true"
-set -x DISPLAY "localhost:0.0"
-set -x XDG_RUNTIME_DIR "/tmp"
-
 # Determine environment
 set -l unamestr (uname -s)
 if test "$unamestr" = "Linux"
@@ -72,14 +67,17 @@ if test -f "$HOME/.opam/opam-init/variables.fish"
   source "$HOME/.opam/opam-init/variables.fish"
 end
 
-if test -z "(pgrep gpg-agent)"
-  gpgconf --launch gpg-agent
+
+if test $isOSX = true
+  if test -z "(pgrep gpg-agent)"
+    gpgconf --launch gpg-agent
+  end
+else
+  set -x GPG_AGENT_INFO "$XDG_RUNTIME_DIR/gnupg/S.gpg-agent"
+  set -x SSH_AUTH_SOCK "$XDG_RUNTIME_DIR/gnupg/S.gpg-agent.ssh"
 end
 
-# Establish GPG Agent session
-set -x GPG_AGENT_INFO "$GNUPGHOME/S.gpg-agent:(pgrep gpg-agent):1"
 set -x GPG_TTY (tty)
-set -x SSH_AUTH_SOCK "$GNUPGHOME/S.gpg-agent.ssh"
 set -e SSH_AGENT_PID
 
 ######################################
