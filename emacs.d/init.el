@@ -23,4 +23,8 @@
 (when (eq system-type 'darwin)
   (require 'init-mac))
 
+;; LINUX ONLY
+(when (eq system-type 'gnu/linux)
+  (require 'init-linux))
+
 (provide 'init)
