@@ -4,6 +4,7 @@
 (use-package 'editorconfig)
 (use-package 'git-gutter)
 (use-package 'json-mode)
+(use-package 'typescript-mode)
 (use-package 'flymake-diagnostic-at-point)
 
 (require 'lsp)
@@ -36,5 +37,10 @@
  (make-lsp-client :new-connection (lsp-stdio-connection '("flow-language-server" "--stdio" "--try-flow-bin"))
                   :major-modes '(js-mode js2-mode js2-jsx-mode rjsx-mode)
                   :server-id 'flow-ls))
+
+(lsp-register-client
+ (make-lsp-client :new-connection (lsp-stdio-connection '("javascript-typescript-stdio"))
+                  :major-modes '(typescript-mode)
+                  :server-id 'typescript-ls))
 
 (provide 'init-prog-mode)
