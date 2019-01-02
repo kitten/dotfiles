@@ -14,8 +14,9 @@
 
 ;; MAIN MODULES
 (require 'init-basics)
-(require 'init-ui)
 (require 'init-evil)
+(require 'init-ui)
+(require 'init-modeline)
 (require 'init-projects)
 (require 'init-prog-mode)
 

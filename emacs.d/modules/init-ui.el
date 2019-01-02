@@ -1,20 +1,13 @@
 (use-package 'night-owl-theme)
-(use-package 'powerline)
-(use-package 'spaceline)
 (use-package 'which-key)
 (use-package 'golden-ratio)
 
-(require 'spaceline-config)
-(require 'which-key)
-(require 'golden-ratio)
-
 ;; resize windows according to the golden ratio
+(require 'golden-ratio)
 (golden-ratio-mode 1)
 
-;; clean up modes
-(global-eldoc-mode -1)
-
 ;; show available keybindings after you start typing
+(require 'which-key)
 (which-key-mode +1)
 
 ;; disable fringe icons
@@ -22,9 +15,6 @@
 
 ;; Empty scratch on start
 (setq initial-scratch-message "")
-
-;; Fix powerline images on Mac
-(setq powerline-image-apple-rgb t)
 
 ;; font attributes
 (set-face-attribute 'default nil :family "Dank Mono")
@@ -44,18 +34,8 @@
 (setq scroll-conservatively 100000)
 (setq scroll-preserve-screen-position 1)
 
-;; mode line settings
-(line-number-mode t)
-(column-number-mode t)
-(size-indication-mode t)
-
-;; Configure modeline content
-(setq powerline-default-separator 'nil)
-
 ;; set UI theme
 (load-theme 'night-owl t)
-(spaceline-spacemacs-theme)
-(spaceline-toggle-minor-modes-off)
 
 ;; Use italics for comments
 (custom-theme-set-faces
@@ -65,15 +45,7 @@
                       :inherit italic))))
   `(font-lock-comment-face
      ((t (:foreground ,night-owl-comments
-                      :inherit italic))))
-  )
-
-;; Define git-gutter settings
-(custom-set-variables
-  '(git-gutter:hide-gutter t)
-  '(git-gutter:modified-sign "~")
-  '(git-gutter:added-sign "+")
-  '(git-gutter:deleted-sign "-"))
+                      :inherit italic)))))
 
 ;; Invert default git-gutter face from night-owl
 (custom-theme-set-faces
@@ -86,7 +58,13 @@
                       :foreground ,night-owl-magenta))))
   `(git-gutter:modified
      ((t (:background ,night-owl-background
-                      :foreground ,night-owl-blue))))
-  )
+                      :foreground ,night-owl-blue)))))
+
+;; Define git-gutter settings
+(custom-set-variables
+  '(git-gutter:hide-gutter t)
+  '(git-gutter:modified-sign "~")
+  '(git-gutter:added-sign "+")
+  '(git-gutter:deleted-sign "-"))
 
 (provide 'init-ui)
