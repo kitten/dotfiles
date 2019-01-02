@@ -122,6 +122,7 @@
 ;; 1.0 - First release. <br/>
 
 ;;; Code:
+(use-package 'dash)
 (require 'dash)
 
 (require 'package)
