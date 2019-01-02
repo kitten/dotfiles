@@ -82,4 +82,13 @@
   '(git-gutter:added-sign "+")
   '(git-gutter:deleted-sign "-"))
 
+;; Fix up header line styling
+(custom-theme-set-faces
+  'night-owl
+  `(header-line ((t (:foreground ,night-owl-foreground
+                                 :background ,night-owl-background
+                                 :box (:color ,"#204462"
+                                              :line-width 1
+                                              :style unspecified))))))
+
 (provide 'init-ui)
