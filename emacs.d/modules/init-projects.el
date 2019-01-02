@@ -13,8 +13,9 @@
 (setq projectile-completion-system 'ivy)
 
 ;; Keybinding
-(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
-(evil-leader/set-key "p" 'projectile-command-map)
+(define-key projectile-mode-map (kbd "M-p") 'projectile-command-map)
+(evil-leader/set-key "p" 'projectile-switch-project)
+(evil-leader/set-key "o" 'projectile-find-file)
 
 ;; Set up a default search path for projects
 (setq projectile-project-search-path '("~/Development/"))

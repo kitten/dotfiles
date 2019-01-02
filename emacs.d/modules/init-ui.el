@@ -2,10 +2,14 @@
 (use-package 'powerline)
 (use-package 'spaceline)
 (use-package 'which-key)
-(use-package 'which-key)
+(use-package 'golden-ratio)
 
 (require 'spaceline-config)
 (require 'which-key)
+(require 'golden-ratio)
+
+;; resize windows according to the golden ratio
+(golden-ratio-mode 1)
 
 ;; clean up modes
 (global-eldoc-mode -1)
@@ -64,8 +68,13 @@
                       :inherit italic))))
   )
 
-;; Hide git-gutter when it's empty
-(custom-set-variables '(git-gutter:hide-gutter t))
+;; Define git-gutter settings
+(custom-set-variables
+  '(git-gutter:hide-gutter t)
+  '(git-gutter:modified-sign "~")
+  '(git-gutter:added-sign "+")
+  '(git-gutter:deleted-sign "-"))
+
 ;; Invert default git-gutter face from night-owl
 (custom-theme-set-faces
   'night-owl
