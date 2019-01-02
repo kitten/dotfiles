@@ -5,6 +5,7 @@
 (use-package 'git-gutter)
 (use-package 'json-mode)
 (use-package 'typescript-mode)
+(use-package 'markdown-mode)
 (use-package 'flymake-diagnostic-at-point)
 
 (require 'lsp)
