@@ -47,6 +47,21 @@
      ((t (:foreground ,night-owl-comments
                       :inherit italic)))))
 
+;; Add border to popups
+(custom-theme-set-faces
+  'night-owl
+   `(popup-face
+     ((t (:background ,night-owl-highlight-line
+                      :foreground ,night-owl-foreground
+                      :box (:color ,"#204462"
+                                   :line-width 1)))))
+   `(popup-tip-face
+     ((t (:background ,night-owl-highlight-line
+                      :foreground ,night-owl-foreground
+                      :box (:color ,"#204462"
+                                   :line-width 1)))))
+   )
+
 ;; Invert default git-gutter face from night-owl
 (custom-theme-set-faces
   'night-owl
