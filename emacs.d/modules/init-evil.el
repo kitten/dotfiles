@@ -1,7 +1,9 @@
 (use-package 'undo-tree)
+(use-package 'elscreen)
 (use-package 'evil)
 (use-package 'evil-leader)
 (use-package 'evil-collection)
+(use-package 'evil-tabs)
 
 (setq evil-want-integration t)
 (setq evil-want-keybinding nil)
@@ -9,12 +11,30 @@
 (require 'key-chord)
 (require 'evil)
 (require 'evil-leader)
+(require 'evil-tabs)
 (require 'evil-collection)
 
 (evil-mode 1)
 (global-evil-leader-mode)
+(global-evil-tabs-mode)
 (evil-collection-init 'dired)
 (evil-collection-init 'ivy)
+
+(elscreen-start)
+(setq elscreen-display-tab nil)
+
+;; Bind tab shortcuts to c-w map
+(define-key evil-window-map "t" 'elscreen-create)
+(define-key evil-window-map "q" 'elscreen-kill)
+
+;; Add hook that hides the tab bar when only one tab is active
+(defun elscreen-auto-disable ()
+  (if (> (elscreen-get-number-of-screens) 1)
+    (setq elscreen-display-tab t)
+    (setq elscreen-display-tab nil))
+  (elscreen-notify-screen-modification 'force))
+(add-hook 'elscreen-create-hook 'elscreen-auto-disable)
+(add-hook 'elscreen-kill-hook 'elscreen-auto-disable)
 
 (setq night-owl-evil-cursors
       '(("normal" night-owl-orange box)
