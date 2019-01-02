@@ -1,8 +1,3 @@
-;; Fix missing $PATH froms shell on Linux
-(use-package 'exec-path-from-shell)
-(require 'exec-path-from-shell)
-(exec-path-from-shell-initialize)
-
 ;; Touchpad scrolling needs to fucking chill
 (setq mouse-wheel-scroll-amount '(1))
 (setq mouse-wheel-progressive-speed nil)

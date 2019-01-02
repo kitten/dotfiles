@@ -4,11 +4,6 @@
 (setq ns-use-proxy-icon  nil)
 (setq frame-title-format nil)
 
-;; Fix missing $PATH froms shell on Mac
-(use-package 'exec-path-from-shell)
-(require 'exec-path-from-shell)
-(exec-path-from-shell-initialize)
-
 (setq ns-command-modifier 'meta); Command is Meta
 (setq ns-alternate-modifier 'super); Option is Mac Option
 (setq ns-function-modifier  'hyper)
