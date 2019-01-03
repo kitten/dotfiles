@@ -19,6 +19,7 @@
 (require 'init-modeline)
 (require 'init-projects)
 (require 'init-prog-mode)
+(require 'init-shell-mode)
 
 ;; MAC ONLY
 (when (eq system-type 'darwin)

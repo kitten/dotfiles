@@ -15,4 +15,10 @@
 (setq auto-package-update-last-update-day-filename
 	(no-littering-expand-var-file-name ".last-package-update-day"))
 
+;; Set up eshell files in var/
+(setq eshell-directory-name (no-littering-expand-var-file-name "eshell/"))
+(setq eshell-history-file-name (no-littering-expand-var-file-name "eshell/history"))
+(setq eshell-aliases-file (no-littering-expand-var-file-name "eshell/.alias"))
+(setq eshell-last-dir-ring-file-name (no-littering-expand-var-file-name "eshell/.last-dir"))
+
 (provide 'core-no-littering)

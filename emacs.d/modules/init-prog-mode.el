@@ -21,6 +21,8 @@
   '(flymake-diagnostic-at-point-timer-delay 0.3)
   '(flymake-diagnostic-at-point-error-prefix "> "))
 
+(push 'company-lsp company-backends)
+
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 (add-hook 'prog-mode-hook 'lsp)
 (add-hook 'prog-mode-hook 'company-mode)
@@ -31,8 +33,6 @@
 (add-hook 'prog-mode-hook (lambda () (setq truncate-lines t)))
 
 (add-hook 'flymake-mode-hook #'flymake-diagnostic-at-point-mode)
-
-(push 'company-lsp company-backends)
 
 (lsp-register-client
  (make-lsp-client :new-connection (lsp-stdio-connection '("flow-language-server" "--stdio" "--try-flow-bin"))
