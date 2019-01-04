@@ -8,10 +8,17 @@
 (require 'projectile)
 (require 'ivy)
 
+;; Setup ranger
+(ranger-override-dired-mode t)
+(setq
+  ranger-cleanup-eagerly t
+  ranger-modify-header nil)
+
 ;; Set up ivy
 (ivy-mode 1)
-(setq ivy-use-virtual-buffers t)
-(setq enable-recursive-minibuffers t)
+(setq
+  ivy-use-virtual-buffers t
+  enable-recursive-minibuffers t)
 
 (projectile-mode +1)
 (counsel-projectile-mode)
