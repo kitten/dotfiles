@@ -17,6 +17,7 @@
 (require 'init-evil)
 (require 'init-ui)
 (require 'init-modeline)
+(require 'init-tabs)
 (require 'init-projects)
 (require 'init-prog-mode)
 (require 'init-shell-mode)

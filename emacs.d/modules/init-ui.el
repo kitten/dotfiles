@@ -82,16 +82,11 @@
   '(git-gutter:added-sign "+")
   '(git-gutter:deleted-sign "-"))
 
-;; elscreen stuff
-(setq elscreen-tab-display-control nil)
-(setq elscreen-tab-display-kill-screen nil)
 (custom-theme-set-faces
   'night-owl
   `(header-line ((t (:foreground ,night-owl-foreground
                                  :background ,night-owl-background-highlight
                                  :box nil))))
-  `(elscreen-tab-background-face ((t (:background ,night-owl-background-highlight
-                                                  :box nil))))
   `(elscreen-tab-current-screen-face ((t (:background ,night-owl-background))))
   `(elscreen-tab-other-screen-face ((t (:background ,night-owl-background-highlight))))
   )

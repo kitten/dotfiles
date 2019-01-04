@@ -23,10 +23,12 @@
     (package-install package)))
 
 (require 'auto-package-update)
-(setq auto-package-update-prompt-before-update t)
-(setq auto-package-update-delete-old-versions t)
-(setq auto-package-update-hide-results t)
-(setq auto-package-update-interval 1)
+
+(setq
+  auto-package-update-prompt-before-update t
+  auto-package-update-delete-old-versions t
+  auto-package-update-hide-results t
+  auto-package-update-interval 1)
 ;; Perform packages updates
 (auto-package-update-maybe)
 
