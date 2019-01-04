@@ -17,8 +17,11 @@ function! ResetTheme()
   let &t_ut=''
 
   " Invisibles
-  set listchars=tab:▸\ ,eol:⨼,trail:·
-  set list
+  "set listchars=tab:▸\ ,eol:⨼,trail:·
+  "set list
+
+  " Disable all bolds
+  set t_md=
 
   " Palenight Italics
   let g:palenight_terminal_italics=1

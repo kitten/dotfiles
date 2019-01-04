@@ -4,8 +4,8 @@ set hidden
 let g:LanguageClient_serverCommands = {
     \ 'reason': ['ocaml-language-server', '--stdio'],
     \ 'ocaml': ['ocaml-language-server', '--stdio'],
-    \ 'javascript': ['flow-language-server', '--stdio'],
-    \ 'javascript.jsx': ['flow-language-server', '--stdio'],
+    \ 'javascript': ['flow-language-server', '--try-flow-bin', '--stdio'],
+    \ 'javascript.jsx': ['flow-language-server', '--try-flow-bin', '--stdio'],
     \ 'typescript': ['javascript-typescript-stdio']
     \ }
 

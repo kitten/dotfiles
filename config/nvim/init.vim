@@ -6,8 +6,9 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'Shougo/vimproc.vim', { 'do': 'make' }
   Plug 'simnalamburt/vim-mundo'
   Plug 'jsfaint/purge_undodir.vim'
-  Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
   Plug 'roxma/python-support.nvim'
+
+  Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 
   " Themes
   Plug 'drewtempelmeyer/palenight.vim'
@@ -22,7 +23,7 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'junegunn/limelight.vim'
 
   " Navigation
-  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  Plug 'junegunn/fzf'
   Plug 'junegunn/fzf.vim'
   Plug 'justinmk/vim-dirvish'
 
@@ -45,10 +46,12 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'Shougo/echodoc.vim'
 
   " Completion
-  Plug 'roxma/nvim-completion-manager', { 'do': 'pip3 install --user neovim jedi psutil setproctitle' }
-  Plug 'calebeby/ncm-css'
-  Plug 'roxma/ncm-github'
-  Plug 'fgrsnau/ncm-otherbuf'
+  Plug 'ncm2/ncm2'
+  Plug 'roxma/nvim-yarp'
+  Plug 'ncm2/ncm2-tmux'
+  Plug 'ncm2/ncm2-bufword'
+  Plug 'ncm2/ncm2-path'
+  Plug 'ncm2/ncm2-cssomni'
 
   " Non neovim dependencies
   if !has('nvim')

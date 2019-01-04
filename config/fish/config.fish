@@ -2,13 +2,6 @@
 # Env
 #####################################
 
-# Force nested shells to use xterm-256color-italic
-set -x TERM 'tmux-256color'
-
-# Ensure dotfiles bin directory is loaded first
-set -x PATH "$HOME/.bin" "$HOME/Library/Python/3.6/bin" "/usr/local/sbin" "/usr/local/bin" "/usr/bin" "/bin" "/usr/sbin" "/sbin" $PATH
-set -x PATH $PATH "./node_modules/.bin"
-
 # Determine environment
 set -l unamestr (uname -s)
 if test "$unamestr" = "Linux"
@@ -16,6 +9,20 @@ if test "$unamestr" = "Linux"
 else
   set -x isOSX true
 end
+
+# Force nested shells to use xterm-256color-italic
+set -x TERM 'tmux-256color'
+
+# Ensure dotfiles bin directory is loaded first
+if test $isOSX = true
+  # set -x PATH "$HOME/Library/Python/3.6/bin"
+end
+
+set -x PATH "$HOME/.bin" "/usr/local/sbin" "/usr/local/bin" "/usr/bin" "/bin" "/usr/sbin" "/sbin" $PATH
+set -x PATH $PATH "./node_modules/.bin"
+
+# Adjut Yarn cache path
+set -x YARN_CACHE_FOLDER "$HOME/.cache/yarn"
 
 # UID
 set -x UID (id -u)
@@ -54,11 +61,24 @@ else
 end
 
 set -x EDITOR $VISUAL
+set -x GNUPGHOME "$HOME/.gnupg"
 
-# Establish GPG Agent session
+if test -f "$HOME/.opam/opam-init/variables.fish"
+  source "$HOME/.opam/opam-init/variables.fish"
+end
+
+
+if test $isOSX = true
+  if test -z "(pgrep gpg-agent)"
+    gpgconf --launch gpg-agent
+  end
+else
+  set -x GPG_AGENT_INFO "$XDG_RUNTIME_DIR/gnupg/S.gpg-agent"
+  set -x SSH_AUTH_SOCK "$XDG_RUNTIME_DIR/gnupg/S.gpg-agent.ssh"
+end
+
 set -x GPG_TTY (tty)
-gpg-connect-agent --quiet /bye
-set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
+set -e SSH_AGENT_PID
 
 ######################################
 # Fish
@@ -122,7 +142,8 @@ alias tkss='tmux kill-session -t'
 #####################################
 
 # Attach to tmux automatically
-if test "$TMUX" = ""
-  tmux a
-  or tmux new-session -s casual
-end
+#if test "$TMUX" = ""
+#  cd
+#  tmux a
+#  or tmux new-session -s casual
+#end

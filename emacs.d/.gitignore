@@ -1,0 +1,7 @@
+auto-save-list/
+var/
+etc/
+elpa/
+*.eld
+.*
+!.gitignore
