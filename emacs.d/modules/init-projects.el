@@ -38,7 +38,6 @@
 (setq projectile-switch-project-action #'projectile-dired)
 
 ;; Bind "-" to directory viewer
-(global-unset-key "-")
 (evil-global-set-key 'normal "-" 'deer)
 
 (provide 'init-projects)

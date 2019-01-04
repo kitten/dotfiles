@@ -61,9 +61,6 @@
 (define-key evil-operator-state-map (kbd "C-c") 'keyboard-quit)
 (set-quit-char "C-c")
 
-;; Bind "-" to directory viewer
-(evil-global-set-key 'normal "-" 'projectile-dired)
-
 ;; Open vsplits to the right
 (setq evil-vsplit-window-right t)
 
