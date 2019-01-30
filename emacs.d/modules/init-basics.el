@@ -15,9 +15,6 @@
 (exec-path-from-shell-copy-env "SSH_AUTH_SOCK")
 (exec-path-from-shell-copy-env "GPG_TTY")
 
-;; Change GC threshold to >100MB
-(setq gc-cons-threshold 100000000)
-
 ;; Warn on files >100MB
 (setq large-file-warning-threshold 100000000)
 
@@ -29,6 +26,9 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 
 ;; Default indentation
-(setq-default indent-tabs-mode nil tab-width 2)
+(setq-default
+  indent-tabs-mode nil
+  tab-width 2
+  electric-indent-inhibit t)
 
 (provide 'init-basics)

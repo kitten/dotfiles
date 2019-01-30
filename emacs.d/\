@@ -10,15 +10,13 @@
 (require 'key-chord)
 (require 'evil)
 (require 'evil-leader)
-(require 'evil-collection-dired)
-(require 'evil-collection-ivy)
-(require 'evil-collection-eshell)
 
 (evil-mode 1)
 (global-evil-leader-mode)
-(evil-collection-dired-setup)
-(evil-collection-ivy-setup)
-(evil-collection-eshell-setup)
+
+(evil-collection-init 'dired)
+(evil-collection-init 'ivy)
+(evil-collection-init 'eshell)
 
 (setq night-owl-evil-cursors
       '(("normal" night-owl-orange box)
@@ -72,11 +70,5 @@
 
 ;; Bind <ESC> to enter normal mode from emacs mode
 (define-key evil-emacs-state-map [escape] 'evil-normal-state)
-
-;; Resizing
-(define-key evil-normal-state-map (kbd "C-h") 'shrink-window-horizontally)
-(define-key evil-normal-state-map (kbd "C-l") 'enlarge-window-horizontally)
-(define-key evil-normal-state-map (kbd "C-j") 'shrink-window)
-(define-key evil-normal-state-map (kbd "C-k") 'enlarge-window)
 
 (provide 'init-evil)

@@ -29,7 +29,7 @@
   auto-package-update-delete-old-versions t
   auto-package-update-hide-results t
   auto-package-update-interval 1)
-;; Perform packages updates
-(auto-package-update-maybe)
+
+(add-hook 'emacs-startup-hook (lambda () (auto-package-update-maybe)))
 
 (provide 'core-use-package)

@@ -72,6 +72,9 @@ if test $isOSX = true
   if test -z "(pgrep gpg-agent)"
     gpgconf --launch gpg-agent
   end
+
+  set -x GPG_AGENT_INFO "$HOME/.gnupg/S.gpg-agent"
+  set -x SSH_AUTH_SOCK "$HOME/.gnupg/S.gpg-agent.ssh"
 else
   set -x GPG_AGENT_INFO "$XDG_RUNTIME_DIR/gnupg/S.gpg-agent"
   set -x SSH_AUTH_SOCK "$XDG_RUNTIME_DIR/gnupg/S.gpg-agent.ssh"

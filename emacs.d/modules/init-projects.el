@@ -32,10 +32,12 @@
 (evil-leader/set-key "b" 'counsel-projectile-switch-to-buffer)
 
 ;; Set up a default search path for projects
-(setq projectile-project-search-path '("~/Development/"))
-
-;; Open dired when switching projects
-(setq projectile-switch-project-action #'projectile-dired)
+(setq
+  projectile-project-search-path '("~/Development/")
+  projectile-indexing-method 'alien
+  projectile-sort-order 'default
+  projectile-enable-caching t
+  projectile-switch-project-action #'projectile-dired)
 
 ;; Bind "-" to directory viewer
 (evil-global-set-key 'normal "-" 'deer)

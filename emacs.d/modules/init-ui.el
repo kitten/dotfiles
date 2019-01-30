@@ -1,10 +1,5 @@
 (use-package 'night-owl-theme)
 (use-package 'which-key)
-(use-package 'golden-ratio)
-
-;; resize windows according to the golden ratio
-(require 'golden-ratio)
-(golden-ratio-mode 1)
 
 ;; show available keybindings after you start typing
 (require 'which-key)
