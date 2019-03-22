@@ -3,7 +3,6 @@
 (use-package 'company)
 (use-package 'company-lsp)
 (use-package 'editorconfig)
-(use-package 'git-gutter)
 (use-package 'json-mode)
 (use-package 'typescript-mode)
 (use-package 'markdown-mode)

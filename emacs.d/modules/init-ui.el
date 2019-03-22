@@ -5,8 +5,25 @@
 (require 'which-key)
 (which-key-mode +1)
 
-;; disable fringe icons
-(fringe-mode '(1 . 0))
+;; Hide Fringe wrapping icons
+(define-fringe-bitmap 'right-curly-arrow
+  [#b00000000
+   #b00000000
+   #b00000000
+   #b00000000
+   #b00000000
+   #b00000000
+   #b00000000
+   #b00000000])
+(define-fringe-bitmap 'left-curly-arrow
+  [#b00000000
+   #b00000000
+   #b00000000
+   #b00000000
+   #b00000000
+   #b00000000
+   #b00000000
+   #b00000000])
 
 ;; Empty scratch on start
 (setq initial-scratch-message "")
@@ -77,13 +94,6 @@
      ((t (:background ,night-owl-background
                       :foreground ,night-owl-blue)))))
 
-;; Define git-gutter settings
-(custom-set-variables
-  '(git-gutter:hide-gutter t)
-  '(git-gutter:modified-sign "~")
-  '(git-gutter:added-sign "+")
-  '(git-gutter:deleted-sign "-"))
-
 (custom-theme-set-faces
   'night-owl
   `(header-line ((t (:foreground ,night-owl-foreground
@@ -93,21 +103,41 @@
   `(elscreen-tab-other-screen-face ((t (:background ,night-owl-background-highlight))))
   )
 
-(defun darkroom--enter-or-leave ()
+(defun reset-max-width (&optional window)
+  (when (eq (window-parameter window 'split-window) 'split-max-width-window)
+    (set-window-parameter window 'split-window nil))
+  (kill-local-variable 'split-window-preferred-function)
+  (set-window-margins window nil))
+
+(defun split-max-width-window (&optional window size side)
+  (reset-max-width window)
+  (split-window window size side))
+
+(defun split-max-width-window-sensibly (&optional window)
+  (reset-max-width window)
+  (split-window-sensibly window))
+
+(defun apply-max-width (&optional frame)
   "Resize margin of current window."
   (interactive)
   (mapc (lambda (window)
     (with-selected-window window
-      (let ((margin (round (- (window-width window) 100))))
-        (setq truncate-lines t)
-        (git-gutter-mode 1)
-        (display-line-numbers-mode 1)
-        (when (> margin 0)
-          (set-window-buffer window (current-buffer))
-          (set-window-fringes window margin margin t))
-      )))
-      (window-list)))
+      (let* ((width 100)
+             (window-width (window-total-width window))
+             (fringes (window-fringes window))
+             (left-fringe (/ (car fringes) (float (frame-char-width frame))))
+             (right-fringe (/ (cadr fringes) (float (frame-char-width frame))))
+             (margin-total (max (/ (- window-width width) 2) 0))
+             (left-margin (max (round (- margin-total left-fringe)) 0))
+             (right-margin (max (round (- margin-total right-fringe)) 0)))
+          (display-line-numbers-mode 1)
+          (set-window-parameter window 'split-window 'split-max-width-window)
+          (setq-local split-window-preferred-function #'split-max-width-window-sensibly)
+          (set-window-margins window left-margin right-margin))
+      ))
+      (window-list nil :exclude-minibuffer)))
 
-(add-hook 'window-configuration-change-hook 'darkroom--enter-or-leave 'append)
+(add-hook 'window-configuration-change-hook 'apply-max-width 'append)
+(add-hook 'window-size-change-functions 'apply-max-width 'append)
 
 (provide 'init-ui)
