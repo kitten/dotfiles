@@ -29,6 +29,13 @@
 (setq scroll-conservatively 100000)
 (setq scroll-preserve-screen-position 1)
 
+(custom-set-variables
+  '(night-owl-blue "#87abf9")
+  '(night-owl-background "#031526")
+  '(night-owl-comments "#4b6479")
+  '(night-owl-line-number "#4b6479")
+  '(night-owl-foreground "#dee6f2"))
+
 ;; set UI theme
 (load-theme 'night-owl t)
 
@@ -85,5 +92,22 @@
   `(elscreen-tab-current-screen-face ((t (:background ,night-owl-background))))
   `(elscreen-tab-other-screen-face ((t (:background ,night-owl-background-highlight))))
   )
+
+(defun darkroom--enter-or-leave ()
+  "Resize margin of current window."
+  (interactive)
+  (mapc (lambda (window)
+    (with-selected-window window
+      (let ((margin (round (- (window-width window) 100))))
+        (setq truncate-lines t)
+        (git-gutter-mode 1)
+        (display-line-numbers-mode 1)
+        (when (> margin 0)
+          (set-window-buffer window (current-buffer))
+          (set-window-fringes window margin margin t))
+      )))
+      (window-list)))
+
+(add-hook 'window-configuration-change-hook 'darkroom--enter-or-leave 'append)
 
 (provide 'init-ui)

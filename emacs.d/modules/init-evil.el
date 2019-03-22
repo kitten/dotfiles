@@ -3,9 +3,9 @@
 (use-package 'evil-leader)
 (use-package 'evil-collection)
 
-(setq evil-want-integration t)
-(setq evil-want-keybinding nil)
-(setq evil-collection-mode-list nil)
+(setq evil-want-integration t
+  evil-want-keybinding nil
+  evil-collection-mode-list nil)
 
 (require 'key-chord)
 (require 'evil)

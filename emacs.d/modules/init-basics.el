@@ -28,7 +28,8 @@
 ;; Default indentation
 (setq-default
   indent-tabs-mode nil
-  tab-width 2
-  electric-indent-inhibit t)
+  electric-indent-mode -1
+  electric-indent-inhibit t
+  tab-width 2)
 
 (provide 'init-basics)

@@ -2,11 +2,8 @@
 (require 'package)
 
 ;; Add MELPA to package archives
-(if (eq system-type 'windows-nt)
-    (add-to-list 'package-archives
-                 '("melpa" . "http://melpa.org/packages/") t)
-    (add-to-list 'package-archives
-                 '("melpa" . "https://melpa.org/packages/") t))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 
 ;; Package install path
 (setq package-user-dir (expand-file-name "elpa" init-dir))
