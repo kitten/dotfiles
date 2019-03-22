@@ -150,3 +150,13 @@ alias tkss='tmux kill-session -t'
 #  tmux a
 #  or tmux new-session -s casual
 #end
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[ -f /Users/philpluckthun/Development/lego-shop/moonbase/node_modules/tabtab/.completions/serverless.fish ]; and . /Users/philpluckthun/Development/lego-shop/moonbase/node_modules/tabtab/.completions/serverless.fish
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[ -f /Users/philpluckthun/Development/lego-shop/moonbase/node_modules/tabtab/.completions/sls.fish ]; and . /Users/philpluckthun/Development/lego-shop/moonbase/node_modules/tabtab/.completions/sls.fish
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[ -f /Users/philpluckthun/Development/lego-shop/moonbase/node_modules/tabtab/.completions/slss.fish ]; and . /Users/philpluckthun/Development/lego-shop/moonbase/node_modules/tabtab/.completions/slss.fish

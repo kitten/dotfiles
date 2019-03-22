@@ -56,6 +56,21 @@
 ;; set UI theme
 (load-theme 'night-owl t)
 
+;; Only show current line number
+(custom-theme-set-faces
+  'night-owl
+  `(line-number
+     ((t (:foreground ,night-owl-background
+                      :inherit default
+                      :underline nil))))
+   `(line-number-current-line
+     ((t (:foreground ,night-owl-line-number
+                      :inherit default
+                      :underline nil))))
+   `(vertical-border
+     ((t (:foreground ,night-owl-background-highlight))))
+   )
+
 ;; Use italics for comments
 (custom-theme-set-faces
   'night-owl
@@ -122,7 +137,7 @@
   (interactive)
   (mapc (lambda (window)
     (with-selected-window window
-      (let* ((width 100)
+      (let* ((width 102)
              (window-width (window-total-width window))
              (fringes (window-fringes window))
              (left-fringe (/ (car fringes) (float (frame-char-width frame))))
