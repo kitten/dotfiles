@@ -13,7 +13,7 @@ window:
     lines: 48
   padding:
     x: 4
-    y: 10
+    y: 4
 
 tabspaces: 2
 draw_bold_text_with_bright_colors: false
@@ -28,7 +28,7 @@ font:
   italic:
     family: Dank Mono
     style: Italic
-  size: 13.0
+  size: 11.0
   offset:
     x: 0
     y: 1
@@ -38,7 +38,6 @@ font:
   use_thin_strokes: false
 
 render_timer: false
-custom_cursor_colors: false
 
 colors:
   primary:
@@ -81,15 +80,17 @@ mouse_bindings:
 mouse:
   double_click: { threshold: 300 }
   triple_click: { threshold: 300 }
-  faux_scrollback_lines: 0
+  faux_scrolling_lines: 0
+  hide_when_typing: true
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
 
 dynamic_title: true
-hide_cursor_when_typing: true
-unfocused_hollow_cursor: true
-cursor_style: Block
+
+cursor:
+  style: Block
+  unfocused_hollow: true
 
 key_bindings:
   - { key: V,        mods: Command, action: Paste                        }

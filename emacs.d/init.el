@@ -1,3 +1,10 @@
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (defvar init-dir (file-name-directory load-file-name) "The config root dir.")
 (defvar init-core-dir (expand-file-name "core" init-dir) "The core modules.")
 (defvar init-vendor-dir (expand-file-name "vendor" init-core-dir) "The vendored core modules.")

@@ -9,6 +9,8 @@
 (setq moody-mode-line-height 24)
 (setq x-underline-at-descent-line t)
 
+(when (not (eq system-type 'darwin)) (setq moody-mode-line-height 48))
+
 (set-face-attribute 'mode-line          nil :box        nil)
 (set-face-attribute 'mode-line-inactive nil :box        nil)
 (set-face-attribute 'mode-line-inactive nil :background "#010F1D")
