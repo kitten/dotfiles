@@ -4,6 +4,7 @@
   ui = auto
 [commit]
   template = ~/.gitmessage
+	gpgSign = true
 [fetch]
   prune = true
 [include]
