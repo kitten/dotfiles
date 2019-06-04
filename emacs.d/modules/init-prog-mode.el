@@ -22,6 +22,7 @@
   '(typescript-indent-switch-clause nil)
   '(lsp-auto-guess-root t)
 	'(lsp-prefer-flymake t)
+	'(lsp-enable-snippet nil)
   '(lsp-markup-display-all nil)
   '(lsp-auto-require-clients t)
   '(lsp-ui-sideline-enable nil)

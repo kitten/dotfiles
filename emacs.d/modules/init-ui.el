@@ -56,6 +56,15 @@
 ;; set UI theme
 (load-theme 'night-owl t)
 
+;; Fix markdown fonts
+(custom-theme-set-faces
+  'night-owl
+  `(markdown-pre-face ((t (:foreground ,night-owl-blue
+                           :inherit default :family nil))))
+  `(markdown-inline-code-face ((t (:foreground ,night-owl-blue
+                                   :inherit default :family nil))))
+  )
+
 ;; Only show current line number
 (custom-theme-set-faces
   'night-owl
