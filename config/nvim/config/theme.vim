@@ -29,7 +29,7 @@ function! ResetTheme()
   " Syntax highlighting
   syntax enable
   set background=dark
-  set cursorline
+  "set cursorline
   colorscheme palenight
 
   " Translucent background
