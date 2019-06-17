@@ -37,8 +37,6 @@ font:
     y: 2
   use_thin_strokes: false
 
-render_timer: false
-
 colors:
   primary:
     background: '0x191b1f'
