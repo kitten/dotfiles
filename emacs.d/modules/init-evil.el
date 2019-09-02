@@ -64,6 +64,9 @@
 (define-key evil-operator-state-map (kbd "C-c") 'keyboard-quit)
 (set-quit-char "C-c")
 
+;; Use <TAB> to indent in insert mode
+(define-key evil-insert-state-map (kbd "TAB") 'tab-to-tab-stop)
+
 ;; Open vsplits to the right
 (setq evil-vsplit-window-right t)
 

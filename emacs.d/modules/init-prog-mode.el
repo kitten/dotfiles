@@ -7,6 +7,8 @@
 (use-package 'typescript-mode)
 (use-package 'markdown-mode)
 (use-package 'reason-mode)
+(use-package 'js2-mode)
+(use-package 'rjsx-mode)
 (use-package 'flymake-diagnostic-at-point)
 
 (require 'lsp)
@@ -34,6 +36,14 @@
 
 (push 'company-lsp company-backends)
 
+(defun setup-prog ()
+	(interactive)
+    (setq-local indent-line-function 'indent-relative-maybe))
+
+(add-to-list 'auto-mode-alist '("\\.[jt]sx?$" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.[jt]sx$" . rjsx-mode))
+
+(add-hook 'prog-mode-hook 'setup-prog)
 (add-hook 'prog-mode-hook 'lsp)
 (add-hook 'prog-mode-hook 'company-mode)
 (add-hook 'prog-mode-hook 'flymake-mode)
