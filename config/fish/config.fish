@@ -141,6 +141,7 @@ alias tksv='tmux kill-server'
 alias tkss='tmux kill-session -t'
 
 set -g fish_user_paths "/usr/local/opt/cheerp" $fish_user_paths
+set -g fish_user_paths "/usr/local/opt/ruby/bin" $fish_user_paths
 
 #####################################
 # TMUX
