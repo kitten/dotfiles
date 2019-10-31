@@ -3,4 +3,5 @@
 .env
 .tern-port
 *.orig
+.unison*
 .ign-*/
