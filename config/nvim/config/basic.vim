@@ -1,6 +1,8 @@
 " Set default shell
 set shell=/bin/bash
 
+set hidden
+
 " Encoding
 set encoding=utf8
 
@@ -16,6 +18,9 @@ set textwidth=0
 
 " Lazy redraw for e.g. macros
 set lazyredraw
+
+" Lower default updatetime
+set updatetime=300
 
 " No wrapping except onmarkdown and html
 set nowrap
@@ -49,6 +54,7 @@ set nofoldenable
 
 " No Backup
 set nobackup
+set nowritebackup
 set nowb
 set noswapfile
 
@@ -66,8 +72,8 @@ set diffopt+=vertical
 set t_ZH=^[[3m
 set t_ZR=^[[23m
 
-" Disable welcome message
 set shortmess+=I
+set shortmess+=c
 
 " Command livepreview for nvim
 if has('nvim')

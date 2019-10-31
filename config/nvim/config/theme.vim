@@ -16,6 +16,12 @@ function! ResetTheme()
   " Don't reset background colour
   let &t_ut=''
 
+  " Better display for messages
+  set cmdheight=2
+
+  " Always show signcolumns
+  set signcolumn=yes
+
   " Invisibles
   "set listchars=tab:▸\ ,eol:⨼,trail:·
   "set list
@@ -29,13 +35,13 @@ function! ResetTheme()
   " Syntax highlighting
   syntax enable
   set background=dark
-  "set cursorline
+  set cursorline
   colorscheme palenight
 
   " Translucent background
-  hi LineNr guifg=#404449 guibg=NONE gui=NONE
+  hi LineNr ctermfg=232 ctermbg=232 cterm=bold guifg=#16181c guibg=#16181c gui=bold
   hi CursorLine ctermbg=232 guibg=#16181c
-  hi CursorLineNR ctermfg=180 ctermbg=232 cterm=bold guifg=#ffcb6b guibg=#16181c gui=bold
+  hi CursorLineNR ctermfg=235 ctermbg=232 cterm=bold guifg=#404449 guibg=#16181c gui=bold
   hi NonText guifg=#404449 guibg=NONE gui=NONE
   hi SpecialKey guifg=#404449 guibg=NONE gui=NONE
   hi VertSplit ctermfg=235 ctermbg=235 cterm=NONE guifg=#282c34 guibg=#282c34 gui=NONE

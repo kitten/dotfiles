@@ -3,12 +3,10 @@ let g:plug_timeout = 300
 call plug#begin('~/.config/nvim/plugins')
   Plug 'tpope/vim-repeat'
   Plug 'editorconfig/editorconfig-vim'
-  Plug 'Shougo/vimproc.vim', { 'do': 'make' }
   Plug 'simnalamburt/vim-mundo'
   Plug 'jsfaint/purge_undodir.vim'
-  Plug 'roxma/python-support.nvim'
 
-  Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
   " Themes
   Plug 'drewtempelmeyer/palenight.vim'
@@ -32,31 +30,12 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'Valloric/ListToggle'
 
   " Syntax
-  Plug 'sheerun/vim-polyglot', { 'do': 'npm i -g javascript-typescript-langserver flow-language-server' }
-  Plug 'reasonml-editor/vim-reason-plus', { 'do': 'npm i -g ocaml-language-server' }
-  Plug 'jparise/vim-graphql', { 'do': 'npm i -g graphql-language-service' }
+  Plug 'sheerun/vim-polyglot'
 
   " Motions
   Plug 'Lokaltog/vim-easymotion'
   Plug 'tpope/vim-surround'
   Plug 'bronson/vim-visual-star-search'
-
-  " Linting
-  Plug 'w0rp/ale'
-  Plug 'Shougo/echodoc.vim'
-
-  " Completion
-  Plug 'ncm2/ncm2'
-  Plug 'roxma/nvim-yarp'
-  Plug 'ncm2/ncm2-tmux'
-  Plug 'ncm2/ncm2-bufword'
-  Plug 'ncm2/ncm2-path'
-  Plug 'ncm2/ncm2-cssomni'
-
-  " Non neovim dependencies
-  if !has('nvim')
-    Plug 'roxma/vim-hug-neovim-rpc'
-  endif
 call plug#end()
 
 let g:javascript_plugin_flow = 1
