@@ -12,7 +12,6 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'drewtempelmeyer/palenight.vim'
 
   " Visual
-  Plug 'airblade/vim-gitgutter'
   Plug 'itchyny/lightline.vim'
   Plug 'sjl/vitality.vim'
   Plug 'sts10/vim-zipper'
