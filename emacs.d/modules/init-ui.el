@@ -29,8 +29,9 @@
 (setq initial-scratch-message "")
 
 ;; font attributes
-(set-face-attribute 'default nil :family "Dank Mono")
+(set-face-attribute 'default nil :family "Dank Mono Neue")
 (set-face-attribute 'default nil :height 130)
+(set-face-attribute 'default nil :weight 'normal)
 
 ;; disable unnecessary UI stuff
 (when (fboundp 'tool-bar-mode) (tool-bar-mode -1))

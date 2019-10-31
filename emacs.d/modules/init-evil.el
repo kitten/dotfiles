@@ -1,7 +1,7 @@
 (use-package 'undo-tree)
 (use-package 'evil)
 (use-package 'evil-leader)
-(use-package 'evil-collection)
+;(use-package 'evil-collection)
 
 (setq evil-want-integration t
   evil-want-keybinding nil
@@ -9,16 +9,15 @@
 
 (require 'key-chord)
 (require 'evil)
+;(require 'evil-collection)
 (require 'evil-leader)
-(require 'evil-collection-dired)
-(require 'evil-collection-ivy)
-(require 'evil-collection-eshell)
+
+;(evil-collection-init 'dired)
+;(evil-collection-init 'ivy)
+;(evil-collection-init 'eshell)
 
 (evil-mode 1)
 (global-evil-leader-mode)
-(evil-collection-dired-setup)
-(evil-collection-ivy-setup)
-(evil-collection-eshell-setup)
 
 (setq night-owl-evil-cursors
       '(("normal" night-owl-orange box)
