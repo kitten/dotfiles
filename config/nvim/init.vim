@@ -30,6 +30,7 @@ call plug#begin('~/.config/nvim/plugins')
 
   " Syntax
   Plug 'sheerun/vim-polyglot'
+  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
   " Motions
   Plug 'Lokaltog/vim-easymotion'
