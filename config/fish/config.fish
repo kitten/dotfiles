@@ -19,10 +19,14 @@ if test $isOSX = true
 end
 
 set -x PATH "$HOME/.bin" "/usr/local/sbin" "/usr/local/bin" "/usr/bin" "/bin" "/usr/sbin" "/sbin" $PATH
+set -x PATH $PATH "$HOME/.cargo/bin"
 set -x PATH $PATH "./node_modules/.bin"
 
 # Adjut Yarn cache path
 set -x YARN_CACHE_FOLDER "$HOME/.cache/yarn"
+
+# GitHub NPM Auth
+set -x GITHUB_NPM_AUTH_TOKEN "14a0ed64f7e09b42a326ddcbe2f5ad5a0a073eaa"
 
 # UID
 set -x UID (id -u)
@@ -67,7 +71,6 @@ if test -f "$HOME/.opam/opam-init/variables.fish"
   source "$HOME/.opam/opam-init/variables.fish"
 end
 
-
 if test $isOSX = true
   if test -z "(pgrep gpg-agent)"
     gpgconf --launch gpg-agent
@@ -95,9 +98,6 @@ function fish_greeting; end
 
 # Enable vi mode
 fish_vi_key_bindings
-
-# Activate fzy in insert mode
-bind -M insert \cr 'fzy_select_history (commandline -b)'
 
 #####################################
 # Alias
@@ -142,6 +142,8 @@ alias tkss='tmux kill-session -t'
 
 set -g fish_user_paths "/usr/local/opt/cheerp" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/ruby/bin" $fish_user_paths
+
+starship init fish | source
 
 #####################################
 # TMUX

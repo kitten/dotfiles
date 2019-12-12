@@ -7,7 +7,6 @@ call plug#begin('~/.config/nvim/plugins')
   Plug 'jsfaint/purge_undodir.vim'
 
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
   " Themes
   Plug 'drewtempelmeyer/palenight.vim'
 

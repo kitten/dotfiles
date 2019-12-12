@@ -7,8 +7,9 @@ set hidden
 set encoding=utf8
 
 " Indentation
-filetype plugin indent on
+filetype plugin indent off
 set autoindent
+set nosmartindent
 set ts=2
 set shiftwidth=2
 set expandtab
