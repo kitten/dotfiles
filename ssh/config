@@ -3,8 +3,3 @@ Host github.com
   Port 443
   # Github needs SHA1 sometimes
   KexAlgorithms curve25519-sha256@libssh.org,diffie-hellman-group-exchange-sha256,diffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1
-
-Host kitten
-  Hostname home.kitten.sh
-  User phil
-  Port 22123
