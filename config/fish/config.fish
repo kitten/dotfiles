@@ -12,9 +12,6 @@ else
   set -x isOSX true
 end
 
-# Force nested shells to use xterm-256color-italic
-set -x TERM 'tmux-256color'
-
 set -x PATH "$HOME/.bin" "/usr/local/sbin" "/usr/local/bin" "/usr/bin" "/bin" "/usr/sbin" "/sbin" $PATH
 set -x PATH $PATH "$HOME/.cargo/bin"
 set -x PATH $PATH "./node_modules/.bin"
@@ -73,8 +70,8 @@ if test $isOSX = true
   set -x GPG_AGENT_INFO "$HOME/.gnupg/S.gpg-agent"
   set -x SSH_AUTH_SOCK "$HOME/.gnupg/S.gpg-agent.ssh"
 else
-  set -x GPG_AGENT_INFO "$XDG_RUNTIME_DIR/gnupg/S.gpg-agent"
-  set -x SSH_AUTH_SOCK "$XDG_RUNTIME_DIR/gnupg/S.gpg-agent.ssh"
+  set -x GPG_AGENT_INFO "$HOME/.gnupg/S.gpg-agent"
+  set -x SSH_AUTH_SOCK "$HOME/.gnupg/S.gpg-agent.ssh"
 end
 
 set -x GPG_TTY (tty)
