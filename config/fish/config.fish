@@ -2,6 +2,8 @@
 # Env
 #####################################
 
+bass source ~/.profile
+
 # Determine environment
 set -l unamestr (uname -s)
 if test "$unamestr" = "Linux"
@@ -13,20 +15,12 @@ end
 # Force nested shells to use xterm-256color-italic
 set -x TERM 'tmux-256color'
 
-# Ensure dotfiles bin directory is loaded first
-if test $isOSX = true
-  # set -x PATH "$HOME/Library/Python/3.6/bin"
-end
-
 set -x PATH "$HOME/.bin" "/usr/local/sbin" "/usr/local/bin" "/usr/bin" "/bin" "/usr/sbin" "/sbin" $PATH
 set -x PATH $PATH "$HOME/.cargo/bin"
 set -x PATH $PATH "./node_modules/.bin"
 
 # Adjut Yarn cache path
 set -x YARN_CACHE_FOLDER "$HOME/.cache/yarn"
-
-# GitHub NPM Auth
-set -x GITHUB_NPM_AUTH_TOKEN "14a0ed64f7e09b42a326ddcbe2f5ad5a0a073eaa"
 
 # UID
 set -x UID (id -u)
@@ -139,9 +133,6 @@ alias ts='tmux new-session -s'
 alias tl='tmux list-sessions'
 alias tksv='tmux kill-server'
 alias tkss='tmux kill-session -t'
-
-set -g fish_user_paths "/usr/local/opt/cheerp" $fish_user_paths
-set -g fish_user_paths "/usr/local/opt/ruby/bin" $fish_user_paths
 
 starship init fish | source
 

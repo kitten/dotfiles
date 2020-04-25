@@ -9,10 +9,10 @@ BRANCH=`git rev-parse --abbrev-ref HEAD`
 
 echo -n "Base of $BRANCH is "
 
-COLUMN=$(( $(git show-branch | grep '^[^\[]*\*' | head -1 | cut -d* -f1 | wc -c) - 1 ))
-ROW=$(( $(git show-branch | grep -n "^[\-]*$" | cut -d: -f1) + 1 ))
+COLUMN=$(( $(git show-branch --more | grep '^[^\[]*\*' | head -1 | cut -d* -f1 | wc -c) - 1 ))
+ROW=$(( $(git show-branch --more | grep -n "^[\-]*$" | cut -d: -f1) + 1 ))
 
-git show-branch \
+git show-branch --more \
   | tail -n +$ROW \
   | grep -v "^[^\[]*\[$BRANCH" \
   | grep "^.\{$COLUMN\}[^ ]" \
